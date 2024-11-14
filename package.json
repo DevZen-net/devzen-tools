@@ -121,7 +121,7 @@
     ]
   },
   "author": "Angelos Pikoulas",
-  "license": "MIT",
-  "repository": "none",
-  "private": true
+  "license": "MIT NON-AI",
+  "repository": "https://github.com/DevZen-net/DevZen-Tools",
+  "private": false
 }
