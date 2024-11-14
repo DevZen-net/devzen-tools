@@ -1,0 +1,8 @@
+{
+  "extends": "./tsconfig.json",
+  "include": ["src/code/LogZen.ts"],
+  "exclude": ["src/docs/**/*", "src/__tests__/**/*",
+    "src/code/utils/tiny-log.ts"
+  ],
+  "files": ["global.d.ts"]
+}

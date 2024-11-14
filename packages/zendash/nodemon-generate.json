@@ -1,0 +1,10 @@
+{
+  "ext": "js,ts,map,json",
+  "watch": ["./src/test-utils/generation/**/*", "./src/test-utils/generate.ts"],
+  "ignore": ["./node_modules/", "./dist/", "./src/code/**/*"],
+  "verbose": true,
+  "delay": 1000,
+  "execMap": {
+    "ts": "ts-node --transpileOnly"
+  }
+}

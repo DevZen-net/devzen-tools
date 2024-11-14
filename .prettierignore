@@ -1,0 +1,17 @@
+node_modules/
+dist/
+build/
+DRAFT/
+coverage/
+config/
+migrate_data/
+additional-documentation/
+package*.json
+.idea/
+.deps/
+.eslintrc.js
+.generated/
+.node-dev.json
+jest.config.js
+jest.setupFilesAfterEnv.js
+

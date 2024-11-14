@@ -1,0 +1,6 @@
+{
+  "extends": "./tsconfig.json",
+  "include": ["src/code/OrAnd.ts"],
+  "exclude": ["src/docs/**/*", "src/__tests__/**/*", "src/code/tiny-log.ts"],
+  "files": ["global.d.ts"]
+}

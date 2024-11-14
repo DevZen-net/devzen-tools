@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  logzen:
+    build:
+      context: .
+      args:
+        NODE_VERSION: 20.18.0 # set via --build-arg, eg "docker-compose build --build-arg NODE_VERSION=16.20.2"
+    image: logzen:${NODE_VERSION}
+    command: >
+      sh -c "
+        whoami | xargs echo "User:"
+        node --version | xargs echo 'test-node-version.sh: Starting NODE_VERSION=${NODE_VERSION}, \"node --version\"='
+        npm run start
+        node --version | xargs echo 'test-node-version.sh: Finished NODE_VERSION=${NODE_VERSION}, \"node --version\"='
+      "
+
+    volumes:
+      - './:/home/service-project'

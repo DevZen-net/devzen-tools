@@ -1,0 +1,6 @@
+{
+  "ext": "js,ts,map,json",
+  "watch": ["./src/", "./readme.md"],
+  "verbose": true,
+  "delay": 2000
+}

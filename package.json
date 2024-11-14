@@ -1,0 +1,127 @@
+{
+  "name": "devzen-tools",
+  "description": "DevZen Tools Monorepo, using @lerna/legacy-package-management",
+  "version": "1.0.0-alpha.1",
+  "scripts": {
+    "***************** Root Lerna Monorepo setup *****": "",
+
+    "################# Developing & Starting ": "",
+    "   ### fdev: run FOCUSED Build & Test in watch, for selected packages, in separate Konsoles!": "",
+    "fdev~": "npx lerna run fdev~",
+
+    "   ### dev: run ALL Build & Test in watch, for ALL packages, separate Konsoles": "",
+    "dev~": "npx lerna run dev~",
+    "dev:quick~": "npx lerna run dev:quick~",
+
+    "   ### dev:reset A soft reset, and then dev": " # `build gen build` intentional, to re-build after gen!",
+    "dev:reset~": "npm-run-all clean build distzen docker:clean docker:build migration:run dev:quick~",
+
+    "   ### start:reset A soft reset, and then start": " # `build gen build` intentional, to re-build after gen!",
+    "start": "npx lerna run start",
+    "start2": "npx lerna run start2",
+
+    "start:reset": "npm-run-all clean build gen build distzen build docker:clean docker:build migration:run start",
+
+    "################# Testing ": "",
+    "test": "npx lerna run test --loglevel verbose",
+
+    "         ####### Other - docker testing etc": "",
+    "test:all_node_versions": "npx lerna run test:all_node_versions --loglevel verbose",
+    "test:node_version": "npx lerna run test:node_version --loglevel verbose",
+
+    "################# Build & Typescript": "",
+    "build": "npx lerna run build --loglevel verbose --sort --include-dependencies",
+    "build:all": "npm-run-all build docs:build",
+
+    "   ### docs ": "",
+    "docs:build": "npx lerna run docs:build --loglevel verbose",
+    "build:docs": "npm run docs:build",
+
+    "################# Code Generation": "",
+    "gen": "npx lerna run gen --loglevel verbose",
+
+    "################# Chores & installing": "",
+    "     ### Bootstrap, build, install local & test": "",
+    "boot": "npm-run-all bootstrap build installLocal gen build distzen chores docker:build migration:run",
+    "boot:quick": "npm-run-all bootstrap build installLocal build distzen chores",
+    "bootstrap": "npx lerna bootstrap --loglevel verbose",
+
+    "refresh": "npm-run-all clean build gen build distzen chores docker:build migration:run test",
+    "refresh:quick": "npm-run-all clean build gen distzen test",
+
+    "     ###### Specific Packages": "",
+    "boot:logzen": "npx lerna bootstrap --scope=\"@devzen/logzen\" --include-dependencies --loglevel verbose",
+
+    "     ### Delete `dist/`, `cover/` etc on ALL packages": "",
+    "clean": "npx lerna run clean --loglevel verbose",
+    "wipe": "npm run clean && npm run docker:clean",
+
+    "     ### Delete node_modules on ALL packages": "",
+    "rimrafnode": "npx lerna clean --yes --loglevel verbose",
+
+    "     ### Nuke everything! Wipe clean docker & build files & nuke node_modules": "",
+    "nuke": "npm-run-all wipe rimrafnode",
+
+    "     ### Chores - local": "",
+    "audit:root": "npm audit",
+    "audit:root:fix": "npm audit fix",
+    "audit": "npx lerna run audit",
+    "audit:fix": "npx lerna run audit:fix",
+    "installLocal": "npx install-local",
+    "distzen:this": "npx distzen",
+    "distzen:this!": "npx distzen --watch",
+
+    "     ### Chores - all": "",
+    "distzen": "npx lerna run distzen",
+    "distzen!": "npx lerna run distzen!",
+    "chores": "npx lerna run chores",
+    "# postinstall": "npm run installLocal",
+    "# prepare": "husky install",
+
+    "################# TypeORM & Migrations": "",
+    "migration:run": "npx lerna run migration:run",
+
+    "################# Docker & Compose": "",
+    "docker:reset": "npm-run-all docker:clean docker:build migration:run",
+    "docker:clean": "npx lerna run docker:clean --loglevel verbose",
+    "docker:build": "npx lerna run docker:build --loglevel verbose",
+
+    "################# Formatting & Linting": "",
+    "lint": "npx lerna run lint --loglevel verbose",
+    "lint:fix": "npx lerna run lint:fix --loglevel verbose",
+    "lint:noFail": "npx lerna run lint:noFail --loglevel verbose",
+    "format": "npx lerna run format --loglevel verbose",
+    "prettier": "npx lerna run prettier --loglevel verbose"
+  },
+  "localDependencies": {
+    "@devzen/zendash": "./packages/zendash",
+    "@devzen/validzen": "./packages/validzen",
+    "@devzen/logzen": "./packages/logzen",
+    "@devzen/distzen": "./packages/distzen",
+    "@devzen/speczen": "./packages/speczen"
+  },
+  "_skipped_dependencies - why? more?": {
+    "@devzen/distzen": "1.0.0-alpha.1"
+  },
+  "devDependencies": {
+    "install-local": "^3.0.1",
+    "@lerna/legacy-package-management": "^8.1.9",
+    "lerna": "^8.1.9",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.2.5",
+    "typescript": "5.6.3"
+  },
+  "files": [
+    "packages/"
+  ],
+
+  "# lint-staged": {
+    "*.{js,ts}": [
+      "npx prettier --write"
+    ]
+  },
+  "author": "Angelos Pikoulas",
+  "license": "MIT",
+  "repository": "none",
+  "private": true
+}

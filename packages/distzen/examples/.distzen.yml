@@ -1,0 +1,18 @@
+#logLevel: DEBUG
+
+# You must have declared ALL localDependencies, otherwise install-local will fail,
+#  due to issue with npm i auto-prune see https://github.com/npm/cli/issues/3906 & https://github.com/npm/npm/issues/16853
+#
+# Note: targets = _.extend(cfg.localDependencies, packageJson.localDependencies)
+
+localDependencies:
+  "@devzen/authzen": ../authzen
+  "@devzen/authzen-nestjs": ../authzen-nestjs
+  "@devzen/logzen": ../logzen
+  "@devzen/zendash": ../zendash
+
+# A string[] of the dependency names you only care about (to watch, clean, copy, ts-clean-build etc).
+# If omitted, all localDependencies are targets
+targetDepNames:
+  - '@devzen/authzen'
+  - '@devzen/logzen'

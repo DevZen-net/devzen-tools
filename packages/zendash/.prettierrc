@@ -1,0 +1,33 @@
+{
+  "embeddedLanguageFormatting": "off",
+  "singleQuote": true,
+  "printWidth": 96,
+  "experimentalTernaries": false,
+  "semi": false,
+  "trailingComma": "es5",
+  "singleAttributePerLine": false,
+  "overrides": [
+    {
+      "files": "*.ts",
+      "options": {
+        "parser": "typescript"
+      }
+    },
+    {
+      "files": "*typings-spec.ts",
+      "options": {"printWidth": 210}
+    },
+    {
+      "files": "*typings-spec.template.ts",
+      "options": {"printWidth": 210}
+    },
+    {
+      "files": "*typings-test.ts",
+      "options": {"printWidth": 210}
+    },
+    {
+      "files": "*typings-spec.masterTemplate.ts",
+      "options": {"printWidth": 210}
+    }
+  ]
+}

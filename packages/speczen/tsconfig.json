@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "alwaysStrict": true,
+    "declaration": true,
+    "emitDecoratorMetadata": true,
+    "esModuleInterop": false,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "importHelpers": true,
+    "incremental": false,
+    "lib": ["es5", "es6", "es2020", "esnext.asynciterable", "esnext"],
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": false,
+    "noImplicitReturns": true,
+    "noImplicitThis": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "strictNullChecks": false,
+    "target": "ES2020",
+    "skipLibCheck": true,
+    "baseUrl": "./src",
+    "outDir": "./dist",
+    "checkJs": false,
+    "allowJs": true
+  },
+  "include": ["src/**/*.ts", "src/**/*.json"],
+  "exclude": [
+    "node_modules",
+    "dist/**/*",
+    "DRAFT",
+    "src/docs/**/*",
+    "src/**/*ts-ignore*"
+  ],
+  "types": ["node"]
+}

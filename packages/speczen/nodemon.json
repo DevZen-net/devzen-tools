@@ -1,0 +1,12 @@
+{
+  "ext": "js,ts,map,json",
+  "ignore": [
+    "node_modules/**/*",
+    "./src/docs/generated/**/*",
+    "./dist/**/*",
+    "./temp"
+  ],
+  "watch": ["./src/**/*"],
+  "verbose": false,
+  "delay": 2000
+}

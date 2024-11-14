@@ -1,0 +1,21 @@
+{
+  "embeddedLanguageFormatting": "off",
+  "singleQuote": true,
+  "printWidth": 80,
+  "semi": false,
+  "trailingComma": "es5",
+  "overrides": [
+    {
+      "files": "*EACH.filters.spec",
+      "options": {
+        "printWidth": 528
+      }
+    },
+    {
+      "files": "*.ts",
+      "options": {
+        "parser": "typescript"
+      }
+    }
+  ]
+}

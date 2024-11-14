@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  devzen:
+    environment:
+      NODE_OPTIONS: "--max-old-space-size=12288"
+    build:
+      context: .
+      args:
+        NODE_VERSION: 20.18.0 # set via --build-arg, eg "docker-compose build --build-arg NODE_VERSION=16.20.2"
+    image: devzen:${NODE_VERSION}
+    command: >
+      sh -c "
+        whoami | xargs echo "User:"
+        node --version | xargs echo '############################ \ntest-node-version.sh: Starting NODE_VERSION=${NODE_VERSION}, \"node --version\"='
+        npm run start
+        node --version | xargs echo 'test-node-version.sh: Finished NODE_VERSION=${NODE_VERSION}, \"node --version\"='
+      "
+
+    volumes:
+      - './:/home/service-project'
