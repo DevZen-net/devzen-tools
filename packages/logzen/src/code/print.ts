@@ -429,7 +429,7 @@ const printInternal = (
     let itemsCount = 0
     // https://stackoverflow.com/questions/47372305/iterate-through-object-properties-with-symbol-keys
     let previousIdx: number = null
-    // @ts-ignore @todo: remove ts-ignore
+
     for (const [item, prop] of _z.loop(value, { inherited, symbol: true })) {
       // pass LoopOptions
 

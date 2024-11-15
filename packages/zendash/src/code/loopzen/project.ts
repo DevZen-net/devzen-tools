@@ -16,7 +16,8 @@ import { type } from '../typezen/type'
 import { isStop, NOTHING } from '../typezen/utils'
 import { filterTrue, toStringSafe } from '../utils'
 import { ArrayBufferCursor } from './ArrayBufferCursor'
-import { LogZenMini } from '../LogZenMini'
+// import { LogZenMini } from '../LogZenMini'
+
 import {
   FilterCallback,
   ILoopOptions,
@@ -30,7 +31,7 @@ import {
 } from './loop'
 import { takeToFunction } from './take'
 
-const l = new LogZenMini('project()', LogZenMini.LEVELS.warn)
+// const l = new LogZenMini('project()', LogZenMini.LEVELS.warn)
 
 const NO_RESULT = Symbol('_z.NO_RESULT')
 
@@ -223,14 +224,14 @@ export function project<
     }
   }
 
-  l.debug({ result, itemsOnlyLoopGenerator, type: type(input) })
+  // l.debug({ result, itemsOnlyLoopGenerator, type: type(input) })
 
   if (result === NO_RESULT && isGenerator(itemsOnlyLoopGenerator)) {
-    l.debug(
-      'result === NO_RESULT && isGenerator(itemsOnlyLoopGenerator) type(input)',
-      type(input),
-      input
-    )
+    // l.debug(
+    //   'result === NO_RESULT && isGenerator(itemsOnlyLoopGenerator) type(input)',
+    //   type(input),
+    //   input
+    // )
     switch (type(input)) {
       case 'Array': {
         result = []

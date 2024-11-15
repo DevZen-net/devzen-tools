@@ -32,6 +32,6 @@
     "outDir": "./dist"
   },
   "include": ["src/**/*.ts", "src/**/*.json"],
-  "exclude": ["node_modules", "dist", "*.d.ts", "**/drafts-PoCs/**"],
+  "exclude": ["node_modules", "dist", "**/drafts-PoCs"],
   "types": ["mocha", "node"]
 }
