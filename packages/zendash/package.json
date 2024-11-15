@@ -1,6 +1,6 @@
 {
   "name": "@devzen/zendash",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.2",
   "description": "A small set of utilities around types checking, exact or like comparisons, extracting props & deep mutation of objects",
   "scripts": {
     "****************** A Library Setup *****": "",
@@ -38,18 +38,18 @@
     "test:quick!": "npm run test!",
     "test:gen": "npx ts-node src/test-utils/generate.ts",
     "test:gen!": "nodemon --config nodemon-generate.json \"src/test-utils/generate.ts\" -- --watch",
-    "mocha": "npm run node_ram && npx mocha -r ts-node/register \"src/code/**/*-spec.ts\"",
+    "mocha": "npm-run-all node_ram && npx mocha -r ts-node/register \"src/code/**/*-spec.ts\"",
     "mocha:ci": "npm run mocha:coverage",
     "mocha:coverage": "nyc npm run test",
     "mocha!": "npm run node_ram && npx mocha -r ts-node/register \"src/code/**/*-spec.ts\" -w --watch-files \"**/*.ts\"",
-    "mocha:all!": "npm run node_ram && npx mocha -r ts-node/register \"src/**/*-spec.ts\" -w --watch-files \"**/*.ts\"",
-    "mocha:short!": "npm run node_ram && npx mocha -r ts-node/register \"src/code/**/*-spec.ts\" -w --watch-files \"**/*.ts\" --watch-ignore \"**/*long-spec.ts\" --ignore \"**/*long-spec.ts\"",
+    "mocha:all!": "npm-run-all node_ram && npx mocha -r ts-node/register \"src/**/*-spec.ts\" -w --watch-files \"**/*.ts\"",
+    "mocha:short!": "npm-run-all node_ram && npx mocha -r ts-node/register \"src/code/**/*-spec.ts\" -w --watch-files \"**/*.ts\" --watch-ignore \"**/*long-spec.ts\" --ignore \"**/*long-spec.ts\"",
     "mocha:long!": "npm run node_ram && npx mocha -r ts-node/register \"src/code/**/*long-spec.ts\" -w --watch-files \"**/*.ts\"",
     "mocha:all-typings": "npm run node_ram && npx mocha -r ts-node/register \"src/code/**/all-typings/**/*-spec.ts\"",
     "mocha:all-typings!": "npm run node_ram && npx mocha -r ts-node/register \"src/code/**/all-typings/**/*-spec.ts\" -w --watch-files \"**/*.ts\"",
     "mocha:all-but!": "npm run node_ram && npx mocha -r ts-node/register \"src/code/**/*long-spec.ts\" -w --watch-files \"**/*.ts\" --watch-ignore \"**/*Function-normal*-typings-spec.ts\" --ignore \"**/*Function-normal*-typings-spec.ts\"",
     "mocha:only!": "npm run node_ram && npx mocha -r ts-node/register \"src/code/**/**values*-spec.ts\" -w --watch-files \"**/*.ts\"",
-    "mocha:quick!": "npm run mocha!",
+    "mocha:quick!": "npm-run-all clean:test:gen mocha!",
     "mocha!:noverbose": "npm run mocha!",
     "         ####### Other - docker testing etc": "",
     "test:all_node_versions": "./z/test-all-node-versions.sh",
@@ -65,9 +65,10 @@
     "################# Clean, Chores and installing": "",
     "audit": "npm audit",
     "audit:fix": "npm audit fix",
-    "clean": "npx rimraf -g dist coverage .nyc_output result junit.xml tmp tsconfig.*.tsbuildinfo src/code/loopzen/__test__/all-typings/_generated",
-    "gen": "npm run test:gen",
-    "gen!": "npm run test:gen!",
+    "clean": "npx rimraf -g dist coverage .nyc_output result junit.xml tmp tsconfig.*.tsbuildinfo",
+    "clean:test:gen": "npx rimraf src/code/loopzen/__test__/all-typings/_generated",
+    "gen": "echo NO gen for build",
+    "gen!": "echo NO gen! for build",
     "chores": "npm run gen",
     "distzen": "echo NOT NEEDED 'distzen'",
     "distzen!": "echo NOT NEEDED 'distzen --watch'",
@@ -80,7 +81,8 @@
     "lint:noFail": "npx eslint --fix --ignore-path .gitignore \"**/*.{js,ts}\" || exit 0"
   },
   "dependencies": {
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "type-fest": "^4.21.0"
   },
   "devDependencies": {
     "@istanbuljs/nyc-config-typescript": "^1.0.2",
@@ -123,7 +125,6 @@
     "ts-node-dev": "^2.0.0",
     "tsconfig-paths": "^4.2.0",
     "tsutils": "~3.21.0",
-    "type-fest": "^4.21.0",
     "typedoc": "^0.26.7",
     "typescript": "5.6.3",
     "upath": "^2.0.1"

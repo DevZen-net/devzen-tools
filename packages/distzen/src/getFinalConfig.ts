@@ -167,11 +167,11 @@ export const getFinalConfig = async (
     : _.extend(cfg.localDependencies, packageJson.localDependencies)
 
   if (_.isEmpty(cfg.localDependencies)) {
-    l.error(`Both config targetDependencies & packageJsonLocalDependencies empty - exiting!`)
+    l.warn(`Both config targetDependencies & packageJsonLocalDependencies empty - exiting!`)
     l.debug('Final config & cliOptions blend = ', cfg)
 
     // eslint-disable-next-line unicorn/no-process-exit
-    process.exit(1)
+    process.exit(0)
   } else {
     cfg.localDependenciesResolved = projectDependenciesToTargets(cfg, cfg.localDependencies)
     if (!(_.isArray(cfg.targetDepNames) || _.isUndefined(cfg.targetDepNames)))

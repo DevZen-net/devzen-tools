@@ -6,9 +6,19 @@ Install & watch clean/copy/sync multiple local packages, production-level via `n
 
 ## TLDR
 
-Symbolic links for `node_modules` (i.e `npm link`, `lerna bootstrap` etc) cause huge headaches as they fail with Docker, WSL/networked access, and can cause inconsistent usage of non-published lib artifacts, use different lib versions than intended etc. But monorepos and npm/yarn workspaces excessively use linking. 
+Symbolic links for `node_modules` (i.e `npm link`, `lerna bootstrap` etc) are great, but they cam cause huge headaches: 
+* they fail with Docker (when docker container mounts local dir, symlinks aren't followed)   
+* WSL/networked access (open a project that resides inside your WSL, links aren't followed) 
+* inconsistent usage of non-published lib artifacts (files that should, but don't exist on the published lib, but is present on the project's dir, appears as working. But it will break in when published one is used!).  
+* use a different lib package than intended: your full dir linked is different to what is published! The simplest error is having a devDependency, that should really be a normal dependency! 
 
-DistZen helps you having monorepo packages or even unrelated foreign packages **installed locally**, synchronise easily & quickly when there are changes, and work seamlesly with Docker & networking, since it doesn't use Symbolic Links!  
+I'm sure there's more scenarios that links can suck.
+
+But monorepos and npm/yarn workspaces excessively use linking, and don't allow for a **real installation** strategy (that is same as if the lib was published and installed from the npm registry).
+
+On the other hand, links always point to the exact latest code, without any syncing needed, so it's great for development.  
+
+**DistZen** helps you having monorepo packages (or even unrelated foreign packages) **installed locally**, synchronise easily & quickly when there are changes, and work seamlessly with Docker & networking, since it doesn't use Symbolic Links!  
 
 #### Usage:
 
