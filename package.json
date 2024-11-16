@@ -94,7 +94,7 @@
     "prettier": "npx lerna run prettier --loglevel verbose",
 
     "################# Various / Internal": "",
-    "prepublishOnly": "echo DevZen Tools Monorepo SHOULD NOT BE PUBLISHED && exit 1"
+    "prepublishOnly": "echo DevZen Tools Monorepo SHOULD NOT BE PUBLISHED && exit 0"
   },
   "localDependencies": {
     "@devzen/zendash": "./packages/zendash",
