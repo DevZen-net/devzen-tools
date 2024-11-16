@@ -1,27 +1,22 @@
 {
   "name": "@devzen/zendash",
-  "version": "1.0.0-alpha.3",
+  "version": "1.0.0-alpha.4",
   "description": "A small set of utilities around types checking, exact or like comparisons, extracting props & deep mutation of objects",
   "scripts": {
     "****************** A Library Setup *****": "",
-
     "################# Running ": "",
-
     "### dev: build & test in watch, in separate Konsoles!": "",
     "# fdev~": "npm run dev~",
     "dev~": "npm-run-all clean build && t -npr build! gen! test! docs!",
     "dev:quick~": "t -npr build! gen! test:quick!",
     "   ### start covnentional": "",
     "start": "npm-run-all gen build test",
-
     "################# Build & Typescript": "",
     "build": "npm-run-all build:ts",
     "build:all": "npm-run-all build:ts docs:build",
-
     "   ### TypeScript": "",
     "build:ts": "npx mkdirp dist && npx tsc --listEmittedFiles --project tsconfig.json",
     "build:ts:prod": "npm-run-all clean && npx mkdirp dist && npx tsc --listEmittedFiles --project tsconfig.prod.json",
-
     "   ### Watching": "",
     "build:ts!": "npx mkdirp dist && npx tsc --listEmittedFiles --watch --project tsconfig.json",
     "build!": "npm-run-all --parallel build:ts! distzen!",
@@ -29,7 +24,6 @@
     "   ### Aliases": "",
     "build:docs": "npm run docs:build",
     "build:docs!": "npm run docs!",
-
     "################# Testing ": "",
     "test": "npm-run-all mocha",
     "test:ci": "npm-run-all mocha:ci",
@@ -60,17 +54,14 @@
     "         ####### Other - docker testing etc": "",
     "test:all_node_versions": "./z/test-all-node-versions.sh",
     "test:node_version": "./z/test-node-version.sh",
-
     "################# Docs": "",
     "docs:build": "npm-run-all docs:clean typedoc",
     "docs:serve": "npx ws --port 8091 --directory ./dist/docs-html",
     "docs!": "npm-run-all --parallel typedoc! docs:serve",
     "docs:clean": "npx rimraf dist/docs-html",
-
     "         ####### TypeDoc": "",
     "typedoc": "npx typedoc",
     "typedoc!": "nodemon --config nodemon-docs.json --exec npx typedoc",
-
     "################# Clean, Chores and installing": "",
     "audit": "npm audit",
     "audit:fix": "npm audit fix",
@@ -82,14 +73,12 @@
     "distzen": "echo NOT NEEDED 'distzen'",
     "distzen!": "echo NOT NEEDED 'distzen --watch'",
     "node_ram": "node -e 'const ram=v8.getHeapStatistics().heap_size_limit/(1024*1024);const low=ram<8000;console[low ? `error`:`log`](`${ low ? \"WARNING\" : \"NOTE\"} nodejs heap_size_limit RAM =`, ram)'",
-
     "################# Formatting & Linting": "",
     "format": "npm-run-all prettier lint:noFail prettier",
     "prettier": "npx prettier --write \"**/*.{ts,js,json}\"",
     "lint": "npx eslint --ignore-path .gitignore \"**/*.{js,ts}\"",
     "lint:fix": "npx eslint --fix --ignore-path .gitignore \"**/*.{js,ts}\"",
     "lint:noFail": "npx eslint --fix --ignore-path .gitignore \"**/*.{js,ts}\" || exit 0",
-
     "################# Various / Internal": "",
     "prepublishOnly": "echo publishing!"
   },
@@ -145,7 +134,7 @@
   "types": "./dist/code/index.d.ts",
   "type": "commonjs",
   "main": "dist/code/index.js",
-  "files":[
+  "files": [
     "dist/code",
     "!**/__tests__/**",
     "!**/*-spec.*"
