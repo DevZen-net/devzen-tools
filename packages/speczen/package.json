@@ -1,6 +1,6 @@
 {
   "name": "@devzen/speczen",
-  "version": "1.0.0-alpha.4",
+  "version": "1.0.0-alpha.5",
   "description": "Run Test Suites with Jest, with full control for exactly which tests to run or dont. Much more than `it.only()` & `describe.only()` on steroids!",
   "scripts": {
     "****************** A Library Setup *****": "",
@@ -90,7 +90,7 @@
     "@devzen/zendash": "../zendash"
   },
   "dependencies": {
-    "@devzen/zendash": "^1.0.0-alpha.4",
+    "@devzen/zendash": "^1.0.0-alpha.5",
     "ansi-colors": "^4.1.3",
     "deepmerge": "^4.3.1",
     "json-stringify-safe": "^5.0.1",
