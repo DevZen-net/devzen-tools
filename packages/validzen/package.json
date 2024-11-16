@@ -1,6 +1,6 @@
 {
   "name": "@devzen/validzen",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.3",
   "description": "A powerful OR & AND PropertyDecorator for `class-validator`, to support very complex validation scenarios. Full integration with `class-transformer-validator` and useful opinionated tools. Also, a PoC to reuse ALL `class-validator` & `class-validator-extended` PropertyDecorators as-is!",
   "scripts": {
     "****************** A Library Setup *****": "",
@@ -121,7 +121,7 @@
     "reflect-metadata": "^0.1.13"
   },
   "devDependencies": {
-    "@devzen/speczen": "1.0.0-alpha.1",
+    "@devzen/speczen": "^1.0.0-alpha.4",
     "@prettier/sync": "^0.3.0",
     "@types/jest": "^29.5.11",
     "@types/lodash": "^4.14.202",

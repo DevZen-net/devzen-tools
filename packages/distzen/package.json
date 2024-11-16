@@ -1,6 +1,6 @@
 {
   "name": "@devzen/distzen",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.3",
   "description": "Install & watch clean/copy/sync multiple local packages, production-level via `npm i`, without symlinks, in a snap!",
   "scripts": {
     "****************** A CLI Global Setup *****": "",
@@ -54,10 +54,10 @@
     "read-config-ng"
   ],
   "dependencies": {
-    "@devzen/logzen": "1.0.0-alpha.1",
-    "@devzen/speczen": "1.0.0-alpha.1",
-    "@devzen/validzen": "1.0.0-alpha.1",
-    "@devzen/zendash": "1.0.0-alpha.3",
+    "@devzen/logzen": "^1.0.0-alpha.4",
+    "@devzen/speczen": "^1.0.0-alpha.4",
+    "@devzen/validzen": "^1.0.0-alpha.4",
+    "@devzen/zendash": "^1.0.0-alpha.4",
     "chokidar": "^3.5.3",
     "commander": "^10.0.1",
     "fs-jetpack": "^5.1.0",

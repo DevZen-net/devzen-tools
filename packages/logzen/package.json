@@ -1,6 +1,6 @@
 {
   "name": "@devzen/logzen",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.3",
   "description": "A radically powerful yet familiar Logger, with emphasis on Granularity & Context, Debugging BigApps & Observability. Outputs anywhere, colorful values, customizable Header & many more options. Extensively Typed & tested.",
   "scripts": {
     "****************** A Library Setup *****": "",
@@ -114,9 +114,9 @@
     "@devzen/zendash": "../zendash"
   },
   "dependencies": {
-    "@devzen/speczen": "1.0.0-alpha.1",
-    "@devzen/validzen": "1.0.0-alpha.1",
-    "@devzen/zendash": "1.0.0-alpha.3",
+    "@devzen/speczen": "^1.0.0-alpha.4",
+    "@devzen/validzen": "^1.0.0-alpha.4",
+    "@devzen/zendash": "^1.0.0-alpha.4",
     "ansi-colors": "^4.1.3",
     "class-transformer": "^0.5.1",
     "class-transformer-validator": "^0.9.1",

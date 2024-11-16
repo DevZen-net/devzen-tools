@@ -1,7 +1,7 @@
 {
   "name": "devzen-tools",
   "description": "DevZen Tools Monorepo, using @lerna/legacy-package-management",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.3",
   "scripts": {
     "***************** Root Lerna Monorepo setup *****": "",
 
@@ -104,7 +104,7 @@
     "@devzen/speczen": "./packages/speczen"
   },
   "_skipped_dependencies - why? more?": {
-    "@devzen/distzen": "1.0.0-alpha.1"
+    "@devzen/distzen": "1.0.0-alpha.3"
   },
   "devDependencies": {
     "install-local": "^3.0.1",

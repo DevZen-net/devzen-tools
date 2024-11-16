@@ -1,6 +1,6 @@
 {
   "name": "@devzen/speczen",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.3",
   "description": "Run Test Suites with Jest, with full control for exactly which tests to run or dont. Much more than `it.only()` & `describe.only()` on steroids!",
   "scripts": {
     "****************** A Library Setup *****": "",
