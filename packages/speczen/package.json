@@ -110,7 +110,7 @@
     "@devzen/zendash": "../zendash"
   },
   "dependencies": {
-    "@devzen/zendash": "1.0.0-alpha.1",
+    "@devzen/zendash": "1.0.0-alpha.3",
     "ansi-colors": "^4.1.3",
     "deepmerge": "^4.3.1",
     "json-stringify-safe": "^5.0.1",
@@ -161,9 +161,10 @@
     "typedoc": "^0.26.7",
     "typescript": "5.6.3"
   },
-  "files": [
-    "dist/",
-    "patches/"
+  "files":[
+    "dist/code",
+    "!**/__tests__/**",
+    "!**/*-spec.*"
   ],
   "engines": {
     "node": ">=14.0.0"
@@ -175,12 +176,12 @@
   "#################### Not technical meta-data": "####################",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DevZen/SpecZen.git"
+    "url": "git+https://github.com/DevZen-net/DevZen-tools.git"
   },
   "bugs": {
-    "url": "https://github.com/DevZen/SpecZen/issues"
+    "url": "https://github.com/DevZen-net/DevZen-Tools/issues"
   },
-  "homepage": "https://github.com/DevZen/SpecZen",
+  "homepage": "https://github.com/DevZen-net/devzen-tools/tree/main/packages/SpecZen",
   "author": "Angelos Pikoulas",
   "license": "MIT NON-AI"
 }

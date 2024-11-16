@@ -91,7 +91,10 @@
     "lint:fix": "npx lerna run lint:fix --loglevel verbose",
     "lint:noFail": "npx lerna run lint:noFail --loglevel verbose",
     "format": "npx lerna run format --loglevel verbose",
-    "prettier": "npx lerna run prettier --loglevel verbose"
+    "prettier": "npx lerna run prettier --loglevel verbose",
+
+    "################# Various / Internal": "",
+    "prepublishOnly": "echo DevZen Tools Monorepo SHOULD NOT BE PUBLISHED && exit 1"
   },
   "localDependencies": {
     "@devzen/zendash": "./packages/zendash",
@@ -123,5 +126,5 @@
   "author": "Angelos Pikoulas",
   "license": "MIT NON-AI",
   "repository": "https://github.com/DevZen-net/DevZen-Tools",
-  "private": false
+  "private": true
 }

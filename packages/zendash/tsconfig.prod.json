@@ -14,7 +14,7 @@
     "src/**/*ts-ignore*",
     "**/*-spec*.ts",
     "**/**drafts**",
-    "**/__test__/**",
+    "**/__tests__/**",
     "**/test-utils/**"
   ]
 }

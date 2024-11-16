@@ -15,4 +15,4 @@ package*.json
 jest.config.js
 jest.setupFilesAfterEnv.js
 patches/
-/src/code/loopzen/__test__/all-typings/_generated/
+/src/code/loopzen/__tests__/all-typings/_generated/

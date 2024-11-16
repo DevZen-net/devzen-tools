@@ -360,7 +360,7 @@ You can issue an:
 
 inside devzen-tools root, to execute all tests in all packages & verify everything's OK.
 
-NOTE: Tests in src/code/loopzen/__test__/all-typings are generated and are literally HUGE! Nodejs crashes with default RAM, so you need to run them with `
+NOTE: Tests in src/code/loopzen/__tests__/all-typings are generated and are literally HUGE! Nodejs crashes with default RAM, so you need to run them with `
 export NODE_OPTIONS="--max-old-space-size=8192"` on your node (might work with less). Also note they will take a long time to run (up to 5 or 10 minutes, depending on your machine), so you might want to run them separately:
 
 - This will run ONLY those long tests

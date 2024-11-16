@@ -6,7 +6,7 @@ const args = process.argv.slice(2)
 
 substitute({
   watch: args.includes('--watch') || args.includes('-w'),
-  workDir: 'src/code/loopzen/__test__/all-typings',
+  workDir: 'src/code/loopzen/__tests__/all-typings',
   substitutions: {
     'all-typings-tests-vanilla': 'master/Master-typings-spec.masterTemplate.ts',
     'all-typings-tests-WECP': 'master/Master-typings-spec.masterTemplate.ts',

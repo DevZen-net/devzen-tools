@@ -110,14 +110,14 @@
     "@devzen/speczen": "../speczen"
   },
   "dependencies": {
-    "@devzen/zendash": "1.0.0-alpha.1",
+    "@devzen/zendash": "1.0.0-alpha.3",
     "lodash": "^4.17.21"
   },
   "peerDependencies": {
     "class-transformer": "^0.5.1",
     "class-transformer-validator": "^0.9.1",
     "class-validator": "^0.14.1",
-    "class-validator-extended": "^3.1.2",
+    "class-validator-extended": "^3.2.0",
     "reflect-metadata": "^0.1.13"
   },
   "devDependencies": {
@@ -169,9 +169,11 @@
     "typedoc": "^0.26.7",
     "typescript": "5.6.3"
   },
-  "files": [
-    "dist/",
-    "patches/"
+  "files":[
+    "patches/",
+    "dist/code",
+    "!**/__tests__/**",
+    "!**/*-spec.*"
   ],
   "engines": {
     "node": ">=14.0.0"
@@ -183,12 +185,12 @@
   "#################### Not technical meta-data": "####################",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DevZen/ValidZen.git"
+    "url": "git+https://github.com/DevZen-net/DevZen-tools.git"
   },
   "bugs": {
-    "url": "https://github.com/DevZen/ValidZen/issues"
+    "url": "https://github.com/DevZen-net/DevZen-Tools/issues"
   },
-  "homepage": "https://github.com/DevZen/ValidZen",
+  "homepage": "https://github.com/DevZen-net/devzen-tools/tree/main/packages/ValidZen",
   "author": "Angelos Pikoulas",
   "license": "MIT NON-AI"
 }

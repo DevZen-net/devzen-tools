@@ -31,7 +31,7 @@ import { ILoopOptions, loop, LOOP_SYMBOL, AsyncLoopGenerator, LoopGenerator, Loo
 const emptyTypedIloopOptions: ILoopOptions = {}
 
 /**
- * The **real typings tests**, for all functions (keys, values, loop, each, map, clone, filter, take), across all options and across all different inputs, are in `__test__/all-typings`.
+ * The **real typings tests**, for all functions (keys, values, loop, each, map, clone, filter, take), across all options and across all different inputs, are in `__tests__/all-typings`.
  *
  * These are auxiliary smoke tests for internals, like `LoopValues` and `LoopKeys`, and/or for open issues/specific cases/docs that are not covered in the main tests.
  */
