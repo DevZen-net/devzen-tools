@@ -1,7 +1,7 @@
 import * as _ from 'lodash'
 import { OptionsInternal, Options } from './types'
 import { getTinyLog } from './utils/tiny-log'
-import { isRealObject, setProp } from '@neozen/zendash'
+import { isRealObject, setProp } from '@neozen/zen'
 
 // const _log = getTinyLog(false, 'blendOptions')
 

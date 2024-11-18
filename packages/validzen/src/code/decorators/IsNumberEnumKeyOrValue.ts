@@ -1,4 +1,4 @@
-import { numberEnumToStringKey } from '@neozen/zendash'
+import { numberEnumToStringKey } from '@neozen/zen'
 import {
   buildMessage,
   // eslint-disable-next-line import/named

@@ -1,11 +1,11 @@
 import 'reflect-metadata'
-import { TypeNames } from '@neozen/zendash'
+import { TypeNames } from '@neozen/zen'
 import * as ansiColors from 'ansi-colors'
 
 import { Type } from 'class-transformer'
 import * as _ from 'lodash'
 import { InspectOptions } from './inspect'
-import { numberEnumToNumberVal, numberEnumToStringKey } from '@neozen/zendash'
+import { numberEnumToNumberVal, numberEnumToStringKey } from '@neozen/zen'
 import {
   OrAnd,
   $IsArrayWithAllowedValues,

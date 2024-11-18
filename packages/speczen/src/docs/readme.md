@@ -581,7 +581,7 @@ What's more interesting, is Generation, which is quite independent of Version.
 ## Future Direction Highlights
 
 - Improve typing and type checks: 
-  - a) use typing system of `ZenDash` (`Tany` and more)
+  - a) use typing system of `Zen` (`Tany` and more)
   - c) use `TypeEqual` checks from `ts-expect`
   - b) use `ValidZen` to validate the Specs at runtime (Gen2/3) 
 - Improve titling of nested of Suites & Specs.
@@ -599,5 +599,5 @@ Please support by staring, mentioning, sharing on social, reviewing, testing, op
 
 # License
 
-MIT
+MIT NON-AI
 

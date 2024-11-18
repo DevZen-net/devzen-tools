@@ -466,7 +466,7 @@ LogZen.addPathReplacements({
   'dist/docs/generated/detailed-usage-examples.executable.spec.generated': 'LogZen Playground',
 
   // we can also use it for external dependencies, if those use LogZen
-  'node_modules/@neozen/zendash/dist': 'ZenDash',
+  'node_modules/@neozen/zen/dist': 'Zen',
 })
 ```
 
@@ -3271,6 +3271,6 @@ Please support by staring, mentioning, sharing on social, reviewing, testing, op
 
 # License
 
-MIT
+MIT NON-AI
 
 

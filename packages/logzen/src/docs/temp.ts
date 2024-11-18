@@ -1,5 +1,5 @@
-import * as _z from '@neozen/zendash'
-// import { aSimpleSet } from '@neozen/zendash/dist/test-utils/test-data'
+import * as z from '@neozen/zen'
+// import { aSimpleSet } from '@neozen/zen/dist/test-utils/test-data'
 // import * as ansiColors from 'ansi-colors'
 import * as _ from 'lodash'
 import { ELogLevel, getTinyLog, LogZen, Output } from '../code'
@@ -87,7 +87,7 @@ const l14_5 = new LogZen({
 // //
 // // console.log(val2, promiseResults)
 //
-// // for (const [idx, val] of _z.iterator(123, { strict: true })) {
+// // for (const [idx, val] of z.iterator(123, { strict: true })) {
 // //   console.log(idx, val)
 // // }
 // //

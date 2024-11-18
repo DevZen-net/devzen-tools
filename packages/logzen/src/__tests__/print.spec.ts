@@ -12,7 +12,7 @@ if (!Object.hasOwn) hasOwn.shim()
 import { print } from '../code/print'
 const _log = getTinyLog(false, 'print.spec')
 
-// fixtures: also used in zendash/src/code/objects/keys-spec.ts
+// fixtures: also used in zen/src/code/objects/keys-spec.ts
 
 // Class inheritance
 class Person {

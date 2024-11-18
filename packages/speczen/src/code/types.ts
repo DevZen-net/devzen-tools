@@ -1,5 +1,5 @@
 import * as _ from 'lodash'
-import * as _z from '@neozen/zendash'
+import * as z from '@neozen/zen'
 import { ExcludeByKey, TAny_ExcludeObjectAndFunction } from './types-utilities'
 import { objectToString } from './utils/objectToString'
 import { getTinyLog } from './utils/tiny-log'
@@ -1188,7 +1188,7 @@ export const SUITE: T_SUITE_TypeFunction = <TSpecData>(
       title = suiteArgs[0]
       // No options if we used string, just suiteArray
       suiteArray = suiteArgs[1] as T_SUITEArray
-    } else if (_z.isRealObject(suiteArgs[0])) {
+    } else if (z.isRealObject(suiteArgs[0])) {
       options = suiteArgs[0] as SUITEOptions<TSpecData>
       suiteArray = suiteArgs[1] as T_SUITEArray
       ;({ specHandlers, title, group, columns } = options)
@@ -1203,7 +1203,7 @@ export const SUITE: T_SUITE_TypeFunction = <TSpecData>(
   }
 
   if (specHandlers) {
-    // ? _z.arrayize(specHandlers) : null
+    // ? z.arrayize(specHandlers) : null
     if (_.isString(specHandlers))
       finalSpecHandlers = specHandlers.split('|').map((s) => s.trim())
     else if (_.isFunction(specHandlers)) finalSpecHandlers = [specHandlers]

@@ -3,7 +3,7 @@ import { ValidationError } from 'class-validator'
 import { TransformValidationOptions } from 'class-transformer-validator'
 
 // NeoZen
-import { isOk, isRealObject } from '@neozen/zendash'
+import { isOk, isRealObject } from '@neozen/zen'
 import {
   getValidationErrorsString,
   validateObject,

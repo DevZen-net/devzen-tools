@@ -9,7 +9,7 @@ localDependencies:
   "@neozen/authzen": ../authzen
   "@neozen/authzen-nestjs": ../authzen-nestjs
   "@neozen/logzen": ../logzen
-  "@neozen/zendash": ../zendash
+  "@neozen/zen": ../zen
 
 # A string[] of the dependency names you only care about (to watch, clean, copy, ts-clean-build etc).
 # If omitted, all localDependencies are targets

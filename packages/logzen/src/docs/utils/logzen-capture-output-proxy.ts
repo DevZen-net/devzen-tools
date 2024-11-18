@@ -1,5 +1,5 @@
 import * as c from 'ansi-colors'
-import * as _z from '@neozen/zendash'
+import * as z from '@neozen/zen'
 import * as _ from 'lodash'
 import * as assert from 'node:assert'
 import { stderr, stdout } from 'test-console'
@@ -36,7 +36,7 @@ export class LogZenCaptureOutputClass extends LogZen {
         stackDepthCalled: stackDepthLogLogZenCaptureOut,
         loggerName: constructorArgs[0],
       }
-    } else if (_z.isRealObject(constructorArgs[0])) {
+    } else if (z.isRealObject(constructorArgs[0])) {
       ;(constructorArgs[0] as any).stackDepthCreated =
         ((constructorArgs[0] as any)?.stackDepthCreated || 0) +
         stackDepthCreatedLogZenCaptureOut

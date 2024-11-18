@@ -88,11 +88,11 @@
     "lint:noFail": "npx eslint --fix --ignore-path .gitignore \"**/*.{js,ts}\" || exit 0"
   },
   "localDependencies": {
-    "@neozen/zendash": "../zendash",
+    "@neozen/zen": "../zen",
     "@neozen/speczen": "../speczen"
   },
   "dependencies": {
-    "@neozen/zendash": "^1.0.0-alpha.5",
+    "@neozen/zen": "^1.0.0-alpha.5",
     "lodash": "^4.17.21"
   },
   "peerDependencies": {

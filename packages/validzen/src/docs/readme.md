@@ -198,6 +198,6 @@ Please support by staring, mentioning, sharing on social, reviewing, testing, op
 
 # License
 
-MIT
+MIT NON-AI
 
 

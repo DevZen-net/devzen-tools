@@ -1,4 +1,4 @@
-import * as _z from '@neozen/zendash'
+import * as z from '@neozen/zen'
 import * as _ from 'lodash'
 
 type ExpectedResult = any | null
@@ -16,7 +16,7 @@ export const getExpectedStringsAndResult = (
 
   if (_.isArray(expectedStuff)) {
     ;[expectedStrings, expectedResult] = expectedStuff as [string[], ExpectedResult]
-    expectedStrings = expectedStrings === null ? null : _z.arrayize(expectedStrings)
+    expectedStrings = expectedStrings === null ? null : z.arrayize(expectedStrings)
   } else {
     expectedStrings = [expectedStuff]
   }
@@ -25,7 +25,7 @@ export const getExpectedStringsAndResult = (
 
   if (_.isArray(expectedStrings))
     expectedStrings = expectedStrings.map((es) => {
-      if (_z.isRealObject(es)) return JSON.stringify(es)
+      if (z.isRealObject(es)) return JSON.stringify(es)
       if (_.isString(es)) return es
       throw new Error(`getExpectedStuff: Unknown value for expectedStrings:${es}`)
     })

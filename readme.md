@@ -2,7 +2,7 @@
 
 ## Home of NeoZen tools:
 
-* ZenDash
+* Zen
 * LogZen
 * ValidZen
 * SpecZen

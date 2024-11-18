@@ -23,7 +23,7 @@ All the different variations of printing deserve to be at your fingertips!
  Called only if logzen's decision is to use it:
    - Your options suggest it, since you have a truthy / function!
    - object has it's own toString if (
-      _z.isRealObject(value) && value.toString.toString() !== 'function toString() { [native code] }'
+      z.isRealObject(value) && value.toString.toString() !== 'function toString() { [native code] }'
       ) {
 
 And you should be able to change mode per file, per path, per logger, per mode of YOUR operations (I'm doing code testing, I'm reading logs or docs, I'm interacting with JSON files etc)
@@ -49,7 +49,7 @@ import * as c from 'ansi-colors'
 import * as fs from 'node:fs'
 import * as _ from 'lodash'
 import * as upath from 'upath'
-import * as _z from '@neozen/zendash'
+import * as z from '@neozen/zen'
 import { colorsStrip, fixWindowsRootPath } from '../../code/utils/misc'
 
 // local
@@ -155,7 +155,7 @@ const expectOut = async (
 
   const actualOut = getOutput(await stdX.inspectAsync(wrappedExecuteFn))
   if (!_.isNull(expectedPrinted)) {
-    if (_z.isRealObject(expectedPrinted)) {
+    if (z.isRealObject(expectedPrinted)) {
       expect(JSON.parse(actualOut.toString())).toEqual(expectedPrinted)
     } else {
       if (ignoreStyle)
@@ -841,7 +841,7 @@ LogZen.addPathReplacements({
   '${relativeFilename}':               'LogZen Playground',
 
   // we can also use it for external dependencies, if those use LogZen
-  'node_modules/@neozen/zendash/dist': 'ZenDash',
+  'node_modules/@neozen/zen/dist': 'Zen',
 })`),
         docsBlock(`
 How it works: The logPath part (left hand side) has to to correspond to an actual filepath in your FS, since it is resolved at runtime. The path match can be partial.
@@ -853,7 +853,7 @@ But the print-friendly name (right hand side) doesn't have to correspond to it, 
         beforeAll(() => {
           LogZen.addPathReplacements({
             [relativeFilename]: 'LogZen Playground',
-            'node_modules/@neozen/zendash/dist': 'ZenDash',
+            'node_modules/@neozen/zen/dist': 'Zen',
           })
 
           LogZen.addPathReplacements({

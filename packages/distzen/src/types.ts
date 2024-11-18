@@ -18,13 +18,13 @@ export interface IdistZenCliOptions extends IdistZenCommonOptions {
 export type TDependencies = { [dependencyName: string]: string }
 
 export type TDependencyResolved = {
-  dependencyName: string // eg '@neozen/zendash',
-  declaredPath: string // eg '../zendash',
-  absolutePath: string // eg '/projects/neozen/packages/zendash',
-  absoluteSrcPath: string // eg '/projects/neozen/packages/zendash/src',
-  absoluteDistPath: string // eg '/projects/neozen/packages/zendash/dist',
-  installedPath: string // eg '/projects/neozen/packages/authzen-nestjs-example/node_modules/@neozen/zendash'
-  installedDistPath: string // eg '/projects/neozen/packages/authzen-nestjs-example/node_modules/@neozen/zendash/dist'
+  dependencyName: string // eg '@neozen/zen',
+  declaredPath: string // eg '../zen',
+  absolutePath: string // eg '/projects/neozen/packages/zen',
+  absoluteSrcPath: string // eg '/projects/neozen/packages/zen/src',
+  absoluteDistPath: string // eg '/projects/neozen/packages/zen/dist',
+  installedPath: string // eg '/projects/neozen/packages/authzen-nestjs-example/node_modules/@neozen/zen'
+  installedDistPath: string // eg '/projects/neozen/packages/authzen-nestjs-example/node_modules/@neozen/zen/dist'
   distDirName: string // eg dist / dst / build
   srcDirName: string // eg dist / dst / build
 }

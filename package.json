@@ -102,7 +102,7 @@
     "prepublishOnly": "echo NeoZen Tools Monorepo SHOULD NOT BE PUBLISHED && exit 0"
   },
   "localDependencies": {
-    "@neozen/zendash": "./packages/zendash",
+    "@neozen/zen": "./packages/zen",
     "@neozen/validzen": "./packages/validzen",
     "@neozen/logzen": "./packages/logzen",
     "@neozen/distzen": "./packages/distzen",
