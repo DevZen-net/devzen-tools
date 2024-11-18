@@ -1,6 +1,6 @@
 {
   "name": "@devzen/zendash",
-  "version": "1.0.0-alpha.3",
+  "version": "1.0.0-alpha.5",
   "description": "A small set of utilities around types checking, exact or like comparisons, extracting props & deep mutation of objects",
   "scripts": {
     "****************** A Library Setup *****": "",
@@ -11,6 +11,7 @@
     "# fdev~": "npm run dev~",
     "dev~": "npm-run-all clean build && t -npr build! gen! test! docs!",
     "dev:quick~": "t -npr build! gen! test:quick!",
+
     "   ### start covnentional": "",
     "start": "npm-run-all gen build test",
 
@@ -26,6 +27,7 @@
     "build:ts!": "npx mkdirp dist && npx tsc --listEmittedFiles --watch --project tsconfig.json",
     "build!": "npm-run-all --parallel build:ts! distzen!",
     "build:all!": "npm-run-all --parallel build:ts! docs!",
+
     "   ### Aliases": "",
     "build:docs": "npm run docs:build",
     "build:docs!": "npm run docs!",
@@ -34,6 +36,7 @@
     "test": "npm-run-all mocha",
     "test:ci": "npm-run-all mocha:ci",
     "test:coverage": "npm-run-all mocha:coverage",
+
     "         ####### Test watching & Open new Terminal Windows via neoTerm": "",
     "test~": "npm run test!~",
     "test!~": "t -npr 'mocha!'",
@@ -57,6 +60,7 @@
     "mocha:only!": "npm run node_ram && npx mocha -r ts-node/register \"src/code/**/**values*-spec.ts\" -w --watch-files \"**/*.ts\"",
     "mocha:quick!": "npm-run-all clean:test:gen mocha!",
     "mocha!:noverbose": "npm run mocha!",
+
     "         ####### Other - docker testing etc": "",
     "test:all_node_versions": "./z/test-all-node-versions.sh",
     "test:node_version": "./z/test-node-version.sh",
@@ -82,6 +86,7 @@
     "distzen": "echo NOT NEEDED 'distzen'",
     "distzen!": "echo NOT NEEDED 'distzen --watch'",
     "node_ram": "node -e 'const ram=v8.getHeapStatistics().heap_size_limit/(1024*1024);const low=ram<8000;console[low ? `error`:`log`](`${ low ? \"WARNING\" : \"NOTE\"} nodejs heap_size_limit RAM =`, ram)'",
+    "unlock": "rimraf package-lock.json",
 
     "################# Formatting & Linting": "",
     "format": "npm-run-all prettier lint:noFail prettier",
@@ -145,7 +150,7 @@
   "types": "./dist/code/index.d.ts",
   "type": "commonjs",
   "main": "dist/code/index.js",
-  "files":[
+  "files": [
     "dist/code",
     "!**/__tests__/**",
     "!**/*-spec.*"
@@ -161,5 +166,6 @@
   "homepage": "https://github.com/DevZen-net/devzen-tools/tree/main/packages/ZenDash",
   "author": "Angelos Pikoulas",
   "license": "MIT NON-AI",
-  "private": false
+  "private": false,
+  "gitHead": "d95a1176265ab1b01724f53524ccfb81afb89dfa"
 }

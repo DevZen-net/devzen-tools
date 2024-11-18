@@ -1,56 +1,45 @@
 {
   "name": "@devzen/speczen",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.5",
   "description": "Run Test Suites with Jest, with full control for exactly which tests to run or dont. Much more than `it.only()` & `describe.only()` on steroids!",
   "scripts": {
     "****************** A Library Setup *****": "",
-
     "################# Running ": "",
-
     "### dev: build & test in watch, in separate Konsoles!": "",
     "# fdev~": "npm run dev~",
     "dev~ORIGINAL - below is temporary": "npm-run-all build && t -npr build! jest! docs! jest-docs:assert!",
     "dev~": "npm-run-all build:nofail && t -npr build! jest!",
     "dev:quick~": "t -npr build! jest:quick!",
-
     "   ### start covnentional": "",
     "start": "npm-run-all build test",
-
     "################# Build & Typescript": "",
     "build": "npm-run-all build:ts",
     "build:nofail": "npm-run-all build:ts:nofail",
     "build:all": "npm-run-all build:ts jest-docs docs:build",
-
     "   ### TypeScript": "",
     "build:ts": "npx mkdirp dist && npx tsc --listEmittedFiles --project tsconfig.json",
     "build:ts:nofail": "npm run build:ts || exit 0",
     "build:ts:prod": "npm-run-all clean && npx mkdirp dist && npx tsc --listEmittedFiles --removeComments --project tsconfig.prod.json",
-
     "   ### Watching": "",
     "build:ts!": "npx mkdirp dist && npx tsc --listEmittedFiles --watch --project tsconfig.json",
     "build!": "npm-run-all --parallel build:ts! distzen!",
     "build:all!": "npm-run-all --parallel build:ts! docs! distzen!",
-
     "   ### Aliases": "",
     "build:docs": "npm run docs:build",
     "build:docs!": "npm run docs!",
-
     "################# Testing: Jest, mocha & others": "",
     "test": "npm-run-all jest jest-docs:assert jest-docs:assert:run",
     "test:ci": "npm-run-all jest:ci jest-docs:assert jest-docs:assert:run",
     "test:coverage": "npm-run-all jest:coverage",
-
     "         ####### Test watching & Open new Terminal Windows via neoTerm": "",
     "test!": "npm run jest!",
     "test!~ORIGINAL": "t -npr 'jest!' jest-docs:assert!",
     "test!~": "t -npr 'jest!'",
     "test:quick!~": "npm run test!~",
     "test!:noverbose~": "t -npr 'jest!:noverbose' jest-docs:assert!",
-
     "         ####### Other - docker testing etc": "",
     "test:all_node_versions": "./z/test-all-node-versions.sh",
     "test:node_version": "./z/test-node-version.sh",
-
     "         ####### Jest": "",
     "jest": "npx jest --runInBand --detectOpenHandles --verbose --forceExit",
     "jest:dist": "npx jest --roots dist --runInBand --detectOpenHandles --verbose --forceExit",
@@ -60,34 +49,26 @@
     "jest:dist!": "npx jest --roots dist --runInBand --watchAll --no-cache",
     "jest:quick!": "npm run jest!",
     "jest!:noverbose": "npx jest --runInBand --watchAll --no-cache --verbose=false",
-
     "         ####### Others": "",
     "benchmark": "node dist/docs/benchmark.js",
-
     "################# Docs": "",
     "docs:build": "npm-run-all docs:clean jest-docs:markdown typedoc",
     "docs:serve": "npx ws --port 8092 --directory ./dist/docs-html",
     "docs!": "npm-run-all --parallel jest-docs:markdown! typedoc! docs:serve",
     "docs:clean": "npx rimraf dist/docs-html",
-
     "jest-docs": "npm-run-all jest-docs:assert jest-docs:executable jest-docs:markdown",
     "jest-docs:assert": "echo 'DISABLED ts-node src/docs/jest-docs/detailed-usage-examples.generator.spec.ts --assert > dist/docs/generated/detailed-usage-examples.assert.spec.generated.js'",
     "jest-docs:markdown": "echo 'DISABLED ts-node src/docs/jest-docs/detailed-usage-examples.generator.spec.ts --markdown > readme.md'",
     "jest-docs:executable": "echo 'DISABLED ts-node src/docs/jest-docs/detailed-usage-examples.generator.spec.ts --executable > dist/docs/generated/detailed-usage-examples.executable.spec.generated.js'",
-
     "jest-docs:assert!": "echo DISABLED nodemon --config nodemon.json --exec npm-run-all jest-docs:assert jest-docs:assert:run",
     "jest-docs:markdown!": "echo DISABLED nodemon --config nodemon.json --exec npm run jest-docs:markdown",
     "jest-docs:executable!": "echo DISABLED nodemon --config nodemon.json --exec npm-run-all jest-docs:executable jest-docs:executable:run",
-
     "jest-docs:assert:run": "echo DISABLED node dist/docs/generated/detailed-usage-examples.assert.spec.generated.js",
     "jest-docs:executable:run": "echo DISABLED node dist/docs/generated/detailed-usage-examples.executable.spec.generated.js",
-
     "jest-docs:all!~": "t -npr jest-docs:assert! jest-docs:executable jest-docs:markdown!",
-
     "         ####### TypeDoc": "",
     "typedoc": "npx typedoc",
     "typedoc!": "nodemon --config nodemon.json --watch readme.md --exec npm run typedoc",
-
     "################# Chores and installing": "",
     "audit": "npm audit",
     "audit:fix": "npm audit fix",
@@ -98,7 +79,7 @@
     "chore:patch-package": "npx patch-package --error-on-fail",
     "distzen": "npx distzen",
     "distzen!": "npx distzen --watch",
-
+    "unlock": "rimraf package-lock.json",
     "################# Formatting & Linting": "",
     "format": "npm-run-all prettier lint:noFail prettier",
     "prettier": "npx prettier --write \"**/*.{ts,js,json}\"",
@@ -110,7 +91,7 @@
     "@devzen/zendash": "../zendash"
   },
   "dependencies": {
-    "@devzen/zendash": "1.0.0-alpha.3",
+    "@devzen/zendash": "^1.0.0-alpha.5",
     "ansi-colors": "^4.1.3",
     "deepmerge": "^4.3.1",
     "json-stringify-safe": "^5.0.1",
@@ -149,7 +130,7 @@
     "nodemon": "^3.1.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^3.2.5",
-    "rimraf": "^5.0.5",
+    "rimraf": "^6.0.1",
     "string.prototype.replaceall": "^1.0.8",
     "ts-clean-built": "^1.3.1",
     "ts-jest": "^29.1.2",
@@ -161,7 +142,7 @@
     "typedoc": "^0.26.7",
     "typescript": "5.6.3"
   },
-  "files":[
+  "files": [
     "dist/code",
     "!**/__tests__/**",
     "!**/*-spec.*"
@@ -172,7 +153,6 @@
   "types": "./dist/code/index.d.ts",
   "type": "commonjs",
   "main": "dist/code/index.js",
-
   "#################### Not technical meta-data": "####################",
   "repository": {
     "type": "git",
@@ -183,5 +163,7 @@
   },
   "homepage": "https://github.com/DevZen-net/devzen-tools/tree/main/packages/SpecZen",
   "author": "Angelos Pikoulas",
-  "license": "MIT NON-AI"
+  "license": "MIT NON-AI",
+  "private": false,
+  "gitHead": "d95a1176265ab1b01724f53524ccfb81afb89dfa"
 }

@@ -1,7 +1,7 @@
 {
   "name": "devzen-tools",
   "description": "DevZen Tools Monorepo, using @lerna/legacy-package-management",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.3",
   "scripts": {
     "***************** Root Lerna Monorepo setup *****": "",
 
@@ -59,8 +59,13 @@
     "     ### Delete node_modules on ALL packages": "",
     "rimrafnode": "npx lerna clean --yes --loglevel verbose",
 
+    "     ### Delete package-lock.json on ALL packages": "",
+    "unlock": "npm run unlock:this && npx lerna run unlock --loglevel verbose",
+    "unlock:this": "rimraf package-lock.json",
+
     "     ### Nuke everything! Wipe clean docker & build files & nuke node_modules": "",
     "nuke": "npm-run-all wipe rimrafnode",
+    "nuke:unlock": "npm-run-all unlock wipe rimrafnode",
 
     "     ### Chores - local": "",
     "audit:root": "npm audit",
@@ -94,7 +99,7 @@
     "prettier": "npx lerna run prettier --loglevel verbose",
 
     "################# Various / Internal": "",
-    "prepublishOnly": "echo DevZen Tools Monorepo SHOULD NOT BE PUBLISHED && exit 1"
+    "prepublishOnly": "echo DevZen Tools Monorepo SHOULD NOT BE PUBLISHED && exit 0"
   },
   "localDependencies": {
     "@devzen/zendash": "./packages/zendash",
@@ -104,7 +109,7 @@
     "@devzen/speczen": "./packages/speczen"
   },
   "_skipped_dependencies - why? more?": {
-    "@devzen/distzen": "1.0.0-alpha.1"
+    "@devzen/distzen": "1.0.0-alpha.3"
   },
   "devDependencies": {
     "install-local": "^3.0.1",

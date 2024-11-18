@@ -1,30 +1,25 @@
 {
   "name": "@devzen/distzen",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.5",
   "description": "Install & watch clean/copy/sync multiple local packages, production-level via `npm i`, without symlinks, in a snap!",
   "scripts": {
     "****************** A CLI Global Setup *****": "",
-
     "################# Running ": "",
-
     "### dev: build & test in watch, in separate Konsoles!": "",
     "#fdev": "npm run dev",
     "dev": "t -npr 'start!' 'test!'",
     "start": "npm-run-all build test",
     "start!": "npm run build!",
-
     "################# Testing ": "",
     "test": "npx jest --runInBand --detectOpenHandles --verbose --forceExit",
     "test:ci": "npx jest --coverage --ci --reporters=default --reporters=jest-junit --runInBand --detectOpenHandles --forceExit",
     "test!": "npx jest --runInBand --watchAll --no-cache",
     "test:coverage": "nyc --reporter=lcov --reporter=html npm test && nyc report",
-
     "################# Build & Typescript": "",
     "build": "npm-run-all build:ts",
     "build:ts": "npx mkdirp dist && npx tsc --listEmittedFiles --project tsconfig.json",
     "build:ts!": "npx mkdirp dist && npx tsc --listEmittedFiles --watch --project tsconfig.json",
     "build!": "npm-run-all --parallel build:ts! distzen!",
-
     "################# Clean, Chores and installing": "",
     "audit": "npm audit",
     "audit:fix": "npm audit fix",
@@ -32,7 +27,7 @@
     "postinstall": "npx patch-package --error-on-fail --error-on-warn",
     "distzen": "npx distzen",
     "distzen!": "npx distzen --watch",
-
+    "unlock": "rimraf package-lock.json",
     "################# Formatting & Linting": "",
     "format": "npm-run-all prettier lint:noFail prettier",
     "prettier": "npx prettier --write \"**/*.{ts,js,json}\"",
@@ -54,10 +49,10 @@
     "read-config-ng"
   ],
   "dependencies": {
-    "@devzen/logzen": "1.0.0-alpha.1",
-    "@devzen/speczen": "1.0.0-alpha.1",
-    "@devzen/validzen": "1.0.0-alpha.1",
-    "@devzen/zendash": "1.0.0-alpha.3",
+    "@devzen/logzen": "^1.0.0-alpha.5",
+    "@devzen/speczen": "^1.0.0-alpha.5",
+    "@devzen/validzen": "^1.0.0-alpha.5",
+    "@devzen/zendash": "^1.0.0-alpha.5",
     "chokidar": "^3.5.3",
     "commander": "^10.0.1",
     "fs-jetpack": "^5.1.0",
@@ -92,13 +87,13 @@
     "nodemon": "^3.1.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^3.2.5",
-    "rimraf": "^5.0.5",
+    "rimraf": "^6.0.1",
     "ts-jest": "^29.1.2",
     "ts-loader": "^9.5.1",
     "typescript": "5.6.3"
   },
-  "files":[
-    "dist/code",
+  "files": [
+    "dist",
     "!**/__tests__/**",
     "!**/*-spec.*"
   ],
@@ -109,7 +104,6 @@
     "distzen": "dist/index.js"
   },
   "main": "dist/index.js",
-
   "#################### Not technical meta-data": "####################",
   "repository": {
     "type": "git",
@@ -153,5 +147,7 @@
     "development"
   ],
   "author": "Angelos Pikoulas",
-  "license": "MIT NON-AI"
+  "license": "MIT NON-AI",
+  "private": false,
+  "gitHead": "d95a1176265ab1b01724f53524ccfb81afb89dfa"
 }
