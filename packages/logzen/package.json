@@ -1,6 +1,6 @@
 {
-  "name": "@devzen/logzen",
-  "version": "1.0.0-alpha.5",
+  "name": "@neozen/logzen",
+  "version": "1.0.0-alpha.1",
   "description": "A radically powerful yet familiar Logger, with emphasis on Granularity & Context, Debugging BigApps & Observability. Outputs anywhere, colorful values, customizable Header & many more options. Extensively Typed & tested.",
   "scripts": {
     "****************** A Library Setup *****": "",
@@ -90,14 +90,14 @@
     "lint:noFail": "npx eslint --fix --ignore-path .gitignore \"**/*.{js,ts}\" || exit 0"
   },
   "localDependencies": {
-    "@devzen/speczen": "../speczen",
-    "@devzen/validzen": "../validzen",
-    "@devzen/zendash": "../zendash"
+    "@neozen/speczen": "../speczen",
+    "@neozen/validzen": "../validzen",
+    "@neozen/zen": "../zen"
   },
   "dependencies": {
-    "@devzen/speczen": "^1.0.0-alpha.5",
-    "@devzen/validzen": "^1.0.0-alpha.5",
-    "@devzen/zendash": "^1.0.0-alpha.5",
+    "@neozen/speczen": "^1.0.0-alpha.1",
+    "@neozen/validzen": "^1.0.0-alpha.1",
+    "@neozen/zen": "^1.0.0-alpha.1",
     "ansi-colors": "^4.1.3",
     "class-transformer": "^0.5.1",
     "class-transformer-validator": "^0.9.1",
@@ -168,12 +168,12 @@
   "#################### Not technical meta-data": "####################",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DevZen-net/DevZen-tools.git"
+    "url": "git+https://github.com/NeoZen-dev/NeoZen-tools.git"
   },
   "bugs": {
-    "url": "https://github.com/DevZen-net/DevZen-Tools/issues"
+    "url": "https://github.com/NeoZen-dev/NeoZen-Tools/issues"
   },
-  "homepage": "https://github.com/DevZen-net/devzen-tools/tree/main/packages/LogZen",
+  "homepage": "https://github.com/NeoZen-dev/neozen-tools/tree/main/packages/LogZen",
   "author": "Angelos Pikoulas",
   "license": "MIT NON-AI",
   "private": false,

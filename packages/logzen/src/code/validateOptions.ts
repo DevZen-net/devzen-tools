@@ -2,12 +2,12 @@ import * as _ from 'lodash'
 import { ValidationError } from 'class-validator'
 import { TransformValidationOptions } from 'class-transformer-validator'
 
-// DevZen
-import { isOk, isRealObject } from '@devzen/zendash'
+// NeoZen
+import { isOk, isRealObject } from '@neozen/zen'
 import {
   getValidationErrorsString,
   validateObject,
-} from '@devzen/validzen'
+} from '@neozen/validzen'
 
 // local
 import { BuiltInOutputsOptions, Options, Output, TBuiltInOutputNames } from './types'

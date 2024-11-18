@@ -1,4 +1,4 @@
-import { EACH, FOCUS, ME, ONLY, SKIP, SUITE } from '@devzen/speczen'
+import { EACH, FOCUS, ME, ONLY, SKIP, SUITE } from '@neozen/speczen'
 import * as _ from 'lodash'
 import { $Equals, $IsIn, $Max, $Min } from '../code/class-validator-ValidZen-wraps'
 

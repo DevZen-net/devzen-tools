@@ -3,7 +3,7 @@ import 'reflect-metadata'
 import { Type } from 'class-transformer'
 import * as _ from 'lodash'
 import { InspectOptions } from 'util'
-import { numberEnumToNumberVal } from '@devzen/zendash'
+import { numberEnumToNumberVal } from '@neozen/zen'
 
 // local
 import { OrAnd } from '../../code'

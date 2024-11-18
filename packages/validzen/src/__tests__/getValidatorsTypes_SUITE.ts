@@ -1,4 +1,4 @@
-import { SUITE } from '@devzen/speczen'
+import { SUITE } from '@neozen/speczen'
 import { $IsIn, $Max, $Min } from '../code/class-validator-ValidZen-wraps'
 import { getValidatorsTypes } from '../code/OrAnd'
 

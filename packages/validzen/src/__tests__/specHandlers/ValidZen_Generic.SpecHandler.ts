@@ -1,5 +1,5 @@
-import { TSpecHandlerFunction } from '@devzen/speczen'
-import { isOk } from '@devzen/zendash'
+import { TSpecHandlerFunction } from '@neozen/speczen'
+import { isOk } from '@neozen/zen'
 import { ClassType } from 'class-transformer-validator'
 import * as _ from 'lodash'
 import { internalNodeUtilInspect } from '../../code/utils/internalNodeUtilInspect'

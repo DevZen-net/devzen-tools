@@ -1,6 +1,6 @@
 {
-  "name": "@devzen/validzen",
-  "version": "1.0.0-alpha.5",
+  "name": "@neozen/validzen",
+  "version": "1.0.0-alpha.1",
   "description": "A powerful OR & AND PropertyDecorator for `class-validator`, to support very complex validation scenarios. Full integration with `class-transformer-validator` and useful opinionated tools. Also, a PoC to reuse ALL `class-validator` & `class-validator-extended` PropertyDecorators as-is!",
   "scripts": {
     "****************** A Library Setup *****": "",
@@ -88,11 +88,11 @@
     "lint:noFail": "npx eslint --fix --ignore-path .gitignore \"**/*.{js,ts}\" || exit 0"
   },
   "localDependencies": {
-    "@devzen/zendash": "../zendash",
-    "@devzen/speczen": "../speczen"
+    "@neozen/zen": "../zen",
+    "@neozen/speczen": "../speczen"
   },
   "dependencies": {
-    "@devzen/zendash": "^1.0.0-alpha.5",
+    "@neozen/zen": "^1.0.0-alpha.1",
     "lodash": "^4.17.21"
   },
   "peerDependencies": {
@@ -103,7 +103,7 @@
     "reflect-metadata": "^0.1.13"
   },
   "devDependencies": {
-    "@devzen/speczen": "^1.0.0-alpha.5",
+    "@neozen/speczen": "^1.0.0-alpha.1",
     "@prettier/sync": "^0.3.0",
     "@types/jest": "^29.5.11",
     "@types/lodash": "^4.14.202",
@@ -166,12 +166,12 @@
   "#################### Not technical meta-data": "####################",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DevZen-net/DevZen-tools.git"
+    "url": "git+https://github.com/NeoZen-dev/NeoZen-tools.git"
   },
   "bugs": {
-    "url": "https://github.com/DevZen-net/DevZen-Tools/issues"
+    "url": "https://github.com/NeoZen-dev/NeoZen-Tools/issues"
   },
-  "homepage": "https://github.com/DevZen-net/devzen-tools/tree/main/packages/ValidZen",
+  "homepage": "https://github.com/NeoZen-dev/neozen-tools/tree/main/packages/ValidZen",
   "author": "Angelos Pikoulas",
   "license": "MIT NON-AI",
   "private": false,

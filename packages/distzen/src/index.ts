@@ -1,8 +1,8 @@
 #!/usr/bin/env node
-import { LogZen, ELogLevel } from '@devzen/logzen'
+import { LogZen, ELogLevel } from '@neozen/logzen'
 
 LogZen.addPathReplacements({
-  'node_modules/@devzen/distzen/dist': 'DistZen',
+  'node_modules/@neozen/distzen/dist': 'DistZen',
 })
 
 // 3rd party

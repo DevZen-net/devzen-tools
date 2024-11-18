@@ -1,6 +1,6 @@
 import * as _ from 'lodash'
-import * as _z from '@devzen/zendash'
-import { arrayize, isRealObject, type } from '@devzen/zendash'
+import * as z from '@neozen/zen'
+import { arrayize, isRealObject, type } from '@neozen/zen'
 import {
   isArray,
   isBoolean,
@@ -124,7 +124,7 @@ export const validZenTypesConformityValidators = {
   base32: isBase32,
   base58: isBase58,
   base64: isBase64,
-  bigint: _z.isBigInt,
+  bigint: z.isBigInt,
   boolean: isBoolean,
   booleanString: isBooleanString,
   btcAddress: isBtcAddress,
@@ -134,7 +134,7 @@ export const validZenTypesConformityValidators = {
   date: isDate,
   dateString: isDateString,
   dayjs: isDayjs,
-  decimal: (v: any) => isNumber(v) && !isInt(v) && !_z.isBigInt(v),
+  decimal: (v: any) => isNumber(v) && !isInt(v) && !z.isBigInt(v),
   defined: isDefined,
   duration: isDuration,
   element: _.isElement,
@@ -142,7 +142,7 @@ export const validZenTypesConformityValidators = {
   empty: _.isEmpty as (any) => boolean,
   error: _.isError,
   ethereumAddress: isEthereumAddress,
-  false: _z.isFalse,
+  false: z.isFalse,
   finite: _.isFinite,
   firebasePushId: isFirebasePushId,
   fullWidth: isFullWidth,
@@ -184,29 +184,29 @@ export const validZenTypesConformityValidators = {
   object: _.isObject,
   objectLike: _.isObjectLike,
   octal: isOctal,
-  ok: _z.isOk,
+  ok: z.isOk,
   plainObject: _.isPlainObject,
   port: isPort,
   positive: isPositive,
-  primitive: _z.isPrimitive,
+  primitive: z.isPrimitive,
   realObject: isRealObject,
   regExp: _.isRegExp,
   rgbColor: isRgbColor,
   safeInteger: _.isSafeInteger,
   semVer: isSemVer,
   set: _.isSet,
-  single: _z.isSingle,
+  single: z.isSingle,
   string: isString,
   surrogatePair: isSurrogatePair,
   symbol: _.isSymbol,
   timeZone: isTimeZone,
-  true: _z.isTrue,
+  true: z.isTrue,
   typedArray: _.isTypedArray,
   undefined: _.isUndefined,
   variableWidth: isVariableWidth,
   weakMap: _.isWeakMap,
   weakSet: _.isWeakSet,
-} as any // @todo: why do we get this? src/code/OrAnd.ts(94,14): error TS2742: The inferred type of 'validZenTypesConformityValidators' cannot be named without a reference to '@devzen/zendash/node_modules/type-fest'. This is likely not portable. A type annotation is necessary.
+} as any // @todo: why do we get this? src/code/OrAnd.ts(94,14): error TS2742: The inferred type of 'validZenTypesConformityValidators' cannot be named without a reference to '@neozen/zen/node_modules/type-fest'. This is likely not portable. A type annotation is necessary.
 
 export type ValidZenValidator =
   | keyof typeof validZenTypesConformityValidators

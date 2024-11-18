@@ -3,8 +3,8 @@ import * as deepmerge from 'deepmerge'
 import * as _ from 'lodash'
 import * as traverse from 'traverse'
 
-// devzen
-import * as _z from '@devzen/zendash'
+// neozen
+import * as z from '@neozen/zen'
 
 // local
 import { Spec } from './Spec'
@@ -240,7 +240,7 @@ export class Suite<TSpecData> implements ISuite<TSpecData> {
           { cause: suiteCmd.suiteArray }
         )
       } else {
-        // console.log(suiteItem, _z.type(suiteItem), suiteCmd.suiteArray)
+        // console.log(suiteItem, z.type(suiteItem), suiteCmd.suiteArray)
         throw new TypeError(
           `SpecZen: Suite::suiteCmdToConcrete:! Unknown SUITE array item: ${objectToString(
             suiteItem
@@ -258,7 +258,7 @@ export class Suite<TSpecData> implements ISuite<TSpecData> {
     if (!suiteCmd) throw new Error('SpecZen: Suite::suiteCmdToConcrete: No suite provided!')
     if (!_.isArray(suiteCmd.suiteArray))
       throw new Error(
-        `SpecZen: Suite::suiteCmdToConcrete: suiteCmd.suiteArray is not an array! \n_z.type(suiteCmd.suiteArray) = ${_z.type(
+        `SpecZen: Suite::suiteCmdToConcrete: suiteCmd.suiteArray is not an array! \nz.type(suiteCmd.suiteArray) = ${z.type(
           suiteCmd.suiteArray
         )}\nsuiteCmd = ${objectToString(suiteCmd)}`
       )
@@ -437,7 +437,7 @@ export class Suite<TSpecData> implements ISuite<TSpecData> {
         if (_.isFunction(specDataTranformer))
           specDataObj = specDataTranformer(specDataObj)
         else if (
-          _z.isRealObject(specDataTranformer)
+          z.isRealObject(specDataTranformer)
         ) {
           specDataObj = deepmerge(
             _.cloneDeep(specDataTranformer),

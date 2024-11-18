@@ -1,7 +1,7 @@
 {
-  "name": "devzen-tools",
-  "description": "DevZen Tools Monorepo, using @lerna/legacy-package-management",
-  "version": "1.0.0-alpha.3",
+  "name": "neozen-tools",
+  "description": "NeoZen Tools Monorepo, using @lerna/legacy-package-management",
+  "version": "1.0.0-alpha.1",
   "scripts": {
     "***************** Root Lerna Monorepo setup *****": "",
 
@@ -50,7 +50,7 @@
     "refresh:quick": "npm-run-all clean build gen distzen test",
 
     "     ###### Specific Packages": "",
-    "boot:logzen": "npx lerna bootstrap --scope=\"@devzen/logzen\" --include-dependencies --loglevel verbose",
+    "boot:logzen": "npx lerna bootstrap --scope=\"@neozen/logzen\" --include-dependencies --loglevel verbose",
 
     "     ### Delete `dist/`, `cover/` etc on ALL packages": "",
     "clean": "npx lerna run clean --loglevel verbose",
@@ -99,17 +99,17 @@
     "prettier": "npx lerna run prettier --loglevel verbose",
 
     "################# Various / Internal": "",
-    "prepublishOnly": "echo DevZen Tools Monorepo SHOULD NOT BE PUBLISHED && exit 0"
+    "prepublishOnly": "echo NeoZen Tools Monorepo SHOULD NOT BE PUBLISHED && exit 0"
   },
   "localDependencies": {
-    "@devzen/zendash": "./packages/zendash",
-    "@devzen/validzen": "./packages/validzen",
-    "@devzen/logzen": "./packages/logzen",
-    "@devzen/distzen": "./packages/distzen",
-    "@devzen/speczen": "./packages/speczen"
+    "@neozen/zen": "./packages/zen",
+    "@neozen/validzen": "./packages/validzen",
+    "@neozen/logzen": "./packages/logzen",
+    "@neozen/distzen": "./packages/distzen",
+    "@neozen/speczen": "./packages/speczen"
   },
   "_skipped_dependencies - why? more?": {
-    "@devzen/distzen": "1.0.0-alpha.3"
+    "@neozen/distzen": "1.0.0-alpha.1"
   },
   "devDependencies": {
     "install-local": "^3.0.1",
@@ -130,6 +130,6 @@
   },
   "author": "Angelos Pikoulas",
   "license": "MIT NON-AI",
-  "repository": "https://github.com/DevZen-net/DevZen-Tools",
+  "repository": "https://github.com/NeoZen-dev/NeoZen-Tools",
   "private": true
 }

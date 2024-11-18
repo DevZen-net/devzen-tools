@@ -4,7 +4,7 @@ import * as fs from 'node:fs'
 // 3rd
 import * as _ from 'lodash'
 import * as upath from 'upath'
-import { LogZen } from '@devzen/logzen'
+import { LogZen } from '@neozen/logzen'
 import { progress, LocalInstaller } from 'install-local'
 
 // local

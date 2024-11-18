@@ -13,17 +13,17 @@ export const resolvePathsAndNames = ({
 }: {
   /**
     The full path fo creating/calling file to resolve.
-      eg '/mnt/project/node_modules/@devzen/apizen/dist/entity/create',
+      eg '/mnt/project/node_modules/@neozen/apizen/dist/entity/create',
    */
   fullPathToResolve: string
   /**
     An object keyed with candidate paths, and values the replacement that should take place for each one
-    { 'node_modules/@devzen/apizen/dist': 'ApiZen', ... },
+    { 'node_modules/@neozen/apizen/dist': 'ApiZen', ... },
   */
   pathReplacements: TPathReplacements
   /**
     The working directory,
-    eg '/mnt/projects/projects/devzen/packages/apizen-example',
+    eg '/mnt/projects/projects/neozen/packages/apizen-example',
    */
   cwd: string
 }): {
@@ -34,7 +34,7 @@ export const resolvePathsAndNames = ({
   resolvedName: string
   /**
      The path that effectively matched and was replaced,
-      eg 'node_modules/@devzen/apizen/dist',
+      eg 'node_modules/@neozen/apizen/dist',
    */
   replacedPath: string
 
@@ -50,7 +50,7 @@ export const resolvePathsAndNames = ({
   distanceFromReplacedPath: string
   /**
     The full matched path of the library, relative to CWD
-    eg 'node_modules/@devzen/apizen/dist/entity/genAbstractEntityService',
+    eg 'node_modules/@neozen/apizen/dist/entity/genAbstractEntityService',
    */
   matchedPath: string
 } => {

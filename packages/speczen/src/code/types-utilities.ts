@@ -6,7 +6,7 @@ export type ClassType<T> = { new (...args: any[]): T }
 
 export type ExcludeByKey<T, U extends keyof any> = T & { [P in U]?: never } // search "ObjectWithAnyKeyExceptXxxHack"
 
-//** todo: replace with import { TypedArray } from '@devzen/zendash'
+//** todo: replace with import { TypedArray } from '@neozen/zen'
 export type TypedArray =
   | Int8Array
   | Uint8Array
@@ -21,7 +21,7 @@ export type TypedArray =
   | BigUint64Array
 
 /**
- * @todo: replace with import { Tany } from '@devzen/zendash'
+ * @todo: replace with import { Tany } from '@neozen/zen'
  *
  * TL;DR Exclude<any, SomeType> doesn't work, so we use this instead.
  *
@@ -60,6 +60,6 @@ export type TAny =
   | TypedArray
   | ArrayBuffer
 
-// @todo: use TAny from zendash from add all missing ones, Iterator, Generator, AsyncIterator, AsyncGenerator, IArguments, etc       And Object?
+// @todo: use TAny from zen from add all missing ones, Iterator, Generator, AsyncIterator, AsyncGenerator, IArguments, etc       And Object?
 
 export type TAny_ExcludeObjectAndFunction = Exclude<TAny, object | Function> // @see https://www.totaltypescript.com/uses-for-exclude-type-helper

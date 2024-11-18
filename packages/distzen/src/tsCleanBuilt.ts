@@ -3,7 +3,7 @@ import * as _ from 'lodash'
 import * as upath from 'upath'
 import { IdistZenConfigAndOptions, TDependencyResolved } from './types'
 import { execAndPrint } from './execAndPrint'
-import { LogZen } from '@devzen/logzen'
+import { LogZen } from '@neozen/logzen'
 const readConfig = require('read-config-ng')
 
 const l = new LogZen('DistZen:/[@]')

@@ -9,7 +9,7 @@ import { StyleFunction } from 'ansi-colors'
 import * as _ from 'lodash'
 import { inspect } from './inspect'
 
-import * as _z from '@devzen/zendash'
+import * as z from '@neozen/zen'
 import { LogZenInspectOptions, PrintOptions } from './types'
 import { colorsStrip } from './utils/misc'
 
@@ -75,7 +75,7 @@ export const printOptionsDefaults: PrintOptions = {
  * Convert a Map to an Object, so it can be printed in a more user-friendly way.
  * It prints objects Map props, as objects or toString etc.
  *
- * @note: This  can't be extracted & generalised! Reason is we need to print() the keys, if these are _z.isRealObjects or Symbols or other Maps (!)
+ * @note: This  can't be extracted & generalised! Reason is we need to print() the keys, if these are z.isRealObjects or Symbols or other Maps (!)
  *
  * @param data
  * @param printOptions
@@ -179,7 +179,7 @@ const printInternal = (
       colors.quote(quote),
       undefined,
       _.clone(path),
-      _z.type(value),
+      z.type(value),
       undefined
     )
     if (transformResult === false) return `` // go to next item
@@ -218,7 +218,7 @@ const printInternal = (
   let result = ''
   let owedResult = '' // from previous item(s)
 
-  if (_z.isSingleOrWeak(value)) {
+  if (z.isSingleOrWeak(value)) {
     if (_.isString(value)) {
       const quoteStr = (stringify && currentDepth !== 0) || currentDepth !== 0 ? quote : ''
       const quoteStrColor = quoteStr ? colors.quote(quoteStr) : ''
@@ -246,7 +246,7 @@ const printInternal = (
       result += `${outsideQuote}${colors.symbol(symbolPrint)}${outsideQuote}`
     } else if (_.isBoolean(value)) {
       result += `${colors.boolean(value + '')}`
-    } else if (_z.isBigInt(value)) {
+    } else if (z.isBigInt(value)) {
       result += `${stringify ? quote + '[BigInt ' : ''}${colors.bigint(value.toString())}${
         stringify ? ']' + quote : ''
       }`
@@ -341,7 +341,7 @@ const printInternal = (
   }
 
   if (_.isMap(value)) {
-    const mapWithMaxProps = new Map(_z.take(value, maxProps))
+    const mapWithMaxProps = new Map(z.take(value, maxProps))
     const omittedCount = value.size - mapWithMaxProps.size
 
     if (mapAsObject) {
@@ -370,7 +370,7 @@ const printInternal = (
       )
     resultAsIs = true
   } else if (_.isSet(value)) {
-    const setWithMaxItems = new Set(_z.take(value, maxItems))
+    const setWithMaxItems = new Set(z.take(value, maxItems))
     const omittedCount = value.size - setWithMaxItems.size
 
     if (setAsArray) {
@@ -402,7 +402,7 @@ const printInternal = (
   } else if (
     // use custom toString() if exists
     useToString &&
-    _z.isRealObject(value) &&
+    z.isRealObject(value) &&
     value.toString?.toString() !== 'function toString() { [native code] }'
   ) {
     const quoteToString = stringify || useToString === 'quoted' ? colors.quote(quote) : ``
@@ -424,13 +424,13 @@ const printInternal = (
 
     result += colors.comment(omittedStr)
     newLine = ''
-  } else if (_.isArray(value) || _.isArguments(value) || _z.isRealObject(value)) {
+  } else if (_.isArray(value) || _.isArguments(value) || z.isRealObject(value)) {
     // We have a property bag ({} or []) - visit each prop and get its result
     let itemsCount = 0
     // https://stackoverflow.com/questions/47372305/iterate-through-object-properties-with-symbol-keys
     let previousIdx: number = null
 
-    for (const [item, prop] of _z.loop(value, { inherited, symbol: true })) {
+    for (const [item, prop] of z.loop(value, { inherited, symbol: true })) {
       // pass LoopOptions
 
       // check for sparse arrays
@@ -459,8 +459,8 @@ const printInternal = (
           colors.quote(quote),
           value,
           _.clone(path),
-          _z.type(item),
-          _z.type(value)
+          z.type(item),
+          z.type(value)
         )
         if (transformResult === false) continue // go to next item
       }
@@ -469,7 +469,7 @@ const printInternal = (
       itemsCount++
 
       // add props?
-      if (_z.isRealObject(value) || (_.isArguments(value) && argsFormat === 'object')) {
+      if (z.isRealObject(value) || (_.isArguments(value) && argsFormat === 'object')) {
         const propRegExp = /^(([a-zA-Z_][a-zA-Z0-9_]*)|[0-9]+)$/ // @see https://mathiasbynens.be/notes/javascript-properties
         let quotePropOpen: string
         let quotePropClose: string
@@ -505,7 +505,7 @@ const printInternal = (
 
       if (!_.isString(transformResult)) {
         // instance class handling: add a virtual discriminator key (eg __class__ or __kind__)
-        if (instanceClass && _z.isInstance(value) && itemsCount === 1) {
+        if (instanceClass && z.isInstance(value) && itemsCount === 1) {
           let classKeyAndValue: string
           if (_.isFunction(instanceClass)) {
             classKeyAndValue = instanceClass(value)

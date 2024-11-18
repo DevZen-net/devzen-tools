@@ -118,7 +118,7 @@ They all need ValidateByAsValidatorFunction to be injected into class-validator,
 
 Since they are experimental & they break without the injection, they are NOT exported on index.js. You need to import them as:
 
-import { $Min } from '@devzen/validzen/dist/code/class-validator-ValidZen-wraps'
+import { $Min } from '@neozen/validzen/dist/code/class-validator-ValidZen-wraps'
 
 Only a hand full are roughly tested (the ones on top)
 

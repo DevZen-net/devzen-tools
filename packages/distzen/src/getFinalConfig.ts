@@ -1,6 +1,6 @@
 import * as upath from 'upath'
 import * as _ from 'lodash'
-import { LogZen, ELogLevel } from '@devzen/logzen'
+import { LogZen, ELogLevel } from '@neozen/logzen'
 
 const readConfig = require('read-config-ng')
 

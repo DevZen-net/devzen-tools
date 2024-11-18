@@ -1,6 +1,6 @@
 {
-  "name": "@devzen/distzen",
-  "version": "1.0.0-alpha.5",
+  "name": "@neozen/distzen",
+  "version": "1.0.0-alpha.1",
   "description": "Install & watch clean/copy/sync multiple local packages, production-level via `npm i`, without symlinks, in a snap!",
   "scripts": {
     "****************** A CLI Global Setup *****": "",
@@ -36,10 +36,10 @@
     "lint:noFail": "npx eslint --fix --ignore-path .gitignore \"**/*.{js,ts}\" || exit 0"
   },
   "localDependencies": {
-    "@devzen/logzen": "../logzen",
-    "@devzen/zendash": "../zendash",
-    "@devzen/validzen": "../validzen",
-    "@devzen/speczen": "../speczen"
+    "@neozen/logzen": "../logzen",
+    "@neozen/zen": "../zen",
+    "@neozen/validzen": "../validzen",
+    "@neozen/speczen": "../speczen"
   },
   "# comments for patch-package & bundleDependencies ;-)": {
     "get around with prepare": "https://github.com/ds300/patch-package/issues/84#issuecomment-1096372498",
@@ -49,10 +49,10 @@
     "read-config-ng"
   ],
   "dependencies": {
-    "@devzen/logzen": "^1.0.0-alpha.5",
-    "@devzen/speczen": "^1.0.0-alpha.5",
-    "@devzen/validzen": "^1.0.0-alpha.5",
-    "@devzen/zendash": "^1.0.0-alpha.5",
+    "@neozen/logzen": "^1.0.0-alpha.1",
+    "@neozen/speczen": "^1.0.0-alpha.1",
+    "@neozen/validzen": "^1.0.0-alpha.1",
+    "@neozen/zen": "^1.0.0-alpha.1",
     "chokidar": "^3.5.3",
     "commander": "^10.0.1",
     "fs-jetpack": "^5.1.0",
@@ -107,12 +107,12 @@
   "#################### Not technical meta-data": "####################",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DevZen-net/DevZen-tools.git"
+    "url": "git+https://github.com/NeoZen-dev/NeoZen-tools.git"
   },
   "bugs": {
-    "url": "https://github.com/DevZen-net/DevZen-Tools/issues"
+    "url": "https://github.com/NeoZen-dev/NeoZen-Tools/issues"
   },
-  "homepage": "https://github.com/DevZen-net/devzen-tools/tree/main/packages/DistZen",
+  "homepage": "https://github.com/NeoZen-dev/neozen-tools/tree/main/packages/DistZen",
   "keywords": [
     "copy",
     "dist",

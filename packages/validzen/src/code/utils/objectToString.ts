@@ -1,4 +1,4 @@
-import * as _z from '@devzen/zendash'
+import * as z from '@neozen/zen'
 import * as _ from 'lodash'
 
 const padding = (depth) => _.repeat('  ', depth)
@@ -16,7 +16,7 @@ const padding = (depth) => _.repeat('  ', depth)
  * @returns string, unless its an non PropBag value, in which case it returns the value it self
  */
 export const objectToString: any = (value, depth = 1): any | string => {
-  if (_z.isSingle(value)) return value
+  if (z.isSingle(value)) return value
 
   let result = ''
   if (typeof value === 'function') return value.toString()
@@ -35,7 +35,7 @@ export const objectToString: any = (value, depth = 1): any | string => {
 
   // use custom toString() if exists
   if (
-    _z.isRealObject(value) &&
+    z.isRealObject(value) &&
     value.toString?.toString() !== 'function toString() { [native code] }'
   ) {
     result = `\n${propSeparator}${value.toString()}`

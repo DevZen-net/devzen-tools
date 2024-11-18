@@ -89,7 +89,7 @@ See `docs/version-3-examples.ts` to get more of the idea!
 
 **NOT IMPLEMENTED**: Turn your Specs into Documentation. Or maybe, write your documentation as Specs? Or Both? And by documentation we don't mean the boring auto generated JSDocs of your methods. Or long Cucumber definitions that nobody wishes they had to go through. I mean **real documentation** users want to read, proper Examples & Tutorials, even live executable code examples! 
 
-Your `readme.md` or `examples.md` will no longer be disconnected from the code, perhaps getting out of date or be wrong (because it's just text). Imagine having it updated and built every time you build, as long as you write every feature worth documenting, using a special SpecZen way! See how Tests-as-docs idea started in my [upath](http://github.com/anodynos/upath) and became more awesome in my [LogZen](http://github.com/devzen/logzen) - to get a glimpse of what's the aim! 
+Your `readme.md` or `examples.md` will no longer be disconnected from the code, perhaps getting out of date or be wrong (because it's just text). Imagine having it updated and built every time you build, as long as you write every feature worth documenting, using a special SpecZen way! See how Tests-as-docs idea started in my [upath](http://github.com/anodynos/upath) and became more awesome in my [LogZen](http://github.com/neozen/logzen) - to get a glimpse of what's the aim! 
 
 This aim is NOT implemented in current Version. 
 
@@ -581,7 +581,7 @@ What's more interesting, is Generation, which is quite independent of Version.
 ## Future Direction Highlights
 
 - Improve typing and type checks: 
-  - a) use typing system of `ZenDash` (`Tany` and more)
+  - a) use typing system of `Zen` (`Tany` and more)
   - c) use `TypeEqual` checks from `ts-expect`
   - b) use `ValidZen` to validate the Specs at runtime (Gen2/3) 
 - Improve titling of nested of Suites & Specs.
@@ -599,5 +599,5 @@ Please support by staring, mentioning, sharing on social, reviewing, testing, op
 
 # License
 
-MIT
+MIT NON-AI
 

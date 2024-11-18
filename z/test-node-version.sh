@@ -15,6 +15,6 @@ echo "test-node-version.sh: Testing with NODE_VERSION=$NODE_VERSION"
 
 export NODE_VERSION=$NODE_VERSION
 
-docker build --build-arg NODE_VERSION=$NODE_VERSION --tag devzen:$NODE_VERSION .
+docker build --build-arg NODE_VERSION=$NODE_VERSION --tag neozen:$NODE_VERSION .
 
-docker-compose run --rm --remove-orphans --env NODE_VERSION=$NODE_VERSION --user 1000 devzen
+docker-compose run --rm --remove-orphans --env NODE_VERSION=$NODE_VERSION --user 1000 neozen

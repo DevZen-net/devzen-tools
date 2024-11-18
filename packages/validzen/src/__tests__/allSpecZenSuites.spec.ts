@@ -1,4 +1,4 @@
-import { executeSuiteOnHandlers, ONLY, SKIP, SUITE } from '@devzen/speczen'
+import { executeSuiteOnHandlers, ONLY, SKIP, SUITE } from '@neozen/speczen'
 import { wrappedPropertyDecorators_ClassValidator_SUITE } from './wrappedPropertyDecorators-ClassValidator.SUITE'
 import { getValidationErrorsString_SUITE } from './getValidationErrorsString.SUITE'
 import { getValidatorsTypes_SUITE } from './getValidatorsTypes_SUITE'

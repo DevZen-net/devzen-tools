@@ -8,8 +8,8 @@ import { table as consoleTable, log as consoleLog } from 'node:console' // see h
 import { stdout } from 'test-console'
 import { InspectOptions } from './inspect'
 
-// DevZen
-import { getProp, isRealObject, setProp, type } from '@devzen/zendash'
+// NeoZen
+import { getProp, isRealObject, setProp, type } from '@neozen/zen'
 
 // local
 import { inspect, internalInspect } from './inspect'
@@ -810,7 +810,7 @@ Use strictly:
    * For a given path of a runtime log(), for example ['src', 'entities', 'customer'],
    *   it retrieves all Options from `PATHS_OPTIONS_KEY`
    *   starting from deepest kid, up to the top of the hierarchy to the root
-   *   (ie ['zendash', 'objects'], then ['zendash'] & ['\']
+   *   (ie ['zen', 'objects'], then ['zen'] & ['\']
    *
    *   It reads them from `LogZen._logPathOptions` that holds these static (i.e global LogZen) options.
    *

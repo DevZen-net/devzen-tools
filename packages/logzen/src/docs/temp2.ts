@@ -1,6 +1,6 @@
 import * as ansiColors from 'ansi-colors'
-import * as _z from '@devzen/zendash'
-// import { aSimpleSet } from '@devzen/zendash/dist/test-utils/test-data'
+import * as z from '@neozen/zen'
+// import { aSimpleSet } from '@neozen/zen/dist/test-utils/test-data'
 // import * as ansiColors from 'ansi-colors'
 import * as _ from 'lodash'
 import { ELogLevel, getTinyLog, LogZen, Output } from '../code'

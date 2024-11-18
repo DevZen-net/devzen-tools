@@ -1,7 +1,7 @@
 import * as _ from 'lodash'
 import * as upath from 'upath'
 import { stdout } from 'test-console'
-import { getProp } from '@devzen/zendash'
+import { getProp } from '@neozen/zen'
 
 // local
 import { LogZen, getTinyLog } from '../code'

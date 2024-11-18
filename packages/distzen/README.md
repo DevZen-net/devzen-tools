@@ -277,6 +277,6 @@ Help to improve *DistZen* is welcome! Please open an issue or PR if you have iss
 * [`ts-clean-built`](https://www.npmjs.com/package/ts-clean-built)
 * [`fs-jetpack`](https://github.com/szwacz/fs-jetpack)
   
-Copyright (c) 2023 Angelos Pikoulas a.k.a AnoDyNoS
+Copyright (c) 2023-24 Angelos Pikoulas a.k.a AnoDyNoS
 
-MIT License
+MIT NON-AI License

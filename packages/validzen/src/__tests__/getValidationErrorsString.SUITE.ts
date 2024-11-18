@@ -1,4 +1,4 @@
-import { SUITE } from '@devzen/speczen'
+import { SUITE } from '@neozen/speczen'
 
 import { getValidationErrorsString } from '../code'
 
