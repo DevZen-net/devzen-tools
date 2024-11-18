@@ -93,7 +93,7 @@
     "typescript": "5.6.3"
   },
   "files": [
-    "dist/code",
+    "dist",
     "!**/__tests__/**",
     "!**/*-spec.*"
   ],

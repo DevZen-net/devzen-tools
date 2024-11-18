@@ -58,8 +58,10 @@
 
     "     ### Delete node_modules on ALL packages": "",
     "rimrafnode": "npx lerna clean --yes --loglevel verbose",
+
     "     ### Delete package-lock.json on ALL packages": "",
-    "unlock": "npx lerna run unlock --loglevel verbose",
+    "unlock": "npm run unlock:this && npx lerna run unlock --loglevel verbose",
+    "unlock:this": "rimraf package-lock.json",
 
     "     ### Nuke everything! Wipe clean docker & build files & nuke node_modules": "",
     "nuke": "npm-run-all wipe rimrafnode",
