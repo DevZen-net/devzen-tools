@@ -1,5 +1,5 @@
-import { ONLY, ONLY_END, SUITE } from '@devzen/speczen'
-import { isOk } from '@devzen/zendash'
+import { ONLY, ONLY_END, SUITE } from '@neozen/speczen'
+import { isOk } from '@neozen/zendash'
 
 export const LogZenFakeOptionsValidation_SUITE = SUITE(
   {

@@ -1,18 +1,18 @@
 import 'reflect-metadata'
-import { TypeNames } from '@devzen/zendash'
+import { TypeNames } from '@neozen/zendash'
 import * as ansiColors from 'ansi-colors'
 
 import { Type } from 'class-transformer'
 import * as _ from 'lodash'
 import { InspectOptions } from './inspect'
-import { numberEnumToNumberVal, numberEnumToStringKey } from '@devzen/zendash'
+import { numberEnumToNumberVal, numberEnumToStringKey } from '@neozen/zendash'
 import {
   OrAnd,
   $IsArrayWithAllowedValues,
   IsNumberEnumKeyOrValue,
   $IsNumberEnumKeyOrValue,
-} from '@devzen/validzen'
-// import { $Min, $Max } from '@devzen/validzen/dist/code/class-validator-ValidZen-wraps' // needs ValidateBy injection - see ValidZen
+} from '@neozen/validzen'
+// import { $Min, $Max } from '@neozen/validzen/dist/code/class-validator-ValidZen-wraps' // needs ValidateBy injection - see ValidZen
 
 import {
   IsArray,

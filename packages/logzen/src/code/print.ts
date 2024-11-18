@@ -9,7 +9,7 @@ import { StyleFunction } from 'ansi-colors'
 import * as _ from 'lodash'
 import { inspect } from './inspect'
 
-import * as _z from '@devzen/zendash'
+import * as _z from '@neozen/zendash'
 import { LogZenInspectOptions, PrintOptions } from './types'
 import { colorsStrip } from './utils/misc'
 

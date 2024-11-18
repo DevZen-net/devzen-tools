@@ -1,4 +1,4 @@
-import { EACH, FOCUS, ME, ONLY, SKIP, SUITE } from '@devzen/speczen'
+import { EACH, FOCUS, ME, ONLY, SKIP, SUITE } from '@neozen/speczen'
 import { $IsArrayWithAllowedValues, $IsNumberEnumKeyOrValue } from '../code'
 
 const fooBarObject = { foo: 'bar' }

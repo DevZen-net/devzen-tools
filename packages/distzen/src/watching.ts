@@ -3,7 +3,7 @@ import * as upath from 'upath'
 import * as _ from 'lodash'
 import * as chokidar from 'chokidar'
 import { WatchOptions, FSWatcher } from 'chokidar'
-import { LogZen, ELogLevel } from '@devzen/logzen'
+import { LogZen, ELogLevel } from '@neozen/logzen'
 import { IdistZenConfigAndOptions } from './types'
 import * as F from 'futil-js'
 

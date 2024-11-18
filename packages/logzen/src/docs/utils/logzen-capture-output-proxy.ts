@@ -1,5 +1,5 @@
 import * as c from 'ansi-colors'
-import * as _z from '@devzen/zendash'
+import * as _z from '@neozen/zendash'
 import * as _ from 'lodash'
 import * as assert from 'node:assert'
 import { stderr, stdout } from 'test-console'

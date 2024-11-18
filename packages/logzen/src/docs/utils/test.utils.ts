@@ -1,5 +1,5 @@
 /* eslint-disable eslint-comments/disable-enable-pair,one-var */
-import { isOk } from '@devzen/zendash'
+import { isOk } from '@neozen/zendash'
 import * as _ from 'lodash'
 import * as _f from 'lodash/fp'
 import * as prettierSync from '@prettier/sync'

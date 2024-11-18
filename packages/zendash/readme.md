@@ -1,10 +1,35 @@
 # ZenDash 1.0.0
 
-`ZenDash` is so much more than a collection of useful utils for JavaScript/TypeScript, that are missing from JS, lodash & other libraries! 
+`ZenDash` is (so much more than) a collection of essential useful utils for JavaScript & TypeScript, that are missing from JS, lodash & other libraries! 
 
-It features a **Runtime Type System** to check the real-world types, backed by a **Static TypeScript typings** system, and a **JS Native Iteration on Anything** called **loop()**, that is powered by Generators & extended by a **Project & Filter on Anything** engine with **Keys & Props Included** (optionally), all features are optional cause **Options are King**. It's **Well typed with TypeScript**, **Extensively Tested** with 1000's of tests (including generated ones) and more! 
+## Main features
 
-## Runtime Type System
+### Type Checking (Runtime & Compile time)
+ 
+Zen brings proper type-checking to JS and TS: 
+
+* a **Runtime Type System**, to check the real-world types, so much better than `typeof`, `instanceof` & and lodash `is.isXxx` we all use.  
+* Coupled by a **Static TypeScript typings** system, to make sane typing decisions
+
+### Iteration & Projections, next generation, via Generators 
+
+With *Zen* you can simplify & deprecate all the **inconsistent** ways of: 
+
+* Iterating (looping eg. `for..in`, `for..of`, `Array.each()`, `_.each` etc)  
+* Projecting (eg `Array.map`, `_.filter()`) in JavaScript  
+* across all the different data types (yes, you can iterate/map/filter etc on `Array`, `Set`, `Map`, `ArrayBuffer` etc in the same, sane way.
+
+Zen features: 
+
+* a **JS Native Iteration on Anything** function called **loop()**, that is powered by Generators
+* a **Projection & Filtering on Anything** engine build on top of `loop()`, with **native Keys & object Props** & string & Symbol props included (all optional, via options)
+* All behaviors are optional and configurable, cause **Options are King**. 
+
+### Typed & tested
+
+* Zen is rigorously typed with TypeScript 5.6, **Extensively Tested** with 1000's of tests (including generated ones) and more!
+
+# The Runtime Type Chcking System
 
 **ZenDash** dares to propose an extended, very logical and only a bit radical **Runtime Type System** for JS/TS, to fix the UTTERLY BROKEN runtime typing system of JS in 2024, 29 years after its conception. That's why **The Bad Parts** is a must read before even **The Good Parts**, for anyone touching this otherwise great language! 
 
@@ -284,11 +309,11 @@ What's more interesting, is **Generation**, which is quite independent of Versio
 
 # Installation & Usage
 
-    npm i @devzen/zendash
+    npm i @neozen/zendash
 
 Then in your code (ES Modules or TypeScript):
 
-    import * as _z from '@devzen/zendash'
+    import * as _z from '@neozen/zendash'
 
 and then
 
@@ -296,7 +321,7 @@ and then
 
 OR
 
-    import { getProp, setProp } as _z from '@devzen/zendash'
+    import { getProp, setProp } as _z from '@neozen/zendash'
 
 and then
 
@@ -304,11 +329,11 @@ and then
 
 Similarly, in CommonJS:
 
-    const _z = require('@devzen/zendash')
+    const _z = require('@neozen/zendash')
 
 OR
 
-    const { getProp, setProp } = require('@devzen/zendash')
+    const { getProp, setProp } = require('@neozen/zendash')
 
 # Developing & Testing: CliZen
 
@@ -334,7 +359,7 @@ All npm scripts that are post-fixed with a **tilde** (i.e `~`), for example `npm
 
 ## Development Installation
 
-ZenDash is part of the `devzen-tools` [lerna monorepo](https://lerna.js.org).
+ZenDash is part of the `neozen-tools` [lerna monorepo](https://lerna.js.org).
 
 To start development installation, clone the repo locally, cd to the repo's root and execute:
 
@@ -358,7 +383,7 @@ You can issue an:
 
     $ npm run test
 
-inside devzen-tools root, to execute all tests in all packages & verify everything's OK.
+inside neozen-tools root, to execute all tests in all packages & verify everything's OK.
 
 NOTE: Tests in src/code/loopzen/__tests__/all-typings are generated and are literally HUGE! Nodejs crashes with default RAM, so you need to run them with `
 export NODE_OPTIONS="--max-old-space-size=8192"` on your node (might work with less). Also note they will take a long time to run (up to 5 or 10 minutes, depending on your machine), so you might want to run them separately:

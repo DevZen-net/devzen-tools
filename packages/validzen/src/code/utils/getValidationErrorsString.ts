@@ -1,4 +1,4 @@
-import { getProp, isOk, setProp } from '@devzen/zendash'
+import { getProp, isOk, setProp } from '@neozen/zendash'
 import * as _ from 'lodash'
 import { ValidationError } from 'class-validator'
 import { ValidZenValidationError } from '../types'

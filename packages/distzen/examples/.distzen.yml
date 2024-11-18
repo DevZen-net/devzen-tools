@@ -6,13 +6,13 @@
 # Note: targets = _.extend(cfg.localDependencies, packageJson.localDependencies)
 
 localDependencies:
-  "@devzen/authzen": ../authzen
-  "@devzen/authzen-nestjs": ../authzen-nestjs
-  "@devzen/logzen": ../logzen
-  "@devzen/zendash": ../zendash
+  "@neozen/authzen": ../authzen
+  "@neozen/authzen-nestjs": ../authzen-nestjs
+  "@neozen/logzen": ../logzen
+  "@neozen/zendash": ../zendash
 
 # A string[] of the dependency names you only care about (to watch, clean, copy, ts-clean-build etc).
 # If omitted, all localDependencies are targets
 targetDepNames:
-  - '@devzen/authzen'
-  - '@devzen/logzen'
+  - '@neozen/authzen'
+  - '@neozen/logzen'

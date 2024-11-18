@@ -185,7 +185,7 @@ as all paths are assumed to be relative to this path! If you execute from differ
 
 ## 1.1 Installation
 
-      npm i @devzen/logzen
+      npm i @neozen/logzen
 
 
 ## 1.1.1 Import & Require
@@ -193,11 +193,11 @@ as all paths are assumed to be relative to this path! If you execute from differ
 How to require / import LogZen:
 
 
-      const { LogZen } = require('@devzen/logzen')
+      const { LogZen } = require('@neozen/logzen')
 
                   OR
 
-      import { LogZen, ELogLevel, Options, /* etc */ } from '@devzen/logzen' // TypeScript/ES etc
+      import { LogZen, ELogLevel, Options, /* etc */ } from '@neozen/logzen' // TypeScript/ES etc
 
 ## 1.1.2 Construct a LogZen instance & Conventions
 
@@ -466,7 +466,7 @@ LogZen.addPathReplacements({
   'dist/docs/generated/detailed-usage-examples.executable.spec.generated': 'LogZen Playground',
 
   // we can also use it for external dependencies, if those use LogZen
-  'node_modules/@devzen/zendash/dist': 'ZenDash',
+  'node_modules/@neozen/zendash/dist': 'ZenDash',
 })
 ```
 
@@ -2558,7 +2558,7 @@ Lets see an `l.trace()` example:
   lineNumberInPlayGround = getCallSites(1)[0].getLineNumber() + 1
   l13_5.trace('This is a trace of this call')
 })()
-// [TRACE:?0|SpecialConsoleMethods]: This is a trace of this call\n    at someFunction (/mnt/projects/devzen-tools/packages/logzen/dist/docs/generated/detailed-usage-examples.executable.spec.generated.js:${lineNumberInPlayGround}:YY)\n    at  (/mnt/projects/devzen-tools/packages/logzen/dist/docs/generated/detailed-usage-examples.executable.spec.generated.js:${lineNumberInPlayGround + 1}:YY)
+// [TRACE:?0|SpecialConsoleMethods]: This is a trace of this call\n    at someFunction (/mnt/projects/neozen-tools/packages/logzen/dist/docs/generated/detailed-usage-examples.executable.spec.generated.js:${lineNumberInPlayGround}:YY)\n    at  (/mnt/projects/neozen-tools/packages/logzen/dist/docs/generated/detailed-usage-examples.executable.spec.generated.js:${lineNumberInPlayGround + 1}:YY)
 ```
 
 # 14 Printing Objects Types
@@ -3138,7 +3138,7 @@ All npm scripts that are post-fixed with a **tilde** (i.e `~`), for example `npm
 
 ## Installation
 
-LogZen is part of the devzen-tools [lerna monorepo](https://lerna.js.org).
+LogZen is part of the neozen-tools [lerna monorepo](https://lerna.js.org).
 
 To start development installation, clone the repo locally, cd to the repo's root and execute:
 
@@ -3162,7 +3162,7 @@ You can issue an:
 
     $ npm run test
 
-inside devzen-tools root, to execute all tests in all packages & verify everything's OK.
+inside neozen-tools root, to execute all tests in all packages & verify everything's OK.
 
 ## Development
 
@@ -3245,7 +3245,7 @@ since the main documentation (the source .ts file!) is actually a Jest test suit
 - DONE validation
 - DONE constructor overloads implement & test
 - split in 3 packages - submodules?
-  - replace //github.com/anodynos => //github.com/devzen
+  - replace //github.com/anodynos => //github.com/neozen
    See:
     https://stackoverflow.com/a/918927/799502
     https://www.jannikbuschke.de/blog/git-submodules/#:~:text=Git%20submodules%20allow%20us%20to%20have%20a%20setup,mounted%20as%20a%20Git%20Submodule%20in%20other%20%28mono-%29repositories%3A

@@ -1,5 +1,5 @@
 import * as _ from 'lodash'
-import * as _z from '@devzen/zendash'
+import * as _z from '@neozen/zendash'
 import { ExcludeByKey, TAny_ExcludeObjectAndFunction } from './types-utilities'
 import { objectToString } from './utils/objectToString'
 import { getTinyLog } from './utils/tiny-log'

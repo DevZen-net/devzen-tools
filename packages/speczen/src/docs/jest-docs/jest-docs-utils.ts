@@ -1,4 +1,4 @@
-// import * as _z from '@devzen/zendash'
+// import * as _z from '@neozen/zendash'
 // import * as _ from 'lodash'
 //
 // type ExpectedResult = any | null

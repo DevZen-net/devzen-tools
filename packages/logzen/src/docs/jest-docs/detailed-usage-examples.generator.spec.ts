@@ -49,7 +49,7 @@ import * as c from 'ansi-colors'
 import * as fs from 'node:fs'
 import * as _ from 'lodash'
 import * as upath from 'upath'
-import * as _z from '@devzen/zendash'
+import * as _z from '@neozen/zendash'
 import { colorsStrip, fixWindowsRootPath } from '../../code/utils/misc'
 
 // local
@@ -841,7 +841,7 @@ LogZen.addPathReplacements({
   '${relativeFilename}':               'LogZen Playground',
 
   // we can also use it for external dependencies, if those use LogZen
-  'node_modules/@devzen/zendash/dist': 'ZenDash',
+  'node_modules/@neozen/zendash/dist': 'ZenDash',
 })`),
         docsBlock(`
 How it works: The logPath part (left hand side) has to to correspond to an actual filepath in your FS, since it is resolved at runtime. The path match can be partial.
@@ -853,7 +853,7 @@ But the print-friendly name (right hand side) doesn't have to correspond to it, 
         beforeAll(() => {
           LogZen.addPathReplacements({
             [relativeFilename]: 'LogZen Playground',
-            'node_modules/@devzen/zendash/dist': 'ZenDash',
+            'node_modules/@neozen/zendash/dist': 'ZenDash',
           })
 
           LogZen.addPathReplacements({
@@ -4622,7 +4622,7 @@ All npm scripts that are post-fixed with a **tilde** (i.e \`~\`), for example \`
 
 ## Installation
 
-LogZen is part of the devzen-tools [lerna monorepo](https://lerna.js.org).
+LogZen is part of the neozen-tools [lerna monorepo](https://lerna.js.org).
 
 To start development installation, clone the repo locally, cd to the repo's root and execute:
 
@@ -4646,7 +4646,7 @@ You can issue an:
 
     $ npm run test
 
-inside devzen-tools root, to execute all tests in all packages & verify everything's OK.
+inside neozen-tools root, to execute all tests in all packages & verify everything's OK.
 
 ## Development
 
@@ -4729,7 +4729,7 @@ since the main documentation (the source .ts file!) is actually a Jest test suit
 - DONE validation
 - DONE constructor overloads implement & test
 - split in 3 packages - submodules?
-  - replace //github.com/anodynos => //github.com/devzen
+  - replace //github.com/anodynos => //github.com/neozen
    See:
     https://stackoverflow.com/a/918927/799502
     https://www.jannikbuschke.de/blog/git-submodules/#:~:text=Git%20submodules%20allow%20us%20to%20have%20a%20setup,mounted%20as%20a%20Git%20Submodule%20in%20other%20%28mono-%29repositories%3A

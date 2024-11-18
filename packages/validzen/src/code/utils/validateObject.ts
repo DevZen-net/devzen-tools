@@ -1,5 +1,5 @@
 import * as _ from 'lodash'
-import { getProp, setProp } from '@devzen/zendash'
+import { getProp, setProp } from '@neozen/zendash'
 import { ClassType, TransformValidationOptions } from 'class-transformer-validator'
 import { ValidationError } from 'class-validator'
 

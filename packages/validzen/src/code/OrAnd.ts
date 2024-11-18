@@ -1,6 +1,6 @@
 import * as _ from 'lodash'
-import * as _z from '@devzen/zendash'
-import { arrayize, isRealObject, type } from '@devzen/zendash'
+import * as _z from '@neozen/zendash'
+import { arrayize, isRealObject, type } from '@neozen/zendash'
 import {
   isArray,
   isBoolean,
@@ -206,7 +206,7 @@ export const validZenTypesConformityValidators = {
   variableWidth: isVariableWidth,
   weakMap: _.isWeakMap,
   weakSet: _.isWeakSet,
-} as any // @todo: why do we get this? src/code/OrAnd.ts(94,14): error TS2742: The inferred type of 'validZenTypesConformityValidators' cannot be named without a reference to '@devzen/zendash/node_modules/type-fest'. This is likely not portable. A type annotation is necessary.
+} as any // @todo: why do we get this? src/code/OrAnd.ts(94,14): error TS2742: The inferred type of 'validZenTypesConformityValidators' cannot be named without a reference to '@neozen/zendash/node_modules/type-fest'. This is likely not portable. A type annotation is necessary.
 
 export type ValidZenValidator =
   | keyof typeof validZenTypesConformityValidators

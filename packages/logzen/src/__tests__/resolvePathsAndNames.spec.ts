@@ -10,8 +10,8 @@ describe('LogZen.resolvePathsAndNames', () => {
       [
         {
           fullPathToResolve:
-            '/mnt/projects/projects/devzen/packages/logzen/src/examples-docs/temp/',
-          cwd: '/mnt/projects/projects/devzen/packages/logzen/',
+            '/mnt/projects/projects/neozen/packages/logzen/src/examples-docs/temp/',
+          cwd: '/mnt/projects/projects/neozen/packages/logzen/',
         },
         {
           distanceFromReplacedPath: '',
@@ -26,14 +26,14 @@ describe('LogZen.resolvePathsAndNames', () => {
       [
         {
           fullPathToResolve:
-            '/mnt/projects/projects/devzen/packages/logzen/src/examples-docs/playground/logzen-examples-docs-tests-playground',
+            '/mnt/projects/projects/neozen/packages/logzen/src/examples-docs/playground/logzen-examples-docs-tests-playground',
           pathReplacements: {
             'src/examples-docs/something/': 'Something',
             './src/examples-docs/playground/logzen-examples-docs-tests-playground':
               'LogZenPlayground',
             'src/examples-docs/': 'LogZenExample',
           },
-          cwd: '/mnt/projects/projects/devzen/packages/logzen/',
+          cwd: '/mnt/projects/projects/neozen/packages/logzen/',
         },
         {
           resolvedName: 'LogZenPlayground',
@@ -47,13 +47,13 @@ describe('LogZen.resolvePathsAndNames', () => {
       [
         {
           fullPathToResolve:
-            '/mnt/projects/projects/devzen/packages/logzen/src/examples-docs/anotherPath/someOtherFile',
+            '/mnt/projects/projects/neozen/packages/logzen/src/examples-docs/anotherPath/someOtherFile',
           pathReplacements: {
             'src/examples-docs/temp': 'TEMP',
             'src/examples-docs/logzen-examples-docs-tests-playground': 'LogZenPlayground',
             'src/examples-docs': 'LogZenExample',
           },
-          cwd: '/mnt/projects/projects/devzen/packages/logzen',
+          cwd: '/mnt/projects/projects/neozen/packages/logzen',
         },
         {
           resolvedName: 'LogZenExample@/anotherPath/someOtherFile',
@@ -66,26 +66,26 @@ describe('LogZen.resolvePathsAndNames', () => {
       [
         {
           fullPathToResolve:
-            '/mnt/projects/projects/devzen/packages/apizen-example/node_modules/@devzen/apizen/dist/entity/genAbstractEntityService',
+            '/mnt/projects/projects/neozen/packages/apizen-example/node_modules/@neozen/apizen/dist/entity/genAbstractEntityService',
           pathReplacements: {
-            'node_modules/@devzen/apizen/dist': 'ApiZen',
+            'node_modules/@neozen/apizen/dist': 'ApiZen',
           },
-          cwd: '/mnt/projects/projects/devzen/packages/apizen-example',
+          cwd: '/mnt/projects/projects/neozen/packages/apizen-example',
         },
         {
           resolvedName: 'ApiZen@/entity/genAbstractEntityService',
-          replacedPath: 'node_modules/@devzen/apizen/dist',
+          replacedPath: 'node_modules/@neozen/apizen/dist',
           distanceFromReplacedPath: 'entity/genAbstractEntityService',
-          matchedPath: 'node_modules/@devzen/apizen/dist/entity/genAbstractEntityService',
-          relativePath: 'node_modules/@devzen/apizen/dist/entity/genAbstractEntityService',
+          matchedPath: 'node_modules/@neozen/apizen/dist/entity/genAbstractEntityService',
+          relativePath: 'node_modules/@neozen/apizen/dist/entity/genAbstractEntityService',
         },
       ],
 
       [
         {
-          cwd: '/mnt/projects/projects/devzen/packages/logzen',
+          cwd: '/mnt/projects/projects/neozen/packages/logzen',
           fullPathToResolve:
-            '/mnt/projects/projects/devzen/packages/logzen/src/logzen/LogZen-spec',
+            '/mnt/projects/projects/neozen/packages/logzen/src/logzen/LogZen-spec',
           pathReplacements: {
             node_modules: '',
             src: '',

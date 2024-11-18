@@ -1,4 +1,4 @@
-import { TSpecHandlerFunction } from '@devzen/speczen'
+import { TSpecHandlerFunction } from '@neozen/speczen'
 import { ValidZenValidator } from '../../code/OrAnd'
 import { ValidZenValidationError } from '../../code/types'
 import { internalNodeUtilInspect } from '../../code/utils/internalNodeUtilInspect'

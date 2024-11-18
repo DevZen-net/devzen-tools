@@ -1,6 +1,6 @@
-# DevZen Tools Monorepo
+# NeoZen Tools Monorepo
 
-## Home of DevZen tools:
+## Home of NeoZen tools:
 
 * ZenDash
 * LogZen

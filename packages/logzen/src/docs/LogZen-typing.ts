@@ -1,4 +1,4 @@
-import { isRealObject } from '@devzen/zendash'
+import { isRealObject } from '@neozen/zendash'
 import process from 'node:process'
 import * as _ from 'lodash'
 import { ELogLevel, getTinyLog, LogZen, Output } from '../code'

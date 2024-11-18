@@ -1,5 +1,5 @@
 import * as _ from 'lodash'
-import { LogZen } from '@devzen/logzen'
+import { LogZen } from '@neozen/logzen'
 
 // local
 import { clean } from './clean'

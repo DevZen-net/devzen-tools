@@ -1,5 +1,5 @@
 {
-  "name": "@devzen/zendash",
+  "name": "@neozen/zendash",
   "version": "1.0.0-alpha.5",
   "description": "A small set of utilities around types checking, exact or like comparisons, extracting props & deep mutation of objects",
   "scripts": {
@@ -158,12 +158,12 @@
   "#################### Not technical meta-data": "####################",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DevZen-net/DevZen-tools.git"
+    "url": "git+https://github.com/NeoZen-dev/NeoZen-tools.git"
   },
   "bugs": {
-    "url": "https://github.com/DevZen-net/DevZen-Tools/issues"
+    "url": "https://github.com/NeoZen-dev/NeoZen-Tools/issues"
   },
-  "homepage": "https://github.com/DevZen-net/devzen-tools/tree/main/packages/ZenDash",
+  "homepage": "https://github.com/NeoZen-dev/neozen-tools/tree/main/packages/ZenDash",
   "author": "Angelos Pikoulas",
   "license": "MIT NON-AI",
   "private": false,

@@ -1,4 +1,4 @@
-import * as _z from '@devzen/zendash'
+import * as _z from '@neozen/zendash'
 import * as _ from 'lodash'
 
 const padding = (depth) => _.repeat('  ', depth)

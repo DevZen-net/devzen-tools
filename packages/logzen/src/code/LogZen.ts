@@ -8,8 +8,8 @@ import { table as consoleTable, log as consoleLog } from 'node:console' // see h
 import { stdout } from 'test-console'
 import { InspectOptions } from './inspect'
 
-// DevZen
-import { getProp, isRealObject, setProp, type } from '@devzen/zendash'
+// NeoZen
+import { getProp, isRealObject, setProp, type } from '@neozen/zendash'
 
 // local
 import { inspect, internalInspect } from './inspect'

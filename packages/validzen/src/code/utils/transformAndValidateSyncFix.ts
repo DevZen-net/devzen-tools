@@ -1,4 +1,4 @@
-import { isRealObject } from '@devzen/zendash'
+import { isRealObject } from '@neozen/zendash'
 import { ClassType, transformAndValidateSync } from 'class-transformer-validator'
 
 import { internalNodeUtilInspect } from './internalNodeUtilInspect'

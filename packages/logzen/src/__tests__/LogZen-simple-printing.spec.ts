@@ -1,7 +1,7 @@
 import * as upath from 'upath'
 import * as _ from 'lodash'
 import { stderr, stdout } from 'test-console'
-import { type } from '@devzen/zendash'
+import { type } from '@neozen/zendash'
 
 // local
 import { inspect } from '../code/inspect'

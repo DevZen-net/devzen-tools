@@ -3,7 +3,7 @@ import { exec } from 'node:child_process'
 
 // local
 import { IdistZenConfigAndOptions } from './types'
-import { LogZen } from '@devzen/logzen'
+import { LogZen } from '@neozen/logzen'
 import { delaySecs } from './watching'
 
 const execP = util.promisify(exec)

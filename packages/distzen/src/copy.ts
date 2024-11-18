@@ -1,7 +1,7 @@
 // 3rd party
 import * as _ from 'lodash'
 import * as jetpack from 'fs-jetpack'
-import { LogZen } from '@devzen/logzen'
+import { LogZen } from '@neozen/logzen'
 
 // local
 import { IdistZenConfigAndOptions } from './types'

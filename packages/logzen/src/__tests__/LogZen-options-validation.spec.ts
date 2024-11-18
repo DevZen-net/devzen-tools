@@ -1,4 +1,4 @@
-import { isOk } from '@devzen/zendash'
+import { isOk } from '@neozen/zendash'
 import * as _ from 'lodash'
 // local
 import { LogZen, Options, getTinyLog } from '../code'

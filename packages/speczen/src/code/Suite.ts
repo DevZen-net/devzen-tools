@@ -3,8 +3,8 @@ import * as deepmerge from 'deepmerge'
 import * as _ from 'lodash'
 import * as traverse from 'traverse'
 
-// devzen
-import * as _z from '@devzen/zendash'
+// neozen
+import * as _z from '@neozen/zendash'
 
 // local
 import { Spec } from './Spec'
