@@ -1,6 +1,6 @@
 {
   "name": "@neozen/speczen",
-  "version": "1.0.0-alpha.5",
+  "version": "1.0.0-alpha.1",
   "description": "Run Test Suites with Jest, with full control for exactly which tests to run or dont. Much more than `it.only()` & `describe.only()` on steroids!",
   "scripts": {
     "****************** A Library Setup *****": "",
@@ -91,7 +91,7 @@
     "@neozen/zen": "../zen"
   },
   "dependencies": {
-    "@neozen/zen": "^1.0.0-alpha.5",
+    "@neozen/zen": "^1.0.0-alpha.1",
     "ansi-colors": "^4.1.3",
     "deepmerge": "^4.3.1",
     "json-stringify-safe": "^5.0.1",

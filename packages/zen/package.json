@@ -1,6 +1,6 @@
 {
   "name": "@neozen/zen",
-  "version": "1.0.0-alpha.5",
+  "version": "1.0.0-alpha.1",
   "description": "A small set of utilities around types checking, exact or like comparisons, extracting props & deep mutation of objects",
   "scripts": {
     "****************** A Library Setup *****": "",

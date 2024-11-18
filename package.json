@@ -1,7 +1,7 @@
 {
   "name": "neozen-tools",
   "description": "NeoZen Tools Monorepo, using @lerna/legacy-package-management",
-  "version": "1.0.0-alpha.3",
+  "version": "1.0.0-alpha.1",
   "scripts": {
     "***************** Root Lerna Monorepo setup *****": "",
 
@@ -109,7 +109,7 @@
     "@neozen/speczen": "./packages/speczen"
   },
   "_skipped_dependencies - why? more?": {
-    "@neozen/distzen": "1.0.0-alpha.3"
+    "@neozen/distzen": "1.0.0-alpha.1"
   },
   "devDependencies": {
     "install-local": "^3.0.1",
