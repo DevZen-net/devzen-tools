@@ -1,6 +1,6 @@
 {
   "name": "@neozen/distzen",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.2",
   "description": "Install & watch clean/copy/sync multiple local packages, production-level via `npm i`, without symlinks, in a snap!",
   "scripts": {
     "****************** A CLI Global Setup *****": "",
@@ -49,10 +49,10 @@
     "read-config-ng"
   ],
   "dependencies": {
-    "@neozen/logzen": "^1.0.0-alpha.1",
-    "@neozen/speczen": "^1.0.0-alpha.1",
-    "@neozen/validzen": "^1.0.0-alpha.1",
-    "@neozen/zen": "^1.0.0-alpha.1",
+    "@neozen/logzen": "^1.0.0-alpha.2",
+    "@neozen/speczen": "^1.0.0-alpha.2",
+    "@neozen/validzen": "^1.0.0-alpha.2",
+    "@neozen/zen": "^1.0.0-alpha.2",
     "chokidar": "^3.5.3",
     "commander": "^10.0.1",
     "fs-jetpack": "^5.1.0",
