@@ -1,3 +1,5 @@
+// NOTE: ignore the ~75 warnings `[warning] The relative path ...` for now, no better/quicker way!
+
 /** @type {Partial<import('typedoc').TypeDocOptions>} */
 const config = {
   entryPoints: ['./src/code/index.ts'],

@@ -29,9 +29,9 @@ import { printOptionsDefaults } from './print'
 // const _log = getTinyLog(false, 'code/types')
 
 /**
- * The type of `logInfo` in [TOutputFn](/types/TOutputFn.html) function, accessed as `this.logInfo` inside that function call
+ * The type of `logInfo` in [TOutputFn](../types/TOutputFn.html) function, accessed as `this.logInfo` inside that function call
  *
- * @see [`BuiltInOutputsOptions`](/classes/BuiltInOutputsOptions.html)
+ * @see [`BuiltInOutputsOptions`](../classes/BuiltInOutputsOptions.html)
  */
 export interface IOutputLogInfo {
   lineNumber?: number
@@ -66,7 +66,7 @@ export const outputLogInfoKeys = [
  *
  * Note: it is a class only for validation purposes via [class-validator](https://github.com/typestack/class-validator), but it's not meant to be instantiated.
  *
- * @see [Builtin Outputs](/index.html#md:76-builtin-outputs)
+ * @see [Builtin Outputs](../#md:76-builtin-outputs)
  */
 export class BuiltInOutputsOptions {
   /**
@@ -131,7 +131,7 @@ export type TBuiltInOutputNames =
   | 'fileJSON'
 
 /**
- * The type of `outputFn` functions in `options.output` (of type [Output](/classes/Output.html))
+ * The type of `outputFn` functions in `options.output` (of type [Output](../classes/Output.html))
  *
  * The `outputFn` function receives:
  *
@@ -145,20 +145,20 @@ export type TBuiltInOutputNames =
  *
  *   - `instance`: this LogZen instance calling the `outputFn`
  *
- *   - `logInfo`: a convenience object of type [`IOutputLogInfo`](/interfaces/IOutputLogInfo.html) with meta log info, like "relativePath", "logLevelNum", "resolvedName" etc. Useful for JSON printing or constructing your own custom Header etc.
+ *   - `logInfo`: a convenience object of type [`IOutputLogInfo`](../interfaces/IOutputLogInfo.html) with meta log info, like "relativePath", "logLevelNum", "resolvedName" etc. Useful for JSON printing or constructing your own custom Header etc.
  *
  * **NOTE: Remember to NOT USE ArrowFunctions (i.e `() => {}`), if you need to use `this` context**.
  *
- * @see [Custom Output - Redirecting & Transforming output](/index.html#md:7-custom-output---redirecting-amp-transforming-output)
+ * @see [Custom Output - Redirecting & Transforming output](../#md:7-custom-output---redirecting--transforming-output)
  */
 export type TOutputFn = (...argsToPrint: any[]) => void
 
 /**
- * The type of `options.output` in [Options](/classes/options.html)
+ * The type of `options.output` in [Options](../classes/Options.html)
  *
  * Note: it is a class only for validation purposes via [class-validator](https://github.com/typestack/class-validator), but it's not meant to be instantiated.
  *
- * @see [Custom Output - Redirecting & Transforming output](/index.html#md:7-custom-output---redirecting-amp-transforming-output)
+ * @see [Custom Output - Redirecting & Transforming output](../#md:7-custom-output---redirecting--transforming-output)
  */
 export class Output {
   /**
@@ -221,7 +221,7 @@ export class Output {
 /**
  * Enum holds all logLevels as lowercase string, eg 'fatal', 'critical' etc. and the corresponding numeric value.
  *
- * @see [LogLevel - Choosing What Severity To Print](/index.html#md:4-loglevel---choosing-what-severity-to-print)
+ * @see [LogLevel - Choosing What Severity To Print](../#md:4-loglevel---choosing-what-severity-to-print)
  */
 export enum ELogLevel {
   /** Set `logLevel` to 'NONE' in your App to disable all logging. */
@@ -265,23 +265,23 @@ export enum ELogLevel {
 }
 
 /**
- * Helper to convert the string (or numeric) value of [`ELogLevel`](/enums/ELogLevel.html) to its numeric value (right hand side).
+ * Helper to convert the string (or numeric) value of [`ELogLevel`](../enums/ELogLevel.html) to its numeric value (right hand side).
  * The string value is case-insensitive.
  *
  * @param logLevel the string (or numeric) value of ELogLevel
  *
- * @return numeric value of the [`ELogLevel`](/enums/ELogLevel.html)
+ * @return numeric value of the [`ELogLevel`](../enums/ELogLevel.html)
  */
 export const logLevelEnumToNumberVal = (logLevel: ELogLevel | keyof typeof ELogLevel) =>
   numberEnumToNumberVal(ELogLevel, logLevel)
 
 /**
- * Helper to convert the numeric (or the string key) value of [`ELogLevel`](/enums/ELogLevel.html) to its string key (left hand side)
+ * Helper to convert the numeric (or the string key) value of [`ELogLevel`](../enums/ELogLevel.html) to its string key (left hand side)
  * The string key value is case-insensitive.
  *
  * @param logLevel the numeric (or string key) value of ELogLevel
  *
- * @return number the string key of the [`ELogLevel`](/enums/ELogLevel.html)
+ * @return number the string key of the [`ELogLevel`](../enums/ELogLevel.html)
  */
 export const logLevelEnumToStringKey = (
   logLevel: ELogLevel | keyof typeof ELogLevel
@@ -290,7 +290,7 @@ export const logLevelEnumToStringKey = (
 /**
  * The LogLevel descriptions as an object `{[logLevelName: string]: string}` eg `LogLevelDescriptions.NONE` is `"Set logLevel to 'NONE' in your App to disable all logging."`
  *
- * @see [LogLevel - Choosing What Severity To Print](/index.html#md:4-loglevel---choosing-what-severity-to-print)
+ * @see [LogLevel - Choosing What Severity To Print](../#md:4-loglevel---choosing-what-severity-to-print)
  */
 export const LogLevelDescriptions = {
   NONE: "Set `logLevel` to 'NONE' in your App to disable all logging.",
@@ -314,7 +314,7 @@ export const LogLevelDescriptions = {
 /**
  * A `string[]` with all logLevel log methods names eg `['fatal', 'critical', 'error', 'warn', ..., 'silly']`, ordered by severity (lower index = higher severity)
  *
- * @see [LogLevel - Choosing What Severity To Print](/index.html#md:4-loglevel---choosing-what-severity-to-print)
+ * @see [LogLevel - Choosing What Severity To Print](../#md:4-loglevel---choosing-what-severity-to-print)
  */
 export const logLevelMethodNames = _.reduce(
   ELogLevel,
@@ -328,16 +328,16 @@ export const logLevelMethodNames = _.reduce(
 /**
  * A `string[]` with all logging methods names, including `table` & `dir` eg `['fatal', 'critical', 'error', 'warn', ..., 'silly', 'table', 'dir']`
  *
- * @see [LogLevel - Choosing What Severity To Print](/index.html#md:4-loglevel---choosing-what-severity-to-print)
+ * @see [LogLevel - Choosing What Severity To Print](../#md:4-loglevel---choosing-what-severity-to-print)
  */
 export const allLogMethodNames = [...logLevelMethodNames, 'table', 'dir']
 
 /**
- * The type of `options.header` in [`Options`](/classes/options.html)
+ * The type of `options.header` in [`Options`](../classes/Options.html)
  *
  * Note: it is a class only for validation purposes via [class-validator](https://github.com/typestack/class-validator), but it's not meant to be instantiated.
  *
- * @see [Header Options - Print the info you want](/index.html#md:9-header-options---print-the-info-you-want)
+ * @see [Header Options - Print the info you want](../#md:9-header-options---print-the-info-you-want)
  */
 export class Header {
   /**
@@ -534,7 +534,7 @@ export class InspectOptionsClass implements InspectOptions {
 }
 
 /**
- * The type of `options.inspect` in [Options](/classes/options.html)
+ * The type of `options.inspect` in [Options](../classes/Options.html)
  *
  * Note: it is a class only for validation purposes via [class-validator](https://github.com/typestack/class-validator), but it's not meant to be instantiated.
  *
@@ -850,7 +850,7 @@ export type TprintTransformFunction = (
 ) => string | boolean
 
 /**
- * The type of `options.trace` in [`Options`](/classes/options.html)
+ * The type of `options.trace` in [`Options`](../classes/Options.html)
  *
  * Note: it is a class only for validation purposes via [class-validator](https://github.com/typestack/class-validator), but it's not meant to be instantiated.
  */
@@ -892,7 +892,7 @@ export class TraceOptions {
  *
  * Note: it is a class only for validation purposes via [class-validator](https://github.com/typestack/class-validator), but it's not meant to be instantiated.
  *
- * @see [Cascading Options](/index.html#md:6---cascading-options-instanceconstructor-options-logpathoptions-and-defaultoptions)
+ * @see [Cascading Options](../#md:6---cascading-options-instanceconstructor-options-logpathoptions-and-defaultoptions)
  */
 export class Options {
   /**
@@ -904,7 +904,7 @@ export class Options {
    *
    * Note that the physical (relative) path is automatically printed on the Header, if loggerName is not present.
    *
-   * It's best to leave this undefined and use [PathReplacements](/index.html#md:3---path-replacements)
+   * It's best to leave this undefined and use [PathReplacements](../#md:3---path-replacements)
    *
    * @default: undefined, in which case the Header prints the resolved filename where LogZen is created in.
    */
@@ -915,7 +915,7 @@ export class Options {
   /**
    * Where & how to print / output log messages and info.
    *
-   * @see [Custom Output docs](/index.html#md:7-custom-output---redirecting-amp-transforming-output)
+   * @see [Custom Output docs](../#md:7-custom-output---redirecting--transforming-output)
    */
   @IsOptional() // multiple types, done manually in validateOptions() - see https://github.com/typestack/class-validator/issues/160
   output?: Output | TBuiltInOutputNames | [TBuiltInOutputNames, BuiltInOutputsOptions?]
@@ -927,7 +927,7 @@ export class Options {
    *
    *  - true: prints a default header
    *
-   *  - [Header](/classes/Header.html) object: Header enabled with separate settings within.
+   *  - [Header](../classes/Header.html) object: Header enabled with separate settings within.
    *
    * - false: Header is disabled
    *
@@ -977,7 +977,7 @@ export class Options {
   /**
    * The `logLevel` to allow, i.e what logging severity is in effect.
    *
-   * See [logLevel](/index.html#md:4-loglevel---choosing-what-severity-to-print)
+   * See [logLevel](../#md:4-loglevel---choosing-what-severity-to-print)
    *
    * @default: undefined, but `debug` is implicitly enforced (hard coded)
    */
@@ -1004,7 +1004,7 @@ export class Options {
    *
    * It's an arbitrary number of a range of your choosing, but 0-100 is recommended.
    *
-   * @see [debugLevel & traceLevel](/index.html#md:5-the-ldebug--ltrace-methods-amp-debuglevel--tracelevel)
+   * @see [debugLevel & traceLevel](../#md:5-the-ldebug--ltrace-methods--debuglevel--tracelevel)
    *
    * @default undefined, so `l.debug('something')` with no debugLevel will print (if `logLevel` allows `debug`).
    */
@@ -1065,7 +1065,7 @@ export class Options {
    *
    * It's an arbitrary number of a range of your choosing, but 0-100 is recommended.
    *
-   * @see [debugLevel & traceLevel](/index.html#md:5-the-ldebug--ltrace-methods-amp-debuglevel--tracelevel)
+   * @see [debugLevel & traceLevel](../#md:5-the-ldebug--ltrace-methods--debuglevel--tracelevel)
    *
    * @default undefined, so `l.trace('something')` with no \`traceLevel\` will print (if \`logLevel\` allows trace\`trace\`).
    */
@@ -1095,7 +1095,7 @@ export class Options {
   stringColors?: boolean
 
   /**
-   * The [TraceOptions](/classes/TraceOptions.html) to use
+   * The [TraceOptions](../classes/TraceOptions.html) to use
    */
   @IsOptional()
   @ValidateNested()
@@ -1103,7 +1103,7 @@ export class Options {
   trace?: TraceOptions
 
   /**
-   * The [LogZenInspectOptions](/classes/LogZenInspectOptions.html) to use
+   * The [LogZenInspectOptions](../classes/LogZenInspectOptions.html) to use
    *
    * If false, it disables inspect completely, and uses print
    */
@@ -1114,7 +1114,7 @@ export class Options {
   inspect?: LogZenInspectOptions | boolean
 
   /**
-   * The [PrintOptions](/classes/PrintOptions.html) to use, if inspect is false
+   * The [PrintOptions](../classes/PrintOptions.html) to use, if inspect is false
    */
   @IsOptional()
   @ValidateNested()
@@ -1143,7 +1143,7 @@ export class Options {
   /**
    * Add & maintain a list of kids loggers, using these Options.
    *
-   * These kid loggers are [fully managed by LogZen](/#md:122--automatically-managed-via-cascading-options), updating them via options and not programmatically.
+   * These kid loggers are [fully managed by LogZen](../#md:122--automatically-managed-via-cascading-options), updating them via options and not programmatically.
    *
    * **Kids rules are:**
    *
@@ -1155,8 +1155,8 @@ export class Options {
    *
    * - When kids's options change, the kids are recreated with these new options (i.e no partial options merging with kids options)
    *
-   * @see [Kid Instances - inherit parent options & echo log methods](/#md:12-kid-instances---inherit-parent-options-amp-echo-log-methods)
-   * @see [**Automatically Managed**, via Cascading Options](/#md:122--automatically-managed-via-cascading-options)
+   * @see [Kid Instances - inherit parent options & echo log methods](../#md:12-kid-instances---inherit-parent-options--echo-log-methods)
+   * @see [**Automatically Managed**, via Cascading Options](../#md:122--automatically-managed-via-cascading-options)
    */
 
   // @ValidateNested({ each: true }) & @ValidateIf({each: true}) not working with nulls, see https://github.com/typestack/class-validator/issues/1382#issuecomment-1745802645
@@ -1169,7 +1169,7 @@ export class Options {
 }
 
 /**
- * Extends [Options](/classes/options.html) to override absolutePath & CWD. All other relative paths are calculated from these.
+ * Extends [Options](../classes/Options.html) to override absolutePath & CWD. All other relative paths are calculated from these.
  *
  * Useful for virtual FS / testing. You can pass such options only on constructor.
  *
@@ -1229,21 +1229,21 @@ export class OptionsInternal extends OptionsAtConstructor {
 }
 
 /**
- * Parameter type of [LogZen.updateLogPathOptions()](/classes/LogZen.html#updateLogPathOptions)
+ * Parameter type of [LogZen.updateLogPathOptions()](../classes/LogZen.html#updateLogPathOptions)
  */
 export type TLogPathOptions = {
   [logPath: string]: Options | keyof typeof ELogLevel | number
 }
 
 /**
- * Parameter type of [LogZen.addPathReplacements()](/classes/LogZen.html#addPathReplacements)
+ * Parameter type of [LogZen.addPathReplacements()](../classes/LogZen.html#addPathReplacements)
  */
 export type TPathReplacements = { [path: string]: string }
 
 /**
  * The built-in default options used by LogZen
  *
- * **Don't mutate** - use [`LogZen.updateLogPathOptions()`](/classes/LogZen.html#updateLogPathOptions) instead.
+ * **Don't mutate** - use [`LogZen.updateLogPathOptions()`](../classes/LogZen.html#updateLogPathOptions) instead.
  */
 export const defaultOptions: OptionsInternal = {
   // debugLevel: 0,     // implicit, not need to be set
@@ -1280,7 +1280,7 @@ export const defaultOptions: OptionsInternal = {
 /**
  * All \`l.xxx()\` log methods (eg \`.log()\`, \`l.warn()\` etc use this type
  *
- * @see [**LogLevel and log() methods** - Choosing What Severity To Print](/index.html#md:4-loglevel---choosing-what-severity-to-print)
+ * @see [**LogLevel and log() methods** - Choosing What Severity To Print](../#md:4-loglevel---choosing-what-severity-to-print)
  *
  * @param argsToPrint the args to print
  *
@@ -1298,9 +1298,9 @@ export type TwillLogMethod = () => boolean
  *
  * The last arg is returned as a generic type.
  *
- * @see [**Args Pass through** - log anywhere, even inside function calls](/index.html#md:11-args-pass-through---log-anywhere-even-inside-function-calls)
+ * @see [**Args Pass through** - log anywhere, even inside function calls](../#md:11-args-pass-through---log-anywhere-even-inside-function-calls)
  *
- * @see [**LogLevel and log() methods** - Choosing What Severity To Print](/index.html#md:4-loglevel---choosing-what-severity-to-print)
+ * @see [**LogLevel and log() methods** - Choosing What Severity To Print](../#md:4-loglevel---choosing-what-severity-to-print)
  * @ignore
  */
 export type TLog1MethodArgsToReturnLastArg<TLastArg> = [...any[], TLastArg]
@@ -1308,9 +1308,9 @@ export type TLog1MethodArgsToReturnLastArg<TLastArg> = [...any[], TLastArg]
 /**
  * All `.xxx1()` methods (eg `.log1()`, `l.warn1()`) etc use this method type
  *
- * @see [**Args Pass through** - log anywhere, even inside function calls](/index.html#md:11-args-pass-through---log-anywhere-even-inside-function-calls)
+ * @see [**Args Pass through** - log anywhere, even inside function calls](../#md:11-args-pass-through---log-anywhere-even-inside-function-calls)
  *
- * @see [**LogLevel and log() methods** - Choosing What Severity To Print](/index.html#md:4-loglevel---choosing-what-severity-to-print)
+ * @see [**LogLevel and log() methods** - Choosing What Severity To Print](../#md:4-loglevel---choosing-what-severity-to-print)
  *
  * @param argsToPrint the args to print. The last arg is returned & is the generic type of the method.
  *

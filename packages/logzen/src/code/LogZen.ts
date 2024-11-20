@@ -237,9 +237,9 @@ Use strictly:
 }
 
 /**
- * @see [LogZen API Documentation](/#md:13-logzen-api-overview)
+ * @see [LogZen API Documentation](../#md:13-logzen-api-overview)
  *
- * **Note: Hidden from TypeDocs**: Each of the [logLevels](/enums/ELogLevel.html) (except NONE) corresponds to a method with the same name in lowercase (eg `.warn()` etc), along with `.warn1()` and `.willWarn()`. These methods are also bound to the instance, so you can also call as `const warn = l.warn; warn('foo');`` instead of `l.warn('foo')`.
+ * **Note: Hidden from TypeDocs**: Each of the [logLevels](../enums/ELogLevel.html) (except NONE) corresponds to a method with the same name in lowercase (eg `.warn()` etc), along with `.warn1()` and `.willWarn()`. These methods are also bound to the instance, so you can also call as `const warn = l.warn; warn('foo');`` instead of `l.warn('foo')`.
  *
  * For example
  * ```
@@ -454,20 +454,29 @@ Use strictly:
     }
   }
 
+  /**
+   * The `options()` method, either gets current effective options OR it updates the options of the instance (and returns it).
+   * - Pass no argument (in this variant), and you get current effective options (of instance) eg `{colors: true, logLevel: 'warn'}`.
+   * - Pass newOptions to update **existing instance options**, causing revaluation of effective options. It returns \`this\`, i.e the  logger instance, so you can do fluently do `l.options({colors: false}).log('Hello boring world')`
+   *
+   * @see [Accessing & Updating Options](../#md:66-accessing--updating-options)
+   * @return Options current effective options
+   */
   public options(): Readonly<Options>
-  public options(newOptions?: Options): LogZen
 
   /**
-   * Gets current effective options OR updates the options of the instance.
-   * - Pass no arguments, get current effective options (of instance, logPath, parents etc) eg `{colors: true, logLevel: 'warn'}`.
-   * - Pass new options to update **existing instance options**, causing revaluation of effective options. It returns \`this\`, i.e the  logger instance, so you can do fluently do `l.option({colors: false}).log('Hello boring world')`
+   * The `options()` method, either gets current effective options OR it updates the options of the instance (and returns it).
+   * - Pass `newOptions` (in this variant) to update **existing instance options**, causing revaluation of effective options. It returns \`this\`, i.e the  logger instance, so you can do fluently do `l.options({colors: false}).log('Hello boring world')`
+   * - Pass no arguments, get current effective options (of instance) eg `{colors: true, logLevel: 'warn'}`.
    *
-   * @see [Accessing & Updating Options](/index.html#md:66-accessing-amp-updating-options)
+   * @see [Accessing & Updating Options](../#md:66-accessing--updating-options)
    *
    * @param newOptions
    *
-   * @return newOptions OR LogZen instance
+   * @return LogZen instance
    */
+  public options(newOptions: Options): LogZen
+
   public options(newOptions?: Options): Readonly<Options> | LogZen {
     if (newOptions) {
       if (isRealObject(newOptions)) {
@@ -506,7 +515,7 @@ Use strictly:
   /**
    * Add a kid instance to this instance, that will become its parent. Used only internally by LogZen, when options contain kids
    *
-   * @see [Kid Instances with l.addKid()](/index.html#md:12-kid-instances-with-laddkid)
+   * @see [Kid Instances with l.addKid()](../#md:12-kid-instances-with-laddkid)
    *
    * @param kidFromOptionsOptions
    */
@@ -547,7 +556,7 @@ Use strictly:
   /**
    * Add a kid instance to this instance, that will become its parent
    *
-   * @see [Programmatically Managed via l.addKid() & l.removeKid()](/index.html#md:121-programmatically-managed-via-laddkid-amp-lremovekid)
+   * @see [Programmatically Managed via l.addKid() & l.removeKid()](../#md:121-programmatically-managed-via-laddkid--lremovekid)
    *
    * @param kidOptions
    *
@@ -580,7 +589,7 @@ Use strictly:
   /**
    * Remove a kid instance to this instance, that will become its parent
    *
-   * @see [Remove a Kid via l.removeKid()](/index.html#md:1216-remove-a-kid-via-lremovekid)
+   * @see [Remove a Kid via l.removeKid()](../#md:1216-remove-a-kid-via-lremovekid)
    *
    * @param kid
    *
@@ -594,17 +603,17 @@ Use strictly:
   }
 
   /**
-   * Add a [TLogPathOptions](/types/TLogPathOptions.html) object, where:
+   * Add a [TLogPathOptions](../types/TLogPathOptions.html) object, where:
    *
-   * - Keys are **paths in your project's filesystem** (e.g. `'src/some/module'`). They can be [Replaced Paths](/index.html#md:3---path-replacements) or use shortcuts (see below).
+   * - Keys are **paths in your project's filesystem** (e.g. `'src/some/module'`). They can be [Replaced Paths](../#md:3---path-replacements) or use shortcuts (see below).
    *
    * - Values are either:
    *
-   *   - an object of type [TLogZenOptions](/classes/options.html) eg `{colors: true}`
+   *   - an object of type LogZen [Options](../classes/Options.html) eg `{colors: true}`
    *
-   *   - OR a number (even parsable string number), interpreted as [`debugLevel`](/index.html#md:5-the-ldebug--ltrace-methods-amp-debuglevel--tracelevel)
+   *   - OR a number (even parsable string number), interpreted as [`debugLevel`](../#md:5-the-ldebug--ltrace-methods--debuglevel--tracelevel)
    *
-   *   - OR a [`logLevel`](/enums/ELogLevel.html) string eg `'warn'`, `'log'` etc
+   *   - OR a [`logLevel`](../enums/ELogLevel.html) string eg `'warn'`, `'log'` etc
    *
    * For example:
    *
@@ -639,7 +648,7 @@ Use strictly:
    *
    *  `[~]/some/path` which is a special shortcut for "current file I'm calling from". If `[~]` is in your path string, it is replaced with the filepath of the `.js`/`.ts` file you're calling it from (without the .js ext, & adjusted for CWD internally). For example `[~]/some/path` will be replaced with `where/ever/youare/calling/from/some/path`
    *
-   * @see [LogPath Options](/index.html#md:63-logpath-options) & [Important static (a.k.a class) methods](/index.html#md:134-important-static-aka-class-methods)
+   * @see [LogPath Options](../#md:63-logpath-options) & [Important static (a.k.a class) methods](../#md:134-important-static-aka-class-methods)
    *
    * @param logPathOptions an object with `{[logPath:string]: Options}`
    *
@@ -716,7 +725,7 @@ Use strictly:
   }
 
   /**
-   * Add a [TPathReplacements](/types/TPathReplacements.html) object, where:
+   * Add a [TPathReplacements](../types/TPathReplacements.html) object, where:
    *
    *  - keys are **paths in your project's filesystem** (e.g. `'src/some/project'`)
    *
@@ -732,7 +741,7 @@ Use strictly:
    *   }
    * ```
    *
-   * See [pathReplacements](/index.html#md:3---path-replacements) for more options & examples
+   * See [pathReplacements](../#md:3---path-replacements) for more options & examples
    *
    * @param pathReplacements
    *
@@ -858,9 +867,9 @@ Use strictly:
   /**
    * Start a timer on ALL instances, and next time you print with any l.xxx() log method onany instance, it displays how long it took (in the header).
    *
-   * @see [Static LogZen.timer() - a timer for all](/index.html#md:103-static-logzentimer---a-timer-for-all)
+   * @see [Static LogZen.timer() - a timer for all](../#md:103-static-logzentimer---a-timer-for-all)
    *
-   * @param always restart timer automatically when it elapses - see [always restart timer](/index.html#md:102-ltimertrue---always-restart-timer)
+   * @param always restart timer automatically when it elapses - see [always restart timer](../#md:102-ltimertrue---always-restart-timer)
    *
    * @returns the timestamp when the timer was started (or null if always=false)
    */
@@ -906,9 +915,9 @@ Use strictly:
   /**
    * Start a timer on specific instance, and next time you print `l.xxx()` with any log method on specific instance, it displays how long it took (in the header).
    *
-   * @see [l.timer()](/index.html#md:101-instance-ltimer)
+   * @see [l.timer()](../#md:101-instance-ltimer)
    *
-   * @param always restart timer automatically when it elapses - see [always restart timer](/index.html#md:102-ltimertrue---always-restart-timer)
+   * @param always restart timer automatically when it elapses - see [always restart timer](../#md:102-ltimertrue---always-restart-timer)
    *
    * @returns the timestamp when the timer was started (or null if always=false)
    */
@@ -919,7 +928,7 @@ Use strictly:
   /**
    * Returns the difference since \`.timer()\` was started, in milliseconds (like \`.timerNow()\`).
    *
-   * @see [l.timer()](/index.html#md:10-timers---no-need-for-datenow---timestamp--)
+   * @see [l.timer()](../#md:10-timers---no-need-for-datenow---timestamp--)
    *
    * @returns the difference since \`.timer()\` was started, in milliseconds
    */
@@ -932,7 +941,7 @@ Use strictly:
    *
    * It restarts the timer if `always` was set to true in `l.timer(true)`
    *
-   * @see [l.timer()](/index.html#md:10-timers---no-need-for-datenow---timestamp--)
+   * @see [l.timer()](../#md:10-timers---no-need-for-datenow---timestamp--)
    *
    * @returns the difference since \`.timer()\` was started, in milliseconds
    */
@@ -959,7 +968,7 @@ Use strictly:
   /**
    * Prints using `console.table()` with some enhancements and caveats
    *
-   * @see [l.table() = Enhanced console.table()](/index.html#md:135-ltable--enhanced-consoletable)
+   * @see [l.table() = Enhanced console.table()](../#md:135-ltable--enhanced-consoletable)
    *
    * @param argsWithTabularDataAndTableHeaderLast
    *
@@ -995,9 +1004,9 @@ Use strictly:
   /**
    * Prints using `console.table()` with some enhancements and caveats, returning the lastArg (which is also what is passed to console.table())
    *
-   * @see [l.table() = Enhanced console.table()](/index.html#md:135-ltable--enhanced-consoletable)
+   * @see [l.table() = Enhanced console.table()](../#md:135-ltable--enhanced-consoletable)
    *
-   * @see [Pass Single Arg Without Spread with l.xxx1()](/#md:113-pass-single-arg-without-spread-with-lxxx1)
+   * @see [Pass Single Arg Without Spread with l.xxx1()](../#md:113-pass-single-arg-without-spread-with-lxxx1)
    *
    * @param argsToPrint the args to print, with the last arg being the one to return
    *

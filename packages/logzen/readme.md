@@ -1,58 +1,58 @@
 # LogZen v1.0.0-alpha.2
 
-A radical and powerful but familiar **Logger**, with emphasis on Granularity & Context, Debugging BigApps & [Observability](https://en.wikipedia.org/wiki/Observability). Outputs anywhere, colorful inspected values, customizable Header and many more options. Written in TypeScript & extensively typed & tested (hint: [these docs are actually tests!](/index.html#md:logzen-documentation--tutorial--integration-tests-suite)).
+A radical and powerful but familiar **Logger**, with emphasis on Granularity & Context, Debugging BigApps & [Observability](https://en.wikipedia.org/wiki/Observability). Outputs anywhere, colorful inspected values, customizable Header and many more options. Written in TypeScript & extensively typed & tested (hint: [these docs are actually tests!](#md:logzen-documentation--tutorial--integration-tests-suite)).
 
-[Jump to Documentation & Examples](/index.html#md:chapters-outline)
+[Jump to Documentation & Examples](#md:chapters-outline)
 
 ## TLDR & Synopsis
 
- - LogZen is **Context/Path Aware Logger** that pretty prints everything, is very configurable (almost everything is customizable) and solves the [Granularity Problem](/index.html#md:why-amp-inspiration-the-problem-is-granularity-control). It has unique features like:
+ - LogZen is **Context/Path Aware Logger** that pretty prints everything, is very configurable (almost everything is customizable) and solves the [Granularity Problem](#md:why--inspiration-the-problem-is-granularity-control). It has unique features like:
 
-    - All known [**Log Levels**](/#md:4-loglevel---choosing-what-severity-to-print) with more granularity at `debug()` & `trace()`
+    - All known [**Log Levels**](#md:4-loglevel---choosing-what-severity-to-print) with more granularity at `debug()` & `trace()`
 
-    - [Cascading Options](/#md:6---cascading-options-instanceconstructor-options-logpathoptions-and-defaultoptions) to really control the *when*, *where* and *how* to do logging, leading to control of granularity
+    - [Cascading Options](#md:6---cascading-options-instanceconstructor-options-logpathoptions-and-defaultoptions) to really control the *when*, *where* and *how* to do logging, leading to control of granularity
 
-    - [Customizable Header](/#md:9-header-options---print-the-info-you-want) with [filenames](/index.html#md:2-naming-loggers), [Timers](/#md:10-timers---no-need-for-datenow---timestamp--), [Date & Time](/index.html#md:96-header-date-amp-time), [line numbers](/index.html#md:93-header-linenumber) and more
+    - [Customizable Header](#md:9-header-options---print-the-info-you-want) with [filenames](#md:2-naming-loggers), [Timers](#md:10-timers---no-need-for-datenow---timestamp--), [Date & Time](#md:96-header-date--time), [line numbers](#md:93-header-linenumber) and more
 
-    - [Path Replacements](/index.html#md:3---path-replacements) & [Shortcuts](/index.html#md:22-path-name-shortcuts) to shorten filenames & make granularity a snap
+    - [Path Replacements](#md:3---path-replacements) & [Shortcuts](#md:22-path-name-shortcuts) to shorten filenames & make granularity a snap
 
-    - [Custom Outputs](/#md:7-custom-output---redirecting-amp-transforming-output) to print `txt/json/xml/anything` on `stdout/files/everywhere` easily and [even easier](/index.html#md:76-builtin-outputs)
+    - [Custom Outputs](#md:7-custom-output---redirecting--transforming-output) to print `txt/json/xml/anything` on `stdout/files/everywhere` easily and [even easier](#md:76-builtin-outputs)
 
-    - [Args Pass-Through](/index.html#md:11-args-pass-through---log-anywhere-even-inside-function-calls) to **`l.log()`** everywhere, even inside other expressions or function calls etc
+    - [Args Pass-Through](#md:11-args-pass-through---log-anywhere-even-inside-function-calls) to **`l.log()`** everywhere, even inside other expressions or function calls etc
 
-    - [Kids](/#md:12-kid-instances---inherit-parent-options-amp-echo-log-methods) that inherit/override parent options, and then echo parents' log methods, so you can log in different places at once (with different options).
+    - [Kids](#md:12-kid-instances---inherit-parent-options--echo-log-methods) that inherit/override parent options, and then echo parents' log methods, so you can log in different places at once (with different options).
 
-    - A [simple API](/#md:13-logzen-api-overview) & much more...
+    - A [simple API](#md:13-logzen-api-overview) & much more...
 
  - LogZen is a **Context/Path Aware Logger**, that is making it very capable in tailoring and reconfiguring your Logging requirements in large systems, even on the fly. This gives rise to **fine granularity** and **full control** of logging levels (and all other amazing options) per filePath, or per logger instance, or per **Kid** that is **inheriting from a parent**, or whatever incredible rule you can devise. And it doesnt have to be statically at App Boot time, you can even re-configure logging options dynamically at runtime (responding to events, errors, attacks etc)!
 
- - At the heart of it is a [Dynamic Cascading Options system](/index.html#md:6---cascading-options-instanceconstructor-options-logpathoptions-and-defaultoptions) that is configurable per instance, per path, per parent etc, in a cascading manner. But all of this is automatic and transparent to you, the developer. You can change the default options **once** at runtime, and all instances will be (potentially) affected!
+ - At the heart of it is a [Dynamic Cascading Options system](#md:6---cascading-options-instanceconstructor-options-logpathoptions-and-defaultoptions) that is configurable per instance, per path, per parent etc, in a cascading manner. But all of this is automatic and transparent to you, the developer. You can change the default options **once** at runtime, and all instances will be (potentially) affected!
 
- - LogZen has compatibility with `console.xxx()` where it matters & while [enhancing it](/#md:13-logzen-logging-methods-consolexxx-compatibility-amp-enhanced-methods). LogZen can be extended to do things you could not do before!
+ - LogZen has compatibility with `console.xxx()` where it matters & while [enhancing it](#md:13-logzen-logging-methods-consolexxx-compatibility--enhanced-methods). LogZen can be extended to do things you could not do before!
 
-[Jump to Documentation & Examples](/index.html#md:chapters-outline)
+[Jump to Documentation & Examples](#md:chapters-outline)
 
 ## Features Highlight
 
-- Very simple to use [API](/#md:13-logzen-api-overview) with unique & powerful features easy at hand.
+- Very simple to use [API](#md:13-logzen-api-overview) with unique & powerful features easy at hand.
 
-- Unique context-aware [Cascading Options](/index.html#md:6---cascading-options-instanceconstructor-options-logpathoptions-and-defaultoptions) system. It's aware where the logger lives (& logs) and what options apply to it (at boot or on the fly).
+- Unique context-aware [Cascading Options](#md:6---cascading-options-instanceconstructor-options-logpathoptions-and-defaultoptions) system. It's aware where the logger lives (& logs) and what options apply to it (at boot or on the fly).
 
 - Pretty prints nested objects & arrays and all other printables in varying ways, colorful & nested but most importantly ready to be used in different contexts (eg strict JSON with "double quotes" or PoJSo or respecting/ignoring object's `toString()`) method etc, having solved circular refs etc. Print options are fully configurable (eg nested depth, length, colors etc) with options mostly compatible to node `util.inspect()`. Never see printouts like: `{ 'someObject': [Object] }` or non-copy-paste-ables like `Animal {kind: 'Lion', name: 'Shiba', friends: ['Nala', length: 1]}` but instead:  ![pretty-printing](./src/docs/media/pretty-printing.png "pretty-printing")
 
-- [12 Log Levels](/index.html#md:4-loglevel---choosing-what-severity-to-print) to choose from, conforming to severity ordering specified by RFC5424.
+- [12 Log Levels](#md:4-loglevel---choosing-what-severity-to-print) to choose from, conforming to severity ordering specified by RFC5424.
 
-- [Rename paths](/index.html#md:3---path-replacements) for easier tracking & Cascading Options config of different parts of your App. Easy to setup and use less verbose naming.
+- [Rename paths](#md:3---path-replacements) for easier tracking & Cascading Options config of different parts of your App. Easy to setup and use less verbose naming.
 
-- [Kid Logger instances](/index.html#md:12-kid-instances---inherit-parent-options-amp-echo-log-methods) that follow & echo parent Loggers, while perhaps overriding some options (for example different [Output](/index.html#md:7-custom-output---redirecting-amp-transforming-output) or [logLevel](/index.html#md:4-loglevel---choosing-what-severity-to-print) etc).
+- [Kid Logger instances](#md:12-kid-instances---inherit-parent-options--echo-log-methods) that follow & echo parent Loggers, while perhaps overriding some options (for example different [Output](#md:7-custom-output---redirecting--transforming-output) or [logLevel](#md:4-loglevel---choosing-what-severity-to-print) etc).
 
-- Customisable colorful [Header](/index.html#md:9-header-options---print-the-info-you-want) before your printable args, with distinct color for each `logLevel`, with useful info (names and/or logPaths, Calling File, Line Number, customizable Date & Time, automatic Timers etc). ![levels-header](./src/docs/media/levels-header.png "levels-header")
+- Customisable colorful [Header](#md:9-header-options---print-the-info-you-want) before your printable args, with distinct color for each `logLevel`, with useful info (names and/or logPaths, Calling File, Line Number, customizable Date & Time, automatic Timers etc). ![levels-header](./src/docs/media/levels-header.png "levels-header")
 
-- The [`debug()` method](/index.html#md:5-the-ldebug--ltrace-methods-amp-debuglevel--tracelevel) also accepts a `debugLevel`, for high grained control (remember that `l.debug()` outside AND the one inside the loop?). Same for `trace()` with `traceLevel`. ![debug-level](./src/docs/media/debug-level.png "debug-level")
+- The [`debug()` method](#md:5-the-ldebug--ltrace-methods--debuglevel--tracelevel) also accepts a `debugLevel`, for high grained control (remember that `l.debug()` outside AND the one inside the loop?). Same for `trace()` with `traceLevel`. ![debug-level](./src/docs/media/debug-level.png "debug-level")
 
-- [Arguments Pass Through](/index.html#md:11-args-pass-through---log-anywhere-even-inside-function-calls) so you can log everywhere, even inside other expressions or function calls eg. `myFunction(l.log1(suspiciousArg), anotherArg)`! For single argument (via the `.xxx1()` shortcut) or multiple arguments via `...` & `.slice()`.
+- [Arguments Pass Through](#md:11-args-pass-through---log-anywhere-even-inside-function-calls) so you can log everywhere, even inside other expressions or function calls eg. `myFunction(l.log1(suspiciousArg), anotherArg)`! For single argument (via the `.xxx1()` shortcut) or multiple arguments via `...` & `.slice()`.
 
-- Outputs via `console.xxx()` print methods but can [trivially adapt to print via Custom Outputs](/index.html#md:7-custom-output---redirecting-amp-transforming-output) at `stdout`, files, other Loggers & transports (eg Winston, DataDog, Kafka etc), streams etc, in either plain text or JSON (built-in). You can easily configure for CSV, XML and anything else. ![custom-output](./src/docs/media/custom-output.png "custom-output")
+- Outputs via `console.xxx()` print methods but can [trivially adapt to print via Custom Outputs](#md:7-custom-output---redirecting--transforming-output) at `stdout`, files, other Loggers & transports (eg Winston, DataDog, Kafka etc), streams etc, in either plain text or JSON (built-in). You can easily configure for CSV, XML and anything else. ![custom-output](./src/docs/media/custom-output.png "custom-output")
 
 - Improved `.trace()`, colorfully, without internal noise & more:
 
@@ -60,7 +60,7 @@ A radical and powerful but familiar **Logger**, with emphasis on Granularity & C
 
 - Benchmarked to be on average as fast as `console.log` (can be slightly slower or faster depending on options)
 
-[Jump to Documentation & Examples](/index.html#md:chapters-outline)
+[Jump to Documentation & Examples](#md:chapters-outline)
 
 ## Why & Inspiration: The Problem is Granularity Control
 
@@ -76,7 +76,7 @@ LogZen allows you to easily enable/disable `logLevel` & `debugLevel` on a path a
 
 LogZen is great for Debugging Big Apps with fine granularity and full control of *where*, *when* and *how* to print.
 
-The `logLevel` (and `debugLevel`, more granularity) and all other [`Options`](/classes/Options.html) can be configured to apply exactly where YOU want. LogZen instances end up with different effective options dynamically, to cater all your needs in your BigApp.
+The `logLevel` (and `debugLevel`, more granularity) and all other [`Options`](./classes/Options.html) can be configured to apply exactly where YOU want. LogZen instances end up with different effective options dynamically, to cater all your needs in your BigApp.
 
 ### Practical Scenarios
 
@@ -104,7 +104,7 @@ it can make decisions, based on your rules, to decide exactly WHEN to print (or 
 
 You can pass options at instantiation or have filePath defaults (recommended), and make decisions on the fly to match your needs. LogZen instances check for options changes before each execution and refresh their effective options accordingly, if their relevant options have changed.
 
-Jump to [**Chapter 6 - Cascading Options**](/index.html#md:6---cascading-options-instanceconstructor-options-logpathoptions-and-defaultoptions) to see the True Power of LogZen, or read the whole Tutorial!
+Jump to [**Chapter 6 - Cascading Options**](#md:6---cascading-options-instanceconstructor-options-logpathoptions-and-defaultoptions) to see the True Power of LogZen, or read the whole Tutorial!
 
 
 # LogZen Documentation = Tutorial = Integration Tests Suite!
@@ -144,39 +144,39 @@ as all paths are assumed to be relative to this path! If you execute from differ
 
 # Chapters Outline
 
-1. [**Basic Usage** and **LogZen API Overview**](/index.html#md:1---basic-usage)
+1. [**Basic Usage** and **LogZen API Overview**](#md:1---basic-usage)
 
-2. [**Naming Loggers** - name your LogZen loggers the custom way](/index.html#md:2-naming-loggers)
+2. [**Naming Loggers** - name your LogZen loggers the custom way](#md:2-naming-loggers)
 
-3. [**Path Replacements** - name your LogZen loggers the smart way!](/index.html#md:3---path-replacements)
+3. [**Path Replacements** - name your LogZen loggers the smart way!](#md:3---path-replacements)
 
-4. [**LogLevel and log() methods** - Choosing What Severity To Print](/index.html#md:4-loglevel---choosing-what-severity-to-print)
+4. [**LogLevel and log() methods** - Choosing What Severity To Print](#md:4-loglevel---choosing-what-severity-to-print)
 
-5. [**The `debug()`/`trace()` methods & `debugLevel`/`traceLevel` checks** - debug with confidence](/index.html#md:5-the-ldebug--ltrace-methods-amp-debuglevel--tracelevel)
+5. [**The `debug()`/`trace()` methods & `debugLevel`/`traceLevel` checks** - debug with confidence](#md:5-the-ldebug--ltrace-methods--debuglevel--tracelevel)
 
-6. [**Cascading Options** - The true power of LogZen.](/index.html#md:6---cascading-options-instanceconstructor-options-logpathoptions-and-defaultoptions)
+6. [**Cascading Options** - The true power of LogZen.](#md:6---cascading-options-instanceconstructor-options-logpathoptions-and-defaultoptions)
 
-7. [**Custom Output** - Redirecting & Transforming Output.](/index.html#md:7-custom-output---redirecting-amp-transforming-output)
+7. [**Custom Output** - Redirecting & Transforming Output.](#md:7-custom-output---redirecting--transforming-output)
 
-8. [**Options Overview**](/index.html#md:8-options-overview---interesting-notes)
+8. [**Options Overview**](#md:8-options-overview---interesting-notes)
 
-9. [**Header Options** - print the info you want](/index.html#md:9-header-options---print-the-info-you-want)
+9. [**Header Options** - print the info you want](#md:9-header-options---print-the-info-you-want)
 
-10. [**Timers** - no need for Date.now()](/index.html#md:10-timers---no-need-for-datenow---timestamp--)
+10. [**Timers** - no need for Date.now()](#md:10-timers---no-need-for-datenow---timestamp--)
 
-11. [**Args Pass through** - log anywhere, even inside function calls](/index.html#md:11-args-pass-through---log-anywhere-even-inside-function-calls)
+11. [**Args Pass through** - log anywhere, even inside function calls](#md:11-args-pass-through---log-anywhere-even-inside-function-calls)
 
-12. [**Kid Instances** - inherit parent options & Echo Log Methods](/index.html#md:12-kid-instances---inherit-parent-options-amp-echo-log-methods)
+12. [**Kid Instances** - inherit parent options & Echo Log Methods](#md:12-kid-instances---inherit-parent-options--echo-log-methods)
 
-13. [**LogZen logging methods, `console.xxx()` compatibility & enhanced methods**](/index.html#md:13-logzen-logging-methods-consolexxx-compatibility-amp-enhanced-methods)
+13. [**LogZen logging methods, `console.xxx()` compatibility & enhanced methods**](#md:13-logzen-logging-methods-consolexxx-compatibility--enhanced-methods)
 
-14. [**Printing Object Types**](/index.html#md:14-printing-objects-types)
+14. [**Printing Object Types**](#md:14-printing-objects-types)
 
-15. [**Performance & Benchmarks**](/index.html#md:15-performance-amp-benchmarks)
+15. [**Performance & Benchmarks**](#md:15-performance--benchmarks)
 
-16. [**Developing & Testing**](/index.html#md:16-developing-amp-testing-clizen)
+16. [**Developing & Testing**](#md:16-developing--testing-clizen)
 
-17. [**Roadmap - The Future**](/index.html#md:17-roadmap---the-future)
+17. [**Roadmap - The Future**](#md:17-roadmap---the-future)
 
 
 ----------------------------------------------------------------------
@@ -218,7 +218,7 @@ Now let's construct a LogZen instance with no args, and print the mandatory "Hel
 ```ts
 const l1_1 = new LogZen()
 l1_1.log('Hello world from node version', process.version)
-// [LOG|dist/docs/generated/detailed-usage-examples.executable.spec.generated]: Hello world from node version v20.8.0
+// [LOG|dist/docs/generated/detailed-usage-examples.executable.spec.generated]: Hello world from node version v20.18.0
 ```
 We see that the relative filename of this file was printed as the Header name. We can affect this in surprising ways, read on.
 
@@ -238,7 +238,7 @@ const l = new LogZen({...options})  // add instance options, apply only to this 
 const l = new LogZen('aLoggerName', 30) // an options shortcut: pass `loggerName` & `debugLevel`
 ```
 
-Also see [conventions](/index.html#md:112-construct-a-logzen-instance-amp-conventions)
+Also see [conventions](#md:112-construct-a-logzen-instance--conventions)
 
 ### 1.3.2 Instance `l.log()` LogLevel methods
 
@@ -256,7 +256,7 @@ For each of the 12 __Loglevels__ (`fatal`, `critical`, `error`, `warn`, `notice`
 
 ```l.warn1('This argument is fishy', fishyNumber)```
 
-to help with arguments passing - head to [Chapter 11 Args Pass through](/index.html#md:11-args-pass-through---log-anywhere-even-inside-function-calls) for more details.
+to help with arguments passing - head to [Chapter 11 Args Pass through](#md:11-args-pass-through---log-anywhere-even-inside-function-calls) for more details.
 
 **NOTE:** Methods are bound to the instance
 
@@ -268,11 +268,11 @@ so they can be used standalone, without the `l.` (or `logger.` etc) prefix.
 
 More information:
 
-* Same set of methods exists for `table` & `dir` - see [`console.table()`](/index.html#md:135-ltable--enhanced-consoletable) for its enhanced usage.
+* Same set of methods exists for `table` & `dir` - see [`console.table()`](#md:135-ltable--enhanced-consoletable) for its enhanced usage.
 
-* See [Chapter 4 LogLevel](/index.html#md:4-loglevel---choosing-what-severity-to-print) for details about LogLevels (a.k.a Severity logging).
+* See [Chapter 4 LogLevel](#md:4-loglevel---choosing-what-severity-to-print) for details about LogLevels (a.k.a Severity logging).
 
-* The [`debug()` & `trace()`](/index.html#md:5-the-ldebug--ltrace-methods-amp-debuglevel--tracelevel) can optionally have an extra level check
+* The [`debug()` & `trace()`](#md:5-the-ldebug--ltrace-methods--debuglevel--tracelevel) can optionally have an extra level check
 
 ### 1.3.3 Auxiliary instance methods:
 
@@ -282,13 +282,13 @@ More information:
 
 * `l.c`: exposes the `ansi-colors` package, as just `c` per its own convention. So you can use `l.c.red('foo')` anywhere! You can leverage the global naming of LogZen instances via `LogZen.addPathReplacements({'[~]/..': l.c.bgGreenBright.black('neoTerm')}` and now you have a wonder colorful title base for all you loggers!
 
-* `l.options({...newOptions?})`: updates the effective options of the instance & returns the instance. On the contrary `l.options()`: returns the instance's current effective Options. See [Chapter 6.6 Accessing & Updating Options](/index.html#md:66-accessing-amp-updating-options)
+* `l.options({...newOptions?})`: updates the effective options of the instance & returns the instance. On the contrary `l.options()`: returns the instance's current effective Options. See [Chapter 6.6 Accessing & Updating Options](#md:66-accessing--updating-options)
 
-* [`l.timer() and siblings`](/#md:10-timers---no-need-for-datenow---timestamp--): starts a timer on the instance. Next time you print with any `l.xxx()` print method on that instance, it displays how long it took (in millisecs) at the Header. Has more quirks & options, see [Chapter 10 Timers](/index.html#md:10-timers---no-need-for-datenow---timestamp--).
+* [`l.timer() and siblings`](#md:10-timers---no-need-for-datenow---timestamp--): starts a timer on the instance. Next time you print with any `l.xxx()` print method on that instance, it displays how long it took (in millisecs) at the Header. Has more quirks & options, see [Chapter 10 Timers](#md:10-timers---no-need-for-datenow---timestamp--).
 
 ### 1.3.4 Important static (a.k.a class) methods:
 
-* [`LogZen.updateLogPathOptions()`](/classes/LogZen.html#updateLogPathOptions): Add [`LogZenOptions`](/classes/Options.html), that apply to specific *logPaths* (and all sub-logPaths below it).
+* [`LogZen.updateLogPathOptions()`](./classes/LogZen.html#updateLogPathOptions): Add LogZen [`Options`](./classes/Options.html), that apply to specific *logPaths* (and all sub-logPaths below it).
 
 ```ts
 LogZen.updateLogPathOptions(
@@ -323,7 +323,7 @@ In both cases, `stackDepth` is only needed if your LogZen is wrapped inside othe
 
 * `LogZen.clearScreen()`: clear the TTY screen - same effect as instance `l.clearScreen()`
 
-* [`LogZen.timer() and siblings`](/#md:10-timers---no-need-for-datenow---timestamp--): starts a timer, applicable to all timer-less instances. Otherwise exactly like the instance counterpart, as it shares implementation.
+* [`LogZen.timer() and siblings`](#md:10-timers---no-need-for-datenow---timestamp--): starts a timer, applicable to all timer-less instances. Otherwise exactly like the instance counterpart, as it shares implementation.
 
 * `LogZen.inspect(val, inspectOptions?)`: util.inspect (i.e pretty print) any value. Like the instance counterpart, but uses the default options which can be changed.
 
@@ -336,7 +336,7 @@ And that's it! You're ready to use LogZen ;-)
 
 99% of the time you're fine with just a `const l = new LogZen()` in each file (for static logging development).
 
-See next [**Chapter 3 - Path Replacements**](/index.html#md:3---path-replacements) & also [**Chapter #6 - Cascading Options**](/index.html#md:6---cascading-options-instanceconstructor-options-logpathoptions-and-defaultoptions) as to why.
+See next [**Chapter 3 - Path Replacements**](#md:3---path-replacements) & also [**Chapter #6 - Cascading Options**](#md:6---cascading-options-instanceconstructor-options-logpathoptions-and-defaultoptions) as to why.
 
 ## 2.1 Hard Coded Logger Naming
 
@@ -551,7 +551,7 @@ LogLevels are not just conforming to the severity ordering specified by RFC5424 
 
 ## 4.1 LogLevels are in `ELogLevel` enum
 
-They are defined in enum [`ELogLevel`](/enums/ELogLevel.html) and you can grab their descriptions at [`LogLevelDescriptions`](/variables/LogLevelDescriptions.html)):
+They are defined in enum [`ELogLevel`](./enums/ELogLevel.html) and you can grab their descriptions at [`LogLevelDescriptions`](./variables/LogLevelDescriptions.html)):
 
 * `0`			 = `NONE` : __Set `logLevel` to 'NONE' in your App to disable all logging.__
 * `1`			 = `fatal` : __The service/app is going to stop or become unusable soon.__
@@ -569,7 +569,7 @@ They are defined in enum [`ELogLevel`](/enums/ELogLevel.html) and you can grab t
 
 ## 4.2 LogLevel methods
 
-Each of these `logLevels` (except NONE) corresponds to a method with the same name (eg `l.warn()`, `l.log()` etc), plus one for `willLog()` check & [`log1()` variant](/index.html#md:113-pass-single-arg-without-spread-with-lxxx1) etc.
+Each of these `logLevels` (except NONE) corresponds to a method with the same name (eg `l.warn()`, `l.log()` etc), plus one for `willLog()` check & [`log1()` variant](#md:113-pass-single-arg-without-spread-with-lxxx1) etc.
 
 They can be used as `l.log()` or standalone, as they are bound to the instance:
 
@@ -693,7 +693,7 @@ l4_1.silly('Something more silly needs to be printed')
 // [SILLY|LogZen Playground]: Something more silly needs to be printed
 ```
 
-All log methods conform to [`TlogMethod`](/types/TlogMethod.html) type (with a small variation on `.debug()` & `.trace()`), and are bound to the instance & hence all can be used as standalone functions:
+All log methods conform to [`TlogMethod`](./types/TlogMethod.html) type (with a small variation on `.debug()` & `.trace()`), and are bound to the instance & hence all can be used as standalone functions:
 
 ```ts
 const { info, debug } = l4_1
@@ -892,7 +892,7 @@ result = l5_3.willDebug(0)
 ```
 ## 5.4 The .debug() & .trace() Inferred Signatures/Types (TypeScript only)
 
-The `l.debug(aNumber)` returns boolean & the `l.debug1(aNumber)` will throw (see [Pass Single Arg Without Spread with l.xxx1()](/index.html#md:113-pass-single-arg-without-spread-with-lxxx1)).
+The `l.debug(aNumber)` returns boolean & the `l.debug1(aNumber)` will throw (see [Pass Single Arg Without Spread with l.xxx1()](#md:113-pass-single-arg-without-spread-with-lxxx1)).
 
 There are different variants when using more args also.
 
@@ -928,11 +928,11 @@ const l6_1 = new LogZen({
 })
 ```
 
-You also have the case of the instance having a parent, in which case it just overrides it's parent Options as well - see [**Chapter 12 Kid Instances**](/index.html#md:12-kid-instances---inherit-parent-options-amp-echo-log-methods).
+You also have the case of the instance having a parent, in which case it just overrides it's parent Options as well - see [**Chapter 12 Kid Instances**](#md:12-kid-instances---inherit-parent-options--echo-log-methods).
 
 ## 6.2 Default Options
 
-Default Options are what all instances fallback to, when any specific option property is missing from all other options that were collected (via [_.merge()](https://lodash.com/docs/4.17.15#merge)). They are [built in](/variables/defaultOptions.html) and SHOULD NOT BE CHANGED (i.e dont mutate the `defaultOptions` object)!
+Default Options are what all instances fallback to, when any specific option property is missing from all other options that were collected (via [_.merge()](https://lodash.com/docs/4.17.15#merge)). They are [built in](./variables/defaultOptions.html) and SHOULD NOT BE CHANGED (i.e dont mutate the `defaultOptions` object)!
 
 ## 6.3 LogPath Options
 
@@ -993,9 +993,9 @@ Options *cascade* in this order:
 
 * **instance Options** override both **defaultOptions** & **logPathOptions**, even for matched **logPaths**. They also override Parent instance options, if any.
 
-* **parent instance options** also override **logPathOptions** & **defaultOptions** - see [**Chapter 12 Kid Instances**](/index.html#md:12-kid-instances---inherit-parent-options-amp-echo-log-methods).
+* **parent instance options** also override **logPathOptions** & **defaultOptions** - see [**Chapter 12 Kid Instances**](#md:12-kid-instances---inherit-parent-options--echo-log-methods).
 
-* **logPathOptions** in turn override the **defaultOptions**, but only for matched [**logPaths**](/#md:63-logpath-options). Its important to understand, that each instance has a number of potential LogPath options to consider, starting from the closest matched path (eg `/src/code/some/module`, down to the root of your App's filesystem (eg `/src`), provided you have [set any logPathOptions](/#md:134-important-static-aka-class-methods) for those paths. Naturally, the closest matched path overrides the more generic ones.
+* **logPathOptions** in turn override the **defaultOptions**, but only for matched [**logPaths**](#md:63-logpath-options). Its important to understand, that each instance has a number of potential LogPath options to consider, starting from the closest matched path (eg `/src/code/some/module`, down to the root of your App's filesystem (eg `/src`), provided you have [set any logPathOptions](#md:134-important-static-aka-class-methods) for those paths. Naturally, the closest matched path overrides the more generic ones.
 
 * **defaultOptions** apply if a specific option key is not set in neither of the above.
 
@@ -1039,7 +1039,7 @@ First it updates effective options, and then returns the logZen instance, so we 
 
 **NOTE**: Development best practice, is to not to set logger options per instance, most of time.
 
-  * For static usage, ie your Logger's behaviour doesnt change at runtime, you should use [logPathOptions](/#md:63-logpath-options) instead, as they are easier to manage.
+  * For static usage, ie your Logger's behaviour doesnt change at runtime, you should use [logPathOptions](#md:63-logpath-options) instead, as they are easier to manage.
 
   * But if you need Dynamic logging behavior (eg logger options respond to events, or a logger is configured when called in a test etc), then `l.options({})` is your best friend, for these few options that will change only (eg the `logLevel'`)!
 
@@ -1312,7 +1312,7 @@ l7_3.critical(`l.critical() will redirect to our "error" custom output`)
 // ERROR: CustomOutput: l.critical() will redirect to our "error" custom output
 ```
 
-What about [enhanced methods like `.table()`](/#md:135-ltable--enhanced-consoletable)
+What about [enhanced methods like `.table()`](#md:135-ltable--enhanced-consoletable)
 
 ```ts
 l7_3.table(`l.table() will redirect to our "table" custom output`, [{ a: 1, b: 2 }])
@@ -1320,7 +1320,7 @@ l7_3.table(`l.table() will redirect to our "table" custom output`, [{ a: 1, b: 2
 // ┌─────────┬───┬───┐
 // │ (index) │ a │ b │
 // ├─────────┼───┼───┤
-// │    0    │ 1 │ 2 │
+// │ 0       │ 1 │ 2 │
 // └─────────┴───┴───┘
 //
 ```
@@ -1414,7 +1414,7 @@ You can use them just by referring to their name:
 Or you can pass an Array with:
 - the BuiltIn Output name (eg `'fileJSON'` as 1st element
 
-- an options object (type [`BuiltInOutputsOptions`](/classes/BuiltInOutputsOptions.html)) as the 2nd element, if they need any options. For example all `fileXXX` BuiltIn outputs need a `filename` option:
+- an options object (type [`BuiltInOutputsOptions`](./classes/BuiltInOutputsOptions.html)) as the 2nd element, if they need any options. For example all `fileXXX` BuiltIn outputs need a `filename` option:
 
 ```ts
 { output: ['fileJSON', { filename: 'myfile.txt'} ], /*...other options... */ }
@@ -1544,9 +1544,9 @@ There is no screen printing, and if we check the file it contains the proper JSO
 # 8. **Options Overview** - interesting notes
 ----------------------------------------------------------------------
 
-The options of LogZen are defined in [Options](/classes/Options.html)
+The options of LogZen are defined in [Options](./classes/Options.html)
 
-When constructing LogZen, you can pass a slightly extended variant [OptionsAtConstructor](/classes/OptionsAtConstructor.html)
+When constructing LogZen, you can pass a slightly extended variant [OptionsAtConstructor](./classes/OptionsAtConstructor.html)
 
 First, lets revert to normal "std" output & standard options:
 
@@ -1732,7 +1732,7 @@ Similarly you can print **current Time** on the Header in 24H format:
 ```ts
 const l9_6_2 = new LogZen({ header: { time: true } })
 l9_6_2.ok("Prints current 24h time on the Header via new Date().toLocaleTimeString('en-GB')")
-// [17:33:06|OK|aLoggerNameForPath]: Prints current 24h time on the Header via new Date().toLocaleTimeString('en-GB')
+// [23:32:41|OK|aLoggerNameForPath]: Prints current 24h time on the Header via new Date().toLocaleTimeString('en-GB')
 ```
 
 
@@ -1978,7 +1978,7 @@ result = add(50, l11.debug1(99, 'Debugging a', 'Suspicious Number:', suspiciousN
 // [DEBUG:99|Args Pass through Logger]: Debugging a Suspicious Number: 13
 // result === 63
 ```
-Bonus: If you're using TypeScript, [`debug()` & `trace()` method signatures are inferred](/index.html#md:54-the-debug-amp-trace-inferred-signaturestypes-typescript-only)
+Bonus: If you're using TypeScript, [`debug()` & `trace()` method signatures are inferred](#md:54-the-debug--trace-inferred-signaturestypes-typescript-only)
 
 When using `.table1()`, you still get the `tabularData` or `tableHeader`, which ever was passed last:
 
@@ -1995,8 +1995,8 @@ result = l11.table1(`l.table1() returns last arg, which is tableHeader in this c
 // ┌─────────┬───┬───┐
 // │ (index) │ a │ b │
 // ├─────────┼───┼───┤
-// │    0    │ 1 │ 2 │
-// │    1    │ 3 │ 4 │
+// │ 0       │ 1 │ 2 │
+// │ 1       │ 3 │ 4 │
 // └─────────┴───┴───┘
 //
 // result === ["a", "b"]
@@ -2063,7 +2063,7 @@ Kids also get an incremental id, which is printed next to their title (loggerNam
 
 ### 12.1.2 Multiple Kids
 
-It works for multiple kids and for non-`logLevel` methods like [`l.table()`](/index.html#md:135-ltable--enhanced-consoletable) & `l.dir()` also. Lets add multiple kids & call `l.table()`:
+It works for multiple kids and for non-`logLevel` methods like [`l.table()`](#md:135-ltable--enhanced-consoletable) & `l.dir()` also. Lets add multiple kids & call `l.table()`:
 
 ```ts
 const l12_2 = new LogZen()
@@ -2077,23 +2077,23 @@ l12_2.table('Tables are also echoed by kids', [
 ])
 // [TABLE|myKid1|#1]: Tables are also echoed by kids
 // ┌─────────┬───────────┬────────────┐
-// │ (index) │   name    │  nickname  │
+// │ (index) │ name      │ nickname   │
 // ├─────────┼───────────┼────────────┤
-// │    0    │ 'Angelos' │ 'AnoDyNoS' │
+// │ 0       │ 'Angelos' │ 'AnoDyNoS' │
 // └─────────┴───────────┴────────────┘
 //
 // [TABLE|myKid2|#2]: Tables are also echoed by kids
 // ┌─────────┬───────────┬────────────┐
-// │ (index) │   name    │  nickname  │
+// │ (index) │ name      │ nickname   │
 // ├─────────┼───────────┼────────────┤
-// │    0    │ 'Angelos' │ 'AnoDyNoS' │
+// │ 0       │ 'Angelos' │ 'AnoDyNoS' │
 // └─────────┴───────────┴────────────┘
 //
 // [TABLE|Parent With Kid]: Tables are also echoed by kids
 // ┌─────────┬───────────┬────────────┐
-// │ (index) │   name    │  nickname  │
+// │ (index) │ name      │ nickname   │
 // ├─────────┼───────────┼────────────┤
-// │    0    │ 'Angelos' │ 'AnoDyNoS' │
+// │ 0       │ 'Angelos' │ 'AnoDyNoS' │
 // └─────────┴───────────┴────────────┘
 //
 ```
@@ -2138,7 +2138,7 @@ l12_4.debug('The kid will echo everything #2, but print without Header')
 
 We can override any option on the kid.
 
-In this example a common kids pattern: we will override `output` and `logLevel`, to redirect CRITICAL (& fatal) errors only to a [`file` output](/#md:76-builtin-outputs):
+In this example a common kids pattern: we will override `output` and `logLevel`, to redirect CRITICAL (& fatal) errors only to a [`file` output](#md:76-builtin-outputs):
 
 ```ts
 const tempErrorsFilename = '~temp/output-files/critical-errors-only-printed-by-kid.txt'
@@ -2401,7 +2401,7 @@ result = l13_2.log(
 // [LOG|ConsoleInterpolation]: +10 for LogZen and its [32m"{ wonderful: { logging: ['features'] } }"[39m that helps in debugging Apps. Cause it has so many goodies 1 { foo: 'bar' }
 // result === ["+%d for %s and its %o that helps in debugging Apps.",10,"LogZen",{"wonderful":{"logging":["features"]}},"Cause it has so many goodies",1,{"foo":"bar"}]
 ```
-Note that the arguments are returned as-passed (see [**Chapter 11. Args Pass through**](/index.html#md:11-args-pass-through---log-anywhere-even-inside-function-calls))
+Note that the arguments are returned as-passed (see [**Chapter 11. Args Pass through**](#md:11-args-pass-through---log-anywhere-even-inside-function-calls))
 
 Note that console.log gives a similar result:
 
@@ -2442,15 +2442,15 @@ l1_1.critical(
 )
 // [CRITICAL|SpecialConsoleMethods]: LogZen uses the native console.xxx() methods when these exist, and l.error(), l.critical() & l.fatal() print on stderr.
 ```
-You can change how the output behaves (and where to print) - see [Chapter # 7. Custom Output](/index.html#md:7-custom-output---redirecting-amp-transforming-output)
+You can change how the output behaves (and where to print) - see [Chapter # 7. Custom Output](#md:7-custom-output---redirecting--transforming-output)
 
 ## 13.4 Special console methods
 
 There are some implemented "special" console methods, but because they are of a different nature, they arent part of the LogLevel scale:
 
-* [`table()`](/index.html#md:135-ltable--enhanced-consoletable) - prints a table of objects like `console.table()`, with some extras.
+* [`table()`](#md:135-ltable--enhanced-consoletable) - prints a table of objects like `console.table()`, with some extras.
 
-* [`trace()`](/index.html#md:136-ltrace--enhanced-consoletrace) - prints trace like `console.trace()`, with some extras.
+* [`trace()`](#md:136-ltrace--enhanced-consoletrace) - prints trace like `console.trace()`, with some extras.
 
 * `dir()` - prints via `console.dir()` (if using `'consoleXXX`' Output)
 
@@ -2490,10 +2490,10 @@ l1_1.table('This is a table of users, with selected columns, which must be strin
 ])
 // [TABLE|SpecialConsoleMethods]: This is a table of users, with selected columns, which must be string[]:
 // ┌─────────┬──────────┬────────────┐
-// │ (index) │    id    │  nickname  │
+// │ (index) │ id       │ nickname   │
 // ├─────────┼──────────┼────────────┤
-// │    0    │ 'user_1' │ 'AnoDyNoS' │
-// │    1    │ 'user_2' │  'Pipidi'  │
+// │ 0       │ 'user_1' │ 'AnoDyNoS' │
+// │ 1       │ 'user_2' │ 'Pipidi'   │
 // └─────────┴──────────┴────────────┘
 //
 ```
@@ -2508,10 +2508,10 @@ const l13_3 = new LogZen({
 l13_3.table('This is a table of users, with all columns:', users)
 // [TABLE|SpecialConsoleMethods]: This is a table of users, with all columns:
 // ┌─────────┬──────────┬───────────┬────────────┬────────────┐
-// │ (index) │    id    │   name    │  surname   │  nickname  │
+// │ (index) │ id       │ name      │ surname    │ nickname   │
 // ├─────────┼──────────┼───────────┼────────────┼────────────┤
-// │    0    │ 'user_1' │ 'Angelos' │ 'Pikoulas' │ 'AnoDyNoS' │
-// │    1    │ 'user_2' │ 'Elpida'  │ 'Pikoula'  │  'Pipidi'  │
+// │ 0       │ 'user_1' │ 'Angelos' │ 'Pikoulas' │ 'AnoDyNoS' │
+// │ 1       │ 'user_2' │ 'Elpida'  │ 'Pikoula'  │ 'Pipidi'   │
 // └─────────┴──────────┴───────────┴────────────┴────────────┘
 //
 ```
