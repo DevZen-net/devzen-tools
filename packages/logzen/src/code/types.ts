@@ -175,59 +175,45 @@ export class Output {
   @IsOptional()
   error?: TOutputFn
 
-  /** @optional */
+
   @IsOptional()
   fatal?: TOutputFn
 
-  /** @optional */
   @IsOptional()
   critical?: TOutputFn
 
-  /** @optional */
   @IsOptional()
   notice?: TOutputFn
 
-  /** @optional */
   @IsOptional()
   trace?: TOutputFn
 
-  /** @optional */
   @IsOptional()
   warn?: TOutputFn
 
-  /** @optional */
   @IsOptional()
   log?: TOutputFn
 
-  /** @optional */
   @IsOptional()
   ok?: TOutputFn
 
-  /** @optional */
   @IsOptional()
   info?: TOutputFn
 
-  /** @optional */
   @IsOptional()
   verbose?: TOutputFn
 
-  /** @optional */
   @IsOptional()
   debug?: TOutputFn
 
-  /** @optional */
   @IsOptional()
   silly?: TOutputFn
 
-  /** Extra non logLevel method
-   * @optional
-   */
+  /** Extra non logLevel method */
   @IsOptional()
   table?: TOutputFn
 
-  /** Extra non logLevel method
-   * @optional
-   */
+  /** Extra non logLevel method */
   @IsOptional()
   dir?: TOutputFn
 }
@@ -1329,7 +1315,7 @@ export type TLog1MethodArgsToReturnLastArg<TLastArg> = [...any[], TLastArg]
  * @param argsToPrint the args to print. The last arg is returned & is the generic type of the method.
  *
  * @returns lastArg to print, passed through verbatim.
- * @ignore
+ * @??ignore
  */
 /* prettier-ignore */
 export type Tlog1Method =

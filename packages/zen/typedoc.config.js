@@ -1,7 +1,12 @@
-module.exports = {
+/** @type {Partial<import('typedoc').TypeDocOptions>} */
+const config = {
   entryPoints: ['./src/code/index.ts'],
   out: './dist/docs-html',
   sort: ['visibility', 'enum-value-ascending'],
-  intentionallyNotExported: ['TYPE_TO_REAL_TYPE_FUNCTIONS'],
-  // media: './media'
-}
+  // media: './src/docs/media', // removed in 0.26.0 https://typedoc.org/guides/changelog/
+  searchInComments: true,
+  searchInDocuments: true,
+  cleanOutputDir: true,
+};
+
+module.exports = config;
