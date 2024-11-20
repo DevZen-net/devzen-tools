@@ -320,7 +320,7 @@ A radical and powerful but familiar **Logger**, with emphasis on Granularity & C
 
 - Unique context-aware [Cascading Options](/index.html#md:6---cascading-options-instanceconstructor-options-logpathoptions-and-defaultoptions) system. It's aware where the logger lives (& logs) and what options apply to it (at boot or on the fly).
 
-- Pretty prints nested objects & arrays and all other printables in varying ways, colorful & nested but most importantly ready to be used in different contexts (eg strict JSON with "double quotes" or PoJSo or respecting/ignoring object's \`toString()\`) method etc, having solved circular refs etc. Print options are fully configurable (eg nested depth, length, colors etc) with options mostly compatible to node \`util.inspect()\`. Never see printouts like: \`{ 'someObject': [Object] }\` or non-copy-paste-ables like \`Animal {kind: 'Lion', name: 'Shiba', friends: ['Nala', length: 1]}\` but instead:  ![pretty-printing](/media/pretty-printing.png "pretty-printing")
+- Pretty prints nested objects & arrays and all other printables in varying ways, colorful & nested but most importantly ready to be used in different contexts (eg strict JSON with "double quotes" or PoJSo or respecting/ignoring object's \`toString()\`) method etc, having solved circular refs etc. Print options are fully configurable (eg nested depth, length, colors etc) with options mostly compatible to node \`util.inspect()\`. Never see printouts like: \`{ 'someObject': [Object] }\` or non-copy-paste-ables like \`Animal {kind: 'Lion', name: 'Shiba', friends: ['Nala', length: 1]}\` but instead:  ![pretty-printing](./src/docs/media/pretty-printing.png "pretty-printing")
 
 - [12 Log Levels](/index.html#md:4-loglevel---choosing-what-severity-to-print) to choose from, conforming to severity ordering specified by RFC5424.
 
@@ -328,17 +328,17 @@ A radical and powerful but familiar **Logger**, with emphasis on Granularity & C
 
 - [Kid Logger instances](/index.html#md:12-kid-instances---inherit-parent-options-amp-echo-log-methods) that follow & echo parent Loggers, while perhaps overriding some options (for example different [Output](/index.html#md:7-custom-output---redirecting-amp-transforming-output) or [logLevel](/index.html#md:4-loglevel---choosing-what-severity-to-print) etc).
 
-- Customisable colorful [Header](/index.html#md:9-header-options---print-the-info-you-want) before your printable args, with distinct color for each \`logLevel\`, with useful info (names and/or logPaths, Calling File, Line Number, customizable Date & Time, automatic Timers etc). ![levels-header](/media/levels-header.png "levels-header")
+- Customisable colorful [Header](/index.html#md:9-header-options---print-the-info-you-want) before your printable args, with distinct color for each \`logLevel\`, with useful info (names and/or logPaths, Calling File, Line Number, customizable Date & Time, automatic Timers etc). ![levels-header](./src/docs/media/levels-header.png "levels-header")
 
-- The [\`debug()\` method](/index.html#md:5-the-ldebug--ltrace-methods-amp-debuglevel--tracelevel) also accepts a \`debugLevel\`, for high grained control (remember that \`l.debug()\` outside AND the one inside the loop?). Same for \`trace()\` with \`traceLevel\`. ![debug-level](/media/debug-level.png "debug-level")
+- The [\`debug()\` method](/index.html#md:5-the-ldebug--ltrace-methods-amp-debuglevel--tracelevel) also accepts a \`debugLevel\`, for high grained control (remember that \`l.debug()\` outside AND the one inside the loop?). Same for \`trace()\` with \`traceLevel\`. ![debug-level](./src/docs/media/debug-level.png "debug-level")
 
 - [Arguments Pass Through](/index.html#md:11-args-pass-through---log-anywhere-even-inside-function-calls) so you can log everywhere, even inside other expressions or function calls eg. \`myFunction(l.log1(suspiciousArg), anotherArg)\`! For single argument (via the \`.xxx1()\` shortcut) or multiple arguments via \`...\` & \`.slice()\`.
 
-- Outputs via \`console.xxx()\` print methods but can [trivially adapt to print via Custom Outputs](/index.html#md:7-custom-output---redirecting-amp-transforming-output) at \`stdout\`, files, other Loggers & transports (eg Winston, DataDog, Kafka etc), streams etc, in either plain text or JSON (built-in). You can easily configure for CSV, XML and anything else. ![custom-output](/media/custom-output.png "custom-output")
+- Outputs via \`console.xxx()\` print methods but can [trivially adapt to print via Custom Outputs](/index.html#md:7-custom-output---redirecting-amp-transforming-output) at \`stdout\`, files, other Loggers & transports (eg Winston, DataDog, Kafka etc), streams etc, in either plain text or JSON (built-in). You can easily configure for CSV, XML and anything else. ![custom-output](./src/docs/media/custom-output.png "custom-output")
 
 - Improved \`.trace()\`, colorfully, without internal noise & more:
 
-  ![trace-colors](/media/trace-colors.png "trace-colors")
+  ![trace-colors](./src/docs/media/trace-colors.png "trace-colors")
 
 - Benchmarked to be on average as fast as \`console.log\` (can be slightly slower or faster depending on options)
 
@@ -1289,11 +1289,11 @@ When using TypeScript, the call signatures/types are correctly inferred (in your
 
 For example \`.debug1(number)\`) throws Error:
 
-![debug1-calls](/media/debug1-calls.png "debug1-calls")
+![debug1-calls](./src/docs/media/debug1-calls.png "debug1-calls")
 
 Similarly for \`.debug()\` & \`.trace()\`, you get the correct inferred types (eg boolean for \`.debug(number)\`):
 
-![debug-calls](/media/debug-calls.png "debug-calls")
+![debug-calls](./src/docs/media/debug-calls.png "debug-calls")
 `),
             /*
 const l = new LogZen({debugLevel: 10})
@@ -2957,7 +2957,7 @@ You can also set LogZen.timer(true) to always on all timer-less instances:
             ],
             docsBlock(`
 Useful note: the static & instance timer use different colors and padding:
-![pretty-printing](/media/timer-padding.png "timer-padding")
+![timer-padding](./src/docs/media/timer-padding.png "timer-padding")
 `),
           ],
         ])('', (descr, codeFn, expectedStuff, outro?) => {
@@ -3917,7 +3917,7 @@ It implements \`console.trace()\`, with some enhancements:
 
 * Colorful output
 
-![trace-colors](/media/trace-colors.png "trace-colors")
+![trace-colors](./src/docs/media/trace-colors.png "trace-colors")
 
 * Skips the nodejs internal stack frames, like:
 \`\`\`
