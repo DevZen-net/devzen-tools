@@ -204,7 +204,7 @@ const limitExpectedByTake = (
   for (const val of expected) {
     if (_.isArray(val))
       if (val[2] === 1 || val[2] === 0) {
-        // @note: this might intefere in case the results are array but not iteration results
+        // @note this might intefere in case the results are array but not iteration results
         finalExpected.push(...currentPartition)
         currentPartition = []
       }

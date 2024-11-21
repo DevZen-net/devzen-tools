@@ -1,46 +1,3 @@
-/*
-@todo: support all different modes of printing, tiny log, stringify-safe, objectTostring, Inspect, JSON etc.
-
-All the different variations of printing deserve to be at your fingertips!
-
-- JSON / stringify is useful, well, for JSON documents you might have to use. But you dont need it break, just cause it's recursive. Maybe you care about it's other bits and bytes.
-
-- Simple {foo:['bar']} representation is usefull to copy-paste between your code's or test's outputs, and other parts of the code.
-
-- Class info like
-
-    Person {
-      name: 'John',
-      address: Address {
-        streetName: 'Lost Str'
-      }
-    }
-
-   is useful for development, debugging etc.
-
-- useToString: Optionally respect existing toString() method to print 'SKIP('333')' instead of `Skipy { reason: 'SKIP 333', priority: 6, priorityName: 'SKIP', __kind: 'Skipy' }`, along side and without needing symbol.util.inspect to be present (which you can't do in non-own classes), but just as an option per logzen.
-  useToString: (val) => boolean  // select for which classes / objects etc
- Called only if logzen's decision is to use it:
-   - Your options suggest it, since you have a truthy / function!
-   - object has it's own toString if (
-      z.isRealObject(value) && value.toString.toString() !== 'function toString() { [native code] }'
-      ) {
-
-And you should be able to change mode per file, per path, per logger, per mode of YOUR operations (I'm doing code testing, I'm reading logs or docs, I'm interacting with JSON files etc)
-
-[nodemon] starting `ts-node src/docs/temp.ts`
-  tinyLog a, typeof a [ 2, [Function: ONLY] ] object
-ONLY.spec tinyLog: [
-  2,
-  (...args) => new Onlie(EOnliesPriorities.ONLY, args)
-]
-
-
-[nodemon] starting `ts-node src/docs/temp.ts`
-  tinyLog a, typeof a [ 2, [Function: ONLY] ] object
-ONLY.spec tinyLog: [ 2, { [Function: ONLY] [length]: 0, [name]: 'ONLY' }, [length]: 2 ]
- */
-
 // <reference types="jest-extended" />
 
 import * as ansiColors from 'ansi-colors'
@@ -69,7 +26,6 @@ import {
   ELogLevel as ELogLevelOriginal,
   LogLevelDescriptions,
   LogZen as LogZenOriginal,
-  Header,
 } from '../../code'
 
 // @ts-ignore-next-line
@@ -283,7 +239,7 @@ describe(
 
 A radically powerful (yet familiar) **Logger**, with emphasis on Granularity & Context, Debugging BigApps & [Observability](https://en.wikipedia.org/wiki/Observability), but also beautiful output & configurability.
 
-Fully configurable, outputs anywhere (stdout, files etc), colorful inspected values or JSON or anything you want, customizable Headers with automatic timers & Date/Time plus many more context-aware cascading options.
+Fully configurable, outputs anywhere (stdout, files etc), prints colorful inspected values or JSON or anything you want, customizable Headers with automatic timers & Date/Time plus many more context-aware cascading options. Partition your app with different cascading \`logLevel\` & other options, configurable even at runtime!
 
 Written in TypeScript & extensively typed & tested (hint: [**these docs are actually tests!**](#md:logzen-documentation--tutorial--integration-tests-suite)).
 
@@ -299,9 +255,9 @@ NOTE: These docs are hosted at https://neozen.dev/logzen (OR locally with \`$ np
 
     - All known [**Log Levels**](#md:4-loglevel---choosing-what-severity-to-print) with more granularity at \`debug()\` & \`trace()\`
 
-    - [Cascading Options](#md:6---cascading-options-instanceconstructor-options-logpathoptions-and-defaultoptions) to really control the *when*, *where* and *how* to do logging, leading to control of granularity
+    - [Cascading Options](#md:6---cascading-options-instanceconstructor-options-logpathoptions-and-defaultoptions) to really control the *when*, *where* and *how* to do logging in different partitions of your app, leading to control of granularity
 
-    - [Customizable Header](#md:9-header-options---print-the-info-you-want) with [filenames](#md:2-naming-loggers), [Timers](#md:10-timers---no-need-for-datenow---timestamp--), [Date & Time](#md:96-header-date--time), [line numbers](#md:93-header-linenumber) and more
+    - [Customizable Header](#md:9-header-options---print-the-info-you-want) with [filenames](#md:2-naming-loggers), automatic [Timers](#md:10-timers---no-need-for-datenow---timestamp--), [Date & Time](#md:96-header-date--time), [line numbers](#md:93-header-linenumber) and more
 
     - [Path Replacements](#md:3---path-replacements) & [Shortcuts](#md:22-path-name-shortcuts) to shorten filenames & make granularity a snap
 
@@ -4791,3 +4747,48 @@ MIT
     )
   }
 )
+/*
+@todo:
+
+- Support all different modes of printing, tiny log, stringify-safe, objectTostring, Inspect, JSON etc.
+
+  -All the different variations of printing deserve to be at your fingertips!
+
+  - JSON / stringify is useful, well, for JSON documents you might have to use. But you dont need it break, just cause it's recursive. Maybe you care about it's other bits and bytes.
+
+  - Simple {foo:['bar']} representation is useful to copy-paste between your code's or test's outputs, and other parts of the code.
+
+  - Class info like
+
+    Person {
+      name: 'John',
+      address: Address {
+        streetName: 'Lost Str'
+      }
+    }
+
+   is useful for development, debugging etc.
+
+- Test  useToString:
+  Optionally respect existing toString() method to print 'SKIP('333')' instead of `Skipy { reason: 'SKIP 333', priority: 6, priorityName: 'SKIP', __kind: 'Skipy' }`, along side and without needing symbol.util.inspect to be present (which you can't do in non-own classes), but just as an option per logzen.
+  useToString: (val) => boolean  // select for which classes / objects etc
+
+ Called only if logzen's decision is to use it:
+   - Your options suggest it, since you have a truthy / function!
+   - object has it's own toString if (
+      z.isRealObject(value) && value.toString.toString() !== 'function toString() { [native code] }'
+    ) {
+
+And you should be able to change mode per file, per path, per logger, per mode of YOUR operations (I'm doing code testing, I'm reading logs or docs, I'm interacting with JSON files etc)
+
+[nodemon] starting `ts-node src/docs/temp.ts`
+  tinyLog a, typeof a [ 2, [Function: ONLY] ] object
+ONLY.spec tinyLog: [
+  2,
+  (...args) => new Onlie(EOnliesPriorities.ONLY, args)
+]
+
+[nodemon] starting `ts-node src/docs/temp.ts`
+  tinyLog a, typeof a [ 2, [Function: ONLY] ] object
+ONLY.spec tinyLog: [ 2, { [Function: ONLY] [length]: 0, [name]: 'ONLY' }, [length]: 2 ]
+ */

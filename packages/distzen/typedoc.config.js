@@ -2,7 +2,7 @@
 
 /** @type {Partial<import('typedoc').TypeDocOptions>} */
 const config = {
-  entryPoints: ['./src/code/index.ts'],
+  entryPoints: ['./src/index.ts'],
   out: './dist/docs-html',
   sort: ['visibility', 'enum-value-ascending'],
   // media: './src/docs/media', // removed in 0.26.0 https://typedoc.org/guides/changelog/
@@ -14,12 +14,9 @@ const config = {
     //        HENCE we patch it, not ideal (but its only for dev)!
     invalidLink: false,
   },
-  intentionallyNotExported: [
-    'TprintTransformFunction',
-    'TLog1MethodArgsToReturnLastArg'
-  ],
+  intentionallyNotExported: [],
   plugin: ['@mxssfd/typedoc-theme'],
   theme: 'my-theme',
-};
+}
 
-module.exports = config;
+module.exports = config

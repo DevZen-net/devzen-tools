@@ -3,7 +3,7 @@ import * as _ from 'lodash'
 /**
  *   Checks if `value` is in agreement with an `agreement` - see below.
  *
- *   @note: legacy, used by other libs. Needs revising or obsoleting.
+ *   @note legacy, used by other libs. Needs revising or obsoleting.
  *
  *   @param value Any value (object, primitive etc) to check against agreement.
  *

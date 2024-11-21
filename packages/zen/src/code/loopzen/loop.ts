@@ -718,6 +718,13 @@ interface IloopInternalOptions extends ILoopOptions<any, any, any> {
   take: number | TakeCallback<any, any, any>
 }
 
+/**
+ * @todo: Write docs for `loop()` - accepts any input value (usually a "collection" or a container of other nested items) and returns a Generator (actually a LoopGenerator) blah blah
+ *
+ * @param input
+ * @param options
+ * @param callbacks
+ */
 export function loop<
   Tinput extends any,
   Toptions extends ILoopOptions<Titem, TidxKey, Tinput>,

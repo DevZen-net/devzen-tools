@@ -132,7 +132,7 @@ export type IsMany<T> =
  *   - `'WeakSet'`
  *   - `'WeakMap'`
  *
- * @note: class types makes sense to be categorised as "Many", because a class can have interesting static props.
+ * @note class types makes sense to be categorised as "Many", because a class can have interesting static props.
  *
  * Normal 'function' is not normally a "Many" type (many values holder), although in theory it can hold props. Same applies to Boxed primitives like `String`, `Number` etc, which represent a single value (not many), but they can have properties (very rare & bad practice though). You need to enforce this check in your code.
  *

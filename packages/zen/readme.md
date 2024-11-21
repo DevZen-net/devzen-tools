@@ -52,31 +52,37 @@ In short, Zen's **Runtime Type System**:
   * Also, you can bypass lodash's shortcomings around types (and more below):
   
 Can you believe it's 2024 and native / status quo JS is :-(
-    
-    - `typeof myPromise === 'object'`
-    - `typeof Promise === 'function'`
-    - `Promise.isPromise === undefined` 
-    - `_.isPromise === undefined`
+
+\`\`\`ts    
+    typeof myPromise === 'object'
+    typeof Promise === 'function'
+    Promise.isPromise === undefined 
+    _.isPromise === undefined
+\`\`\`
 
 We can only rely on `myPromise instanceof Promise`, for a limited `true` or `false` check.
       
 Compare with the consistency of Zen's Type System:
 
-      - `z.isPromise(prom) === true`
-      - `z.type(prom) = 'Promise'`
-      - `z.type(Promise) === 'class'`      
-      - `z.classType(Promise) === 'systemClass'`
-      - `z.constructor(prom) === Promise`
-  
+\`\`\`ts
+    z.isPromise(prom) === true
+    z.type(prom) = 'Promise'
+    z.type(Promise) === 'class'      
+    z.classType(Promise) === 'systemClass'
+    z.constructor(prom) === Promise
+\`\`\`  
+
 And this is just 1 example, just for `Promise`, but almost ALL types have similar or even worse issues (fixed by Zen)! For example, `typeof null` is `'object'` and `typeof NaN` is `'number'`!
 
 With Zen / ZenType you'll get a consistent, logical, and rich type system, that is also well-typed with TypeScript.
 
 Consider a system Class/constructor & instance info:
 
+\`\`\`ts
     // vanilla JS
-    console.log(typeof Set)         // function
-    console.log(typeof new Set())   // object    
+    typeof Set === 'function'
+    typeof new Set() === 'object'    
+\`\`\`
 
 Really, is `Set` just a `function`? Can we really call `Set([])`? No! It is a class/constructor and we have to `new Set([])`! 
 
@@ -86,57 +92,63 @@ JS is lying to us relentlessly and `typeof` is utterly broken!
 
 Compare with Zen:
 
-    console.log(type(Set))                // class
-    console.log(type(new Set()))          // Set
+\`\`\`ts
+    z.type(Set) === 'class'
+    z.type(new Set()) === 'Set'
 
     // And more: 
-    console.log(classType(Set))           // systemClass
-    console.log(instanceType(new Set()))  // systemInstance
+    z.classType(Set) === 'systemClass'
+    z.instanceType(new Set()) = 'systemInstance'
+\`\`\`
 
 What about user classes and instances?
 
+\`\`\`ts
     class Aclass {a = 1}
     const aInstance = new Aclass()
     
     // Vanilla JS
-    console.log(typeof Aclass)              // function
-    console.log(typeof aInstance)           // object
+    typeof Aclass === 'function'
+    typeof aInstance === 'object'
+\`\`\`
 
-Sucks like above! With Zen:
-    
+Sucks like above! Compare it with Zen:
+
+\`\`\`ts    
     // Zen `type()` basics
-    console.log(type(Aclass))               // class
-    console.log(type(aInstance))            // realObject
+    z.type(Aclass) === 'class'
+    z.type(aInstance) === 'realObject'
     
     // Zen Extras
-    console.log(realObjectType(aInstance))  // instance
-    console.log(realType(aInstance))           // instance
-    console.log(classType(Aclass))          // userClass
-    console.log(instanceType(aInstance))    // userInstance
+    z.realObjectType(aInstance) === 'instance'
+    z.realType(aInstance) === 'instance'
+    z.classType(Aclass) === 'userClass'
+    z.instanceType(aInstance) === 'userInstance'
+\`\`\`
 
 Perhaps the epitome of JS madness is `NaN !== NaN`. But test your self, do you know the `typeof null`? You'll be surprised, I still am ;-)
 
-Let 2024 be the year we stopped using `typeof`, `instanceof`, `Object.isObject` and the rest of the gang, and started using a proper Type System, with [`z.type`](/functions/type.html)and `z.isXxx`!
+Let 2024 be the year we stopped using `typeof`, `instanceof`, `Object.isObject` and the rest of the gang, and started using a proper Type System, with [`z.type`](./functions/type.html)and `z.isXxx`!
 
 The Type System comes packed with:
 
-* [`z.type`](/functions/type.html) & many other `xxxType()` functions, with many natural-occuring & synthetic types
+* [`z.type`](./functions/type.html) & many other `xxxType()` functions, with many natural-occuring & synthetic types
 
-* A plethora of individual type inference checkers like ( [`z.isSingle`](/functions/isSingle.html),  [`z.isMany`](/functions/isMany.html),  [`z.isPrimitive`](/functions/isPrimitive.html), [`z.isClass`](/functions/isClass.html) and tens more
+* A plethora of individual type inference checkers like ( [`z.isSingle`](./functions/isSingle.html),  [`z.isMany`](./functions/isMany.html),  [`z.isPrimitive`](./functions/isPrimitive.html), [`z.isClass`](./functions/isClass.html) and tens more
 
-* You also get useful types like [`Tany`](/types/Tany.html) (so you can `Exclude<Tany, TPrimitive>`), along with [`TPrimitive`](/types/TPrimitive.html), [`TSingle`](/types/TSingle.html) & [`TMany`](/types/TMany.html) and many more, to help you with your TypeScript types.
+* You also get useful types like [`Tany`](./types/Tany.html) (so you can `Exclude<Tany, TPrimitive>`), along with [`TPrimitive`](./types/TPrimitive.html), [`TSingle`](./types/TSingle.html) & [`TMany`](./types/TMany.html) and many more, to help you with your TypeScript types.
 
-* You even get [`TPrimitiveNames`](/types/TPrimitiveNames.html) and [`TsingleNames`](/types/TsingleNames.html) and similarly for all, to help you with your TypeScript types handling!
+* You even get [`TPrimitiveNames`](./types/TPrimitiveNames.html) and [`TsingleNames`](./types/TsingleNames.html) and similarly for all, to help you with your TypeScript types handling!
 
-* To be complete, you also get a runtime [`PRIMITIVE_TYPES`](/variables/PRIMITIVE_TYPES.html), [`SINGLE_TYPES`](/variables/SINGLE_TYPES.html) and similarly for all, to help you with your runtime type checks!
+* To be complete, you also get a runtime [`PRIMITIVE_TYPES`](./variables/PRIMITIVE_TYPES.html), [`SINGLE_TYPES`](./variables/SINGLE_TYPES.html) and similarly for all, to help you with your runtime type checks!
 
-* Equality & similarity checkers like [`z.isEqual`](/functions/isEqual.html),  [`z.isLike`](/functions/isLike.html) and many more, and all `isXxx` type checks you'll ever need ( [`z.isBigInt`](/functions/isBigInt.html),  [`z.isGenerator`](/functions/isGenerator.html) etc) & few set-theory utils (`z.isSetEqual`). All accepting options, to cover many different use cases.
+* Equality & similarity checkers like [`z.isEqual`](./functions/isEqual.html),  [`z.isLike`](./functions/isLike.html) and many more, and all `isXxx` type checks you'll ever need ( [`z.isBigInt`](./functions/isBigInt.html),  [`z.isGenerator`](./functions/isGenerator.html) etc) & few set-theory utils (`z.isSetEqual`). All accepting options, to cover many different use cases.
 
 * All typesafe with TypeScript ;-)
 
 ## Native Iteration on anything
 
-The mighty [z.loop](/functions/loop.html) allows the iteration on ALL collections/nested values types (a.k.a `z.isMany` like `Array`, `realObject`, `Set`, `Map`, `Iterator`, `AsyncIterator` etc) **in the exact same way**, with native JS only:
+The mighty [z.loop](./functions/loop.html) allows the iteration on ALL collections/nested values types (a.k.a `z.isMany` like `Array`, `realObject`, `Set`, `Map`, `Iterator`, `AsyncIterator` etc) **in the exact same way**, with native JS only:
 
 You can just 
 
@@ -150,7 +162,7 @@ Just a `for...of z.loop(anything) {}` and you can loop over anything has nested 
 
 ## Project & Filter Anything
 
-A collection of tools like [`z.map()`](/functions/map.html) / [`z.filter()`](/functions/filter.html) / [`z.take()`](/functions/take.html) / [`z.clone()`](/functions/clone.html) / [`z.keys()`](/functions/keys.html) and more like [`z.reduce()`](/functions/reduce.html)]  (all based on the [z.loop](/functions/loop.html)) that **return the same type, as the input value type**!
+A collection of tools like [`z.map()`](./functions/map.html) / [`z.filter()`](./functions/filter.html) / [`z.take()`](./functions/take.html) / [`z.clone()`](./functions/clone.html) / [`z.keys()`](./functions/keys.html) and more like [`z.reduce()`](./functions/reduce.html)]  (all based on the [z.loop](./functions/loop.html)) that **return the same type, as the input value type**!
 
 * You pass an Array, you get an Array (with mapped/filtered/etc elements - i.e `_.map` / `_.filter`).
 
@@ -188,45 +200,45 @@ Typings are also tested, mostly via [`ts-expect`](https://github.com/TypeStrong/
 
 ## Nested / Collections & Iteration
 
-- [z.loop](/functions/loop.html) returns an `Iterator` of tuples `[item, idxOrKey, count]` **that work the same way** with any kind of nested values (i.e collection) such as `Array`, `Object`, `Map`, `Set`, `Iterator`, `class` and more). But even [`z.isSingle`](/functions/isSingle.html) (i.e non-nested) values are iterated once, yielding the value itself (but you can opt to be strict)! Currently, in the JS world there was no way to iterate on anything in the same way, but now you can `for (const [keyOrIdx, item, count] of z.loop(value)) {...}` and it will work as expected. At the same time you `filter`, `map`, `take` etc while doing so, declaratively!
+- [z.loop](./functions/loop.html) returns an `Iterator` of tuples `[item, idxOrKey, count]` **that work the same way** with any kind of nested values (i.e collection) such as `Array`, `Object`, `Map`, `Set`, `Iterator`, `class` and more). But even [`z.isSingle`](./functions/isSingle.html) (i.e non-nested) values are iterated once, yielding the value itself (but you can opt to be strict)! Currently, in the JS world there was no way to iterate on anything in the same way, but now you can `for (const [keyOrIdx, item, count] of z.loop(value)) {...}` and it will work as expected. At the same time you `filter`, `map`, `take` etc while doing so, declaratively!
 
-- [z.each](/functions/each.html) is a more powerful `_.each()` (which improved `Array.forEach` by allowing objects as well), that based is based on [`z.loop`](/functions/loop.html) and works with any kind of nested values (i.e collection) such as Array, Object, Map & Set). It accepts a callback `(item, keyOrIdx, count) => {}` and since its built on `z.loop`, it accepts the same options so you can also `map`, `filter`, `take` while looping, and more
+- [z.each](./functions/each.html) is a more powerful `_.each()` (which improved `Array.forEach` by allowing objects as well), that based is based on [`z.loop`](./functions/loop.html) and works with any kind of nested values (i.e collection) such as Array, Object, Map & Set). It accepts a callback `(item, keyOrIdx, count) => {}` and since its built on `z.loop`, it accepts the same options so you can also `map`, `filter`, `take` while looping, and more
 
-- [z.keys](/functions/keys.html) optionally returns ALL possible natural keys or indexes of any object (Real object, Array, Function, Map & Set entries etc) with many twists: it can also bring `props` of the underlying JS object (instead of its normal keys/indexes), is supports both string & Symbol props, it can filter own & inherited keys, enumerable & non-enumerable and top-level keys (eg `toString`). Naturally, you can choose which keys/indexes/props to include/exclude.
+- [z.keys](./functions/keys.html) optionally returns ALL possible natural keys or indexes of any object (Real object, Array, Function, Map & Set entries etc) with many twists: it can also bring `props` of the underlying JS object (instead of its normal keys/indexes), is supports both string & Symbol props, it can filter own & inherited keys, enumerable & non-enumerable and top-level keys (eg `toString`). Naturally, you can choose which keys/indexes/props to include/exclude.
 
-- [`z.map()`](/functions/map.html) / [`z.filter()`](/functions/filter.html) / [`z.reduce()`](/functions/reduce.html)] / [`z.take()`](/functions/take.html) / [`z.clone()`](/functions/clone.html) / [`z.keys()`](/functions/keys.html) and more are in place, more coming soon. Most are based on the [z.loop](/functions/loop.html) and accept the same options. They all **return the same type, as the input value type** (eg you pass an Array, you get an Array, with filtered/mapped/etc elements).
+- [`z.map()`](./functions/map.html) / [`z.filter()`](./functions/filter.html) / [`z.reduce()`](./functions/reduce.html)] / [`z.take()`](./functions/take.html) / [`z.clone()`](./functions/clone.html) / [`z.keys()`](./functions/keys.html) and more are in place, more coming soon. Most are based on the [z.loop](./functions/loop.html) and accept the same options. They all **return the same type, as the input value type** (eg you pass an Array, you get an Array, with filtered/mapped/etc elements).
 
 Check docs for the full list of functions & usage.
 
 ## Objects & Arrays
 
-- [z.getProp](/functions/getProp.html) gets a property from a nested Property Bag (i.e objects, classes) or Array, using a custom separated string or array path, with many twists (e.g. `separator`, `defaultKey`, `inherited` etc.)
+- [z.getProp](./functions/getProp.html) gets a property from a nested Property Bag (i.e objects, classes) or Array, using a custom separated string or array path, with many twists (e.g. `separator`, `defaultKey`, `inherited` etc.)
 
-- [z.setProp](/functions/setProp.html) sets a property to a nested Property Bag (i.e objects, classes) or Array, using a string or array path, with many twists (such as `separator`, `create`, `overwrite`).
+- [z.setProp](./functions/setProp.html) sets a property to a nested Property Bag (i.e objects, classes) or Array, using a string or array path, with many twists (such as `separator`, `create`, `overwrite`).
 
-- [z.mutate](/functions/mutate.html) mutates values of an object/array, using a mutator function, if *agreements* are met.
+- [z.mutate](./functions/mutate.html) mutates values of an object/array, using a mutator function, if *agreements* are met.
 
 ## Equality & Similarity
 
-- [z.isEqual](/functions/isEqual.html) checks if two values are deep equal, similar to `_.isEqual` but with many optional twists (`inherited`, `like`, `path`, `exclude` etc.)
+- [z.isEqual](./functions/isEqual.html) checks if two values are deep equal, similar to `_.isEqual` but with many optional twists (`inherited`, `like`, `path`, `exclude` etc.)
 
-- [z.isLike](/functions/isLike.html) checks if two values are deep equal, but the first value only having a subset of props being equal. Shortcut to [ z.isEqual](/functions/isEqual.html).
+- [z.isLike](./functions/isLike.html) checks if two values are deep equal, but the first value only having a subset of props being equal. Shortcut to [ z.isEqual](./functions/isEqual.html).
 
-- [z.isExact](/functions/isExact.html) checks if two values are deep equal, then all refs must point to the same objects, not lookalike clones! Shortcut to [ z.isEqual](/functions/isEqual.html).
+- [z.isExact](./functions/isExact.html) checks if two values are deep equal, then all refs must point to the same objects, not lookalike clones! Shortcut to [ z.isEqual](./functions/isEqual.html).
 
-- [z.isDisjoint](/functions/isDisjoint.html) Checks if there are no common value between the two objects/arrays (i.e. their intersection is empty)
+- [z.isDisjoint](./functions/isDisjoint.html) Checks if there are no common value between the two objects/arrays (i.e. their intersection is empty)
 
-- [z.isRefDisjoint](/functions/isRefDisjoint.html) Given two Property Bags (i.e objects, classes) or Arrays, it returns `true` if there are **NO common/shared references** in their properties.
+- [z.isRefDisjoint](./functions/isRefDisjoint.html) Given two Property Bags (i.e objects, classes) or Arrays, it returns `true` if there are **NO common/shared references** in their properties.
 
-- [z.isSetEqual](/functions/isArraySetEqual.html) Checks if 2 Sets or 2 arrays are equal, without caring about the order of their items, with custom equality functions (on one, or either side).
+- [z.isSetEqual](./functions/isArraySetEqual.html) Checks if 2 Sets or 2 arrays are equal, without caring about the order of their items, with custom equality functions (on one, or either side).
 
 ### Type Checks - Runtime Type System
 
-- [z.type](/functions/type.html) returns the type of the value, as a superset of `typeof` (with a compatible naming format when these co-exist), but in a much richer & *non-Bad Parts* manner, recognising & many more distinct "real world" types. For example `'object'` is considered only and for all real `{}` objects, in all object forms (i.e plain {} object, instance etc.) but does NOT include Arrays, Functions etc unlike lodash & typeof. Naturally `null`'s type is well... `'null'` and not `'object'`, unlike JS's dummy `type`. Also, functions are recognised as `'function'` but ES6 Classes as `'class'`. And NaNs as just a `'NaN'`, not a number as the name stipulates! Finally, it recognises many other types, like Set, Map, Iterator etc.
+- [z.type](./functions/type.html) returns the type of the value, as a superset of `typeof` (with a compatible naming format when these co-exist), but in a much richer & *non-Bad Parts* manner, recognising & many more distinct "real world" types. For example `'object'` is considered only and for all real `{}` objects, in all object forms (i.e plain {} object, instance etc.) but does NOT include Arrays, Functions etc unlike lodash & typeof. Naturally `null`'s type is well... `'null'` and not `'object'`, unlike JS's dummy `type`. Also, functions are recognised as `'function'` but ES6 Classes as `'class'`. And NaNs as just a `'NaN'`, not a number as the name stipulates! Finally, it recognises many other types, like Set, Map, Iterator etc.
 
-- [z.functionType](/functions/functionType.html) returns the specific type of the function, eg `'class'`, `'Function'`, `'AsyncFunction'`, `'GeneratorFunction'`, `'AsyncGeneratorFunction'` & `'ArrowFunction'`.
+- [z.functionType](./functions/functionType.html) returns the specific type of the function, eg `'class'`, `'Function'`, `'AsyncFunction'`, `'GeneratorFunction'`, `'AsyncGeneratorFunction'` & `'ArrowFunction'`.
 
-- [z.objectType](/functions/objectType.html) returns the specific type of the real object, either `'pojso'` or `'instance'`.
+- [z.objectType](./functions/objectType.html) returns the specific type of the real object, either `'pojso'` or `'instance'`.
 
 More in the docs
 
@@ -234,19 +246,19 @@ More in the docs
 
 A plethora of missing type `isXxx(value)` checks (more than 25), that are not provided by lodash and most other libraries or are scattered around stackoverflow and other libs. In Zen they are all & tested in one place. For example:
 
-- [z.isClass](/functions/isClass.html) checks if a value is an ES2015 class
+- [z.isClass](./functions/isClass.html) checks if a value is an ES2015 class
 
-- [z.isIterator](/functions/isIterator.html) checks if a value is any kind of Iterator // @todo: add tests
+- [z.isIterator](./functions/isIterator.html) checks if a value is any kind of Iterator // @todo: add tests
 
-- [z.isPromise](/functions/isPromise.html) checks if a value is a (native) Promise
+- [z.isPromise](./functions/isPromise.html) checks if a value is a (native) Promise
 
-- [z.isRealObject](/functions/isRealObject.html) checks if a value is a Hash (a.k.a. an `{}` object in any form, such as object literal, class instance created with `new MyClass`, or object created by `Object.create(parent)`, with or without a prototype constructor etc.). There is no other way to check for this, as `_.isObject` & `_.isPlainObject` don't do the trick!
+- [z.isRealObject](./functions/isRealObject.html) checks if a value is a Hash (a.k.a. an `{}` object in any form, such as object literal, class instance created with `new MyClass`, or object created by `Object.create(parent)`, with or without a prototype constructor etc.). There is no other way to check for this, as `_.isObject` & `_.isPlainObject` don't do the trick!
 
-- [z.isSingle](/functions/isSingle.html) checks if the value's data type is "plain" in terms of NOT naturally/normally having nested items (eg props, array items etc.) inside it. For example number, string etc. are single.
+- [z.isSingle](./functions/isSingle.html) checks if the value's data type is "plain" in terms of NOT naturally/normally having nested items (eg props, array items etc.) inside it. For example number, string etc. are single.
 
-- [z.isMany](/functions/isMany.html) the opposite of isSingle: checks if the value's data type is "nested" in terms of naturally/normally having nested items (eg props, array items etc.) inside it. For example object, array, Map etc. are nested.
+- [z.isMany](./functions/isMany.html) the opposite of isSingle: checks if the value's data type is "nested" in terms of naturally/normally having nested items (eg props, array items etc.) inside it. For example object, array, Map etc. are nested.
 
-- [z.isPrimitive](/functions/isPrimitive.html) according to the [definition of "primitive" in JavaScript](https://developer.mozilla.org/en-US/docs/Glossary/Primitive)
+- [z.isPrimitive](./functions/isPrimitive.html) according to the [definition of "primitive" in JavaScript](https://developer.mozilla.org/en-US/docs/Glossary/Primitive)
 
 plus many many more...
 
@@ -254,11 +266,11 @@ plus many many more...
 
 JavaScript has a lot of numbers, and it sucks when it comes to checking which is which. Trying to smooth it a bit, we have 3 levels of checks:
 
-- [z.isStrictNumber](/functions/isStrictNumber.html) checks if value is a strict `number`, excluding NaNs, boxed `new Number('123')`, `BigInt` & `Infinity`.
+- [z.isStrictNumber](./functions/isStrictNumber.html) checks if value is a strict `number`, excluding NaNs, boxed `new Number('123')`, `BigInt` & `Infinity`.
 
-- [z.isNumber](/functions/isNumber.html) checks if value is a **strict number** OR `BigInt` OR `Infinity`, excluding only the invalid `NaN`s & boxed Numbers.
+- [z.isNumber](./functions/isNumber.html) checks if value is a **strict number** OR `BigInt` OR `Infinity`, excluding only the invalid `NaN`s & boxed Numbers.
 
-- [z.isAnyNumber](/functions/isAnyNumber.html) Checks and returns true, if value is any kind of a "real number", a good candidate for `Number()`: boxed `new Number()`, `BigInt`, `Infinity` or even a string that represents a "real number" (i.e. any value that is resulting to a non-NaN via `Number(value)`).
+- [z.isAnyNumber](./functions/isAnyNumber.html) Checks and returns true, if value is any kind of a "real number", a good candidate for `Number()`: boxed `new Number()`, `BigInt`, `Infinity` or even a string that represents a "real number" (i.e. any value that is resulting to a non-NaN via `Number(value)`).
 
 ### More...
 
@@ -266,15 +278,15 @@ More exotic ones exist - check the typedoc Docs for the full list (`npm run docs
 
 ### Various type utils
 
-- [z.numberEnumToNumberVal](/functions/numberEnumToNumberVal.html) converts any value of either side of a **numeric enum** to the number side of the enum
+- [z.numberEnumToNumberVal](./functions/numberEnumToNumberVal.html) converts any value of either side of a **numeric enum** to the number side of the enum
 
-- [z.numberEnumToStringKey](/functions/numberEnumToStringKey.html) converts any value of either side of a **numeric enum** to the string key side
+- [z.numberEnumToStringKey](./functions/numberEnumToStringKey.html) converts any value of either side of a **numeric enum** to the string key side
 
 ## Various / Experimental / Abandoned
 
-- [z.isAgree](/functions/isAgree.html) checks if value is in *agreement* with one or more agreement(s) (functions or values).
+- [z.isAgree](./functions/isAgree.html) checks if value is in *agreement* with one or more agreement(s) (functions or values).
 
-- [z.arrayize](/functions/arrayize.html) converts a `value` to an array with `[ value ]`, if value is not already an array. Only `undefined` yields an empty array.
+- [z.arrayize](./functions/arrayize.html) converts a `value` to an array with `[ value ]`, if value is not already an array. Only `undefined` yields an empty array.
 
 ## History & Codebase
 
