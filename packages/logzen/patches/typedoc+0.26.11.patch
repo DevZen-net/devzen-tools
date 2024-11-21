@@ -1,0 +1,27 @@
+diff --git a/node_modules/typedoc/dist/lib/converter/comments/textParser.js b/node_modules/typedoc/dist/lib/converter/comments/textParser.js
+index c6f28a0..6186e5f 100644
+--- a/node_modules/typedoc/dist/lib/converter/comments/textParser.js
++++ b/node_modules/typedoc/dist/lib/converter/comments/textParser.js
+@@ -64,14 +64,14 @@ function textContent(sourcePath, token, i18n, warning, outContent, files, atNewL
+         });
+         lastPartEnd = ref.end;
+         data.pos = ref.end;
+-        if (!ref.target) {
+-            warning(i18n.relative_path_0_is_not_a_file_and_will_not_be_copied_to_output(token.text.slice(ref.pos, ref.end)), {
+-                kind: lexer_1.TokenSyntaxKind.Text,
+-                // ref.pos is relative to the token, but this pos is relative to the file.
+-                pos: token.pos + ref.pos,
+-                text: token.text.slice(ref.pos, ref.end),
+-            });
+-        }
++        // if (!ref.target) {
++        //     warning(i18n.relative_path_0_is_not_a_file_and_will_not_be_copied_to_output(token.text.slice(ref.pos, ref.end)), {
++        //         kind: lexer_1.TokenSyntaxKind.Text,
++        //         // ref.pos is relative to the token, but this pos is relative to the file.
++        //         pos: token.pos + ref.pos,
++        //         text: token.text.slice(ref.pos, ref.end),
++        //     });
++        // }
+     }
+     while (data.pos < token.text.length) {
+         const link = checkMarkdownLink(data, reentry);

@@ -74,7 +74,7 @@
     "clean:docs": "npm run docs:clean",
     "clean:gen": "npx rimraf dist/docs/generated && npx mkdirp dist/docs/generated",
     "chores": "npm-run-all chore:patch-package",
-    "chore:patch-package": "npx patch-package --error-on-fail",
+    "chore:patch-package": "npx patch-package --error-on-fail --error-on-warn",
     "distzen": "npx distzen",
     "distzen!": "npx distzen --watch",
     "unlock": "rimraf package-lock.json",

@@ -281,7 +281,15 @@ describe(
     docsBlock(`
 # LogZen v${packageJson.version}
 
-A radical and powerful but familiar **Logger**, with emphasis on Granularity & Context, Debugging BigApps & [Observability](https://en.wikipedia.org/wiki/Observability). Outputs anywhere, colorful inspected values, customizable Header and many more options. Written in TypeScript & extensively typed & tested (hint: [these docs are actually tests!](#md:logzen-documentation--tutorial--integration-tests-suite)).
+A radically powerful (yet familiar) **Logger**, with emphasis on Granularity & Context, Debugging BigApps & [Observability](https://en.wikipedia.org/wiki/Observability), but also beautiful output & configurability.
+
+Fully configurable, outputs anywhere (stdout, files etc), colorful inspected values or JSON or anything you want, customizable Headers with automatic timers & Date/Time plus many more context-aware cascading options.
+
+Written in TypeScript & extensively typed & tested (hint: [**these docs are actually tests!**](#md:logzen-documentation--tutorial--integration-tests-suite)).
+
+NOTE: Works/tested **only on nodejs** (maybe bun?), but browser/bun/whatever compatibility & testing coming in the future.
+
+NOTE: These docs are hosted at https://neozen.dev/logzen (OR locally with \`$ npx npm-run-all docs:build docs:serve\`)
 
 [Jump to Documentation & Examples](#md:chapters-outline)
 
@@ -318,7 +326,7 @@ A radical and powerful but familiar **Logger**, with emphasis on Granularity & C
 
 - Very simple to use [API](#md:13-logzen-api-overview) with unique & powerful features easy at hand.
 
-- Unique context-aware [Cascading Options](#md:6---cascading-options-instanceconstructor-options-logpathoptions-and-defaultoptions) system. It's aware where the logger lives (& logs) and what options apply to it (at boot or on the fly).
+- Unique path-aware [Cascading Options](#md:6---cascading-options-instanceconstructor-options-logpathoptions-and-defaultoptions) system. It's aware where the logger lives (& logs) and what options apply to it (at boot or on the fly).
 
 - Pretty prints nested objects & arrays and all other printables in varying ways, colorful & nested but most importantly ready to be used in different contexts (eg strict JSON with "double quotes" or PoJSo or respecting/ignoring object's \`toString()\`) method etc, having solved circular refs etc. Print options are fully configurable (eg nested depth, length, colors etc) with options mostly compatible to node \`util.inspect()\`. Never see printouts like: \`{ 'someObject': [Object] }\` or non-copy-paste-ables like \`Animal {kind: 'Lion', name: 'Shiba', friends: ['Nala', length: 1]}\` but instead:  ![pretty-printing](./src/docs/media/pretty-printing.png "pretty-printing")
 
@@ -335,6 +343,8 @@ A radical and powerful but familiar **Logger**, with emphasis on Granularity & C
 - [Arguments Pass Through](#md:11-args-pass-through---log-anywhere-even-inside-function-calls) so you can log everywhere, even inside other expressions or function calls eg. \`myFunction(l.log1(suspiciousArg), anotherArg)\`! For single argument (via the \`.xxx1()\` shortcut) or multiple arguments via \`...\` & \`.slice()\`.
 
 - Outputs via \`console.xxx()\` print methods but can [trivially adapt to print via Custom Outputs](#md:7-custom-output---redirecting--transforming-output) at \`stdout\`, files, other Loggers & transports (eg Winston, DataDog, Kafka etc), streams etc, in either plain text or JSON (built-in). You can easily configure for CSV, XML and anything else. ![custom-output](./src/docs/media/custom-output.png "custom-output")
+
+- Compatible (not 100% but...) with \`console.xxx\` methods, so can be a drop in replacement (i.e replace \`console.\` with \`l.\` (or \`logger.\` or whatever)
 
 - Improved \`.trace()\`, colorfully, without internal noise & more:
 
@@ -519,31 +529,38 @@ as all paths are assumed to be relative to this path! If you execute from differ
 
 ## 1.1 Installation
 
-      npm i ${packageJson.name}
-
+\`\`\`bash
+      $ npm i ${packageJson.name}
+\`\`\`
 
 ## 1.1.1 Import & Require
 
 How to require / import LogZen:
 
-
+\`\`\`js
       const { LogZen } = require('${packageJson.name}')
-
+\`\`\`
                   OR
 
+\`\`\`ts
       import { LogZen, ELogLevel, Options, /* etc */ } from '${packageJson.name}' // TypeScript/ES etc
+\`\`\`
 
 ## 1.1.2 Construct a LogZen instance & Conventions
 
 The **LogZen convention** is to have one LogZen instance per file, simply named \`l\`.
 
+\`\`\`ts
       const l = new LogZen() // can pass options
+\`\`\`
 
 or you can pick your own naming convention, like \`logger\` etc. In this tutorial we'll create multiple instances for example's sake, numbered after the chapter & example number, eg \`l1_1\`, \`l1_2\`, \`l2_1\` etc.
 
 You can also use individual log methods as standalone, without the \`l.\` prefix, as they are bound to the instance:
 
+\`\`\`ts
        const { log, log1, willLog, warn, warn1, /*..etc..*/  } = new LogZen()
+\`\`\`
 
 ## 1.2 Hello world
 

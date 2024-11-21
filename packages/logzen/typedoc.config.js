@@ -8,7 +8,7 @@ const config = {
   // media: './src/docs/media', // removed in 0.26.0 https://typedoc.org/guides/changelog/
   searchInComments: true,
   searchInDocuments: true,
-  cleanOutputDir: true,
+  cleanOutputDir: false,
   intentionallyNotExported: [
     'TprintTransformFunction',
     'TLog1MethodArgsToReturnLastArg'

@@ -1,7 +1,7 @@
 {
   "name": "@neozen/logzen",
   "version": "1.0.0-alpha.2",
-  "description": "A radically powerful yet familiar Logger, with emphasis on Granularity & Context, Debugging BigApps & Observability. Outputs anywhere, colorful values, customizable Header & many more options. Extensively Typed & tested.",
+  "description": "A radically powerful yet familiar **Logger**, with emphasis on Granularity & Context, Debugging BigApps & Observability. Outputs anywhere, colorful values, customizable Header & many more options. Extensively Typed & tested.",
   "scripts": {
     "****************** A Library Setup *****": "",
     "################# Running ": "",
@@ -76,7 +76,7 @@
     "clean": "npx rimraf -g dist coverage .nyc_output result junit.xml ~temp tsconfig.*.tsbuildinfo && npm run clean:gen",
     "clean:docs": "npm run docs:clean",
     "clean:gen": "npx rimraf dist/docs/generated",
-    "chores": "npm-run-all chore:fixInspectOptions",
+    "chores": "npm-run-all chore:fixInspectOptions chore:patch-package",
     "chore:fixInspectOptions": "echo \"export const InspectOptions = util.InspectOptions;\" >> node_modules/node-inspect-extracted/index.mjs\n",
     "chore:patch-package": "npx patch-package --error-on-fail --error-on-warn",
     "distzen": "npx distzen",
