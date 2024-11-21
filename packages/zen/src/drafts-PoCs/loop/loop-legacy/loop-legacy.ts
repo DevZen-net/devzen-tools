@@ -415,7 +415,7 @@ export function loop<Tinput extends RegExp, TmapItemReturn = Tinput, TmapKeyRetu
 >
 
 /**
- * # TSingle # isSingle or Weak items (non-isMany) // @todo: add typings for props: 'all' | true
+ * # Single # isSingle or Weak items (non-isMany) // @todo: add typings for props: 'all' | true
  * @ignore
  * @todo: OLD, remove
  */
@@ -474,7 +474,7 @@ export function loop<
  *
  * Similarly to what `_.each()` tried to do more than a decade ago, using the same syntax/code for both "collections" of `{}` and `[]` values, now `z.loop()` promises to work the same way, for any value type that has "many" values (and more).
  *
- * And of course it powers its own [`z.each`](/functions/each.html) function, along with the usual [`map`](/functions/map.html), [`filter`](/functions/filter.html), [`take`](/functions/take.html), [`reduce`](/functions/reduce.html) etc offsprings.
+ * And of course it powers its own [`z.each`](../functions/each.html) function, along with the usual [`map`](../functions/map.html), [`filter`](../functions/filter.html), [`take`](../functions/take.html), [`reduce`](../functions/reduce.html) etc offsprings.
  *
  * # z.loop() Reasoning
  *
@@ -494,7 +494,7 @@ export function loop<
  *
  * and it will work as expected everywhere.
  *
- * Zen `loop()` exposes all nested items/values as a tuple with 3 parts: `[item, idxOrKey?, count?]` for each item/element/entry of an [`z.isMany()`](/functions/isMany.html) (or for [`z.isSingle()`](/functions/isSingle.html) types as well if `loopSingles: true`).
+ * Zen `loop()` exposes all nested items/values as a tuple with 3 parts: `[item, idxOrKey?, count?]` for each item/element/entry of an [`z.isMany()`](../functions/isMany.html) (or for [`z.isSingle()`](../functions/isSingle-1.html) types as well if `loopSingles: true`).
  *
  * # Filtering, Mapping & Taking
  *
@@ -547,7 +547,7 @@ export function loop<
  *
  * But you can also **choose** to iterate on the **raw** `props` of the underlying JS `Object`, by using `options.props: true`.
  *
- * This is powered by [`z.keys`](/functions/keys.html) & fully supports [`IkeysOptions`](/interfaces/IkeysOptions.html), since [`IloopOptions`](/interfaces/IloopOptions.html) extends it!
+ * This is powered by [`z.keys`](../functions/keys.html) & fully supports [`IkeysOptions`](../interfaces/IkeysOptions.html), since [`IloopOptions`](../interfaces/IloopOptions.html) extends it!
  *
  * Note `options.props: 'all'` works also (includes both props & natural indexes/keys, in same iterable) but it can be ambiguous & is experimental. The `count` is restarted in each part though & props come first!
  *
@@ -557,11 +557,11 @@ export function loop<
  *
  * Note: `mapOrSet.values()` & `mapOrSet.keys()` is experimental - they are  supported with a hack, as they can't be distinguished from `.entries()` at runtime. In short `loop()` on `.values()`/`.keys()` work with all values except **arrays of exact length 2** as values/keys!
  *
- * @see [`isMapIterator`](/functions/isMapIterator.html) & [`isSetIterator`](/functions/isSetIterator.html).
+ * @see [`isMapIterator`](../functions/isMapIterator.html) & [`isSetIterator`](../functions/isSetIterator.html).
  *
  * # `isSingleOrWeak` values
  *
- * All other [`z.isSingleOrWeak`](/functions/isSingleOrWeak.html) values iterate on the single value itself as, **the first and only iteration**.
+ * All other [`z.isSingleOrWeak`](../functions/isSingleOrWeak.html) values iterate on the single value itself as, **the first and only iteration**.
  *
  * You can also opt to be `strict: true` about it, and throw an error if these values are passed. Or just ignore iterating over them, via `loopSingles: false` where `loop()`. In summary:
  *
@@ -603,9 +603,9 @@ export function loop<
  *
  * - It works the same for all these different z.types such as `realObject`, `Array`, `Map`, `Set`, `Iterator`, `Generator`, both sync and Async!
  *
- * - Many options for filtering & limiting what is iterated over: hidden, own, inherited, Symbols on Objects, Set & Map items, enumerable & non-enumerable etc. The optionality is achieved via [`IloopOptions`](/interfaces/IloopOptions.html) (which extends [`TallKeysOptions`](/interfaces/TallKeysOptions.html))
+ * - Many options for filtering & limiting what is iterated over: hidden, own, inherited, Symbols on Objects, Set & Map items, enumerable & non-enumerable etc. The optionality is achieved via [`IloopOptions`](../interfaces/IloopOptions.html) (which extends [`TallKeysOptions`](../interfaces/TallKeysOptions.html))
  *
- * - It extends [`z.keys`](/functions/keys.html) to solve many limitations of iteration in Objects:
+ * - It extends [`z.keys`](../functions/keys.html) to solve many limitations of iteration in Objects:
  *   - only-string keys are returned by `Object.keys`, `_.keys`, `_.each` and many other popular ways.
  *   - only the own props are returned with `Object.keys`, `_.keys`, `_.each` etc. All are returned with `for..in`
  *

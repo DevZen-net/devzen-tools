@@ -5,7 +5,7 @@
  *      const myAsyncGenerator = await myAsyncGeneratorFunction()
  *      z.isAsyncGenerator(myAsyncGenerator) // true
  *
- * @see [`z.isGenerator()`](/functions/isGenerator.html)
+ * @see [`z.isGenerator()`](../functions/isGenerator.html)
  *
  * @param val
  */

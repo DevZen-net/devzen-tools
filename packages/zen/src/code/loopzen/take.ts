@@ -13,13 +13,13 @@ import { project } from './project'
  *
  * Note: No guaranteed order for property bags like `Objects`, `Sets`, `Maps` etc and return the same value type of input value.
  *
- * @see [`z.filter`](/functions/filter.html) for filtering elements - the `filterSingles` option also applies here: if `take` is used with `isSingle` values, `filterSingles` must be `true` or it will throw an error.
+ * @see [`z.filter`](../functions/filter.html) for filtering elements - the `filterSingles` option also applies here: if `take` is used with `isSingle` values, `filterSingles` must be `true` or it will throw an error.
  *
  * @param input any value to take elements from. Usually an `Array`, `Object`, `Map`, `Iterator` etc. but you can also pass single values, like a `number`, `string` etc - see `loopSingles` option.
  *
  * @param n the number of elements to take. If a `function`, it will be called with `(item, keyIdx, value, count)`. If it returns `true` it will take items, as soon as it returns `false` or `z.STOP` it stops taking items.
  *
- * @param options you can optionally pass an [`IloopOptions`](/interfaces/IloopOptions.html) object to control which keys / idx are visited (own / inherited / enumerable etc) and more.
+ * @param options you can optionally pass an [`IloopOptions`](../interfaces/IloopOptions.html) object to control which keys / idx are visited (own / inherited / enumerable etc) and more.
  */
 export function take<
   Tinput extends any,

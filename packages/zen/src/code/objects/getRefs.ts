@@ -6,14 +6,14 @@ import { isStrictNumber } from '../typezen/isStrictNumber'
 const hasProp = {}.hasOwnProperty
 
 /**
- * Default options for [`z.getRefs`](/functions/getRefs.html)
+ * Default options for [`z.getRefs`](../functions/getRefs.html)
  */
 export const getRefs_DefaultOptions = {
   depth: true,
 }
 
 /**
- * Options type for [`z.getRefs`](/functions/getRefs.html)
+ * Options type for [`z.getRefs`](../functions/getRefs.html)
  */
 export interface GetRefsOptions extends ILoopOptions<any, any, any, any, any> {
   depth?: boolean | number

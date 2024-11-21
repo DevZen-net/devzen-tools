@@ -2,7 +2,7 @@ import * as _ from 'lodash'
 import { isRealObject } from '../typezen/isRealObject'
 
 /**
- * Options interface for [`z.setProp`](/functions/setProp.html)
+ * Options interface for [`z.setProp`](../functions/setProp.html)
  */
 export interface SetPropOptions {
   separator?: string
@@ -11,7 +11,7 @@ export interface SetPropOptions {
 }
 
 /**
- * Default options for [`z.setProp`](/functions/setProp.html)
+ * Default options for [`z.setProp`](../functions/setProp.html)
  */
 export const setProp_DefaultOptions = {
   separator: '/',
@@ -38,9 +38,9 @@ export const setProp_DefaultOptions = {
  *
  *  - `separator: string = '/'` the separator to use when splitting the path string. Default is `/`
  *
- *  - `create: boolean = false` if truthy, it creates a new `{}` for missing paths. If falsey, if there is a non [`z.isRealObject`](/functions/isRealObject.html) while expanding the path, it doesn't create a new `{}` and it doesn't set the value. Default is `false`.
+ *  - `create: boolean = false` if truthy, it creates a new `{}` for missing paths. If falsey, if there is a non [`z.isRealObject`](../functions/isRealObject.html) while expanding the path, it doesn't create a new `{}` and it doesn't set the value. Default is `false`.
  *
- *  - `overwrite: string | boolean = false` if true (or truthy string), objects paths that don't exist are created, just like `create: true`. But also, non [`z.isRealObject`](/functions/isRealObject.html) values are replaced by a new `{}` that will 'hold' this new path. If it is a String, then a key/prop by that name is created on the new `{}`, holding the old value that was overwritten. Default is `false`.
+ *  - `overwrite: string | boolean = false` if true (or truthy string), objects paths that don't exist are created, just like `create: true`. But also, non [`z.isRealObject`](../functions/isRealObject.html) values are replaced by a new `{}` that will 'hold' this new path. If it is a String, then a key/prop by that name is created on the new `{}`, holding the old value that was overwritten. Default is `false`.
  *
  *  - @todo: NOT IMPLEMENTED `merge` {boolean} If true, objects at the same path are `_.merge`, instead of overwritten.
  *

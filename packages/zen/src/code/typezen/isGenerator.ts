@@ -7,7 +7,7 @@ import * as _ from 'lodash'
  *      const myGenerator = myGeneratorFunction()
  *      z.isGenerator(myGenerator) // true
  *
- * @see [`z.isAsyncGenerator()`](/functions/isAsyncGenerator.html). The `AsyncGenerator` is NOT included, only pure `Generator`!
+ * @see [`z.isAsyncGenerator()`](../functions/isAsyncGenerator.html). The `AsyncGenerator` is NOT included, only pure `Generator`!
  *
  * @param value
  */

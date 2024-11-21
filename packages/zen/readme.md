@@ -134,13 +134,13 @@ The Type System comes packed with:
 
 * [`z.type`](./functions/type.html) & many other `xxxType()` functions, with many natural-occuring & synthetic types
 
-* A plethora of individual type inference checkers like ( [`z.isSingle`](./functions/isSingle.html),  [`z.isMany`](./functions/isMany.html),  [`z.isPrimitive`](./functions/isPrimitive.html), [`z.isClass`](./functions/isClass.html) and tens more
+* A plethora of individual type inference checkers like ( [`z.isSingle`](./functions/isSingle-1.html),  [`z.isMany`](./functions/isMany.html),  [`z.isPrimitive`](./functions/isPrimitive.html), [`z.isClass`](./functions/isClass.html) and tens more
 
-* You also get useful types like [`Tany`](./types/Tany.html) (so you can `Exclude<Tany, TPrimitive>`), along with [`TPrimitive`](./types/TPrimitive.html), [`TSingle`](./types/TSingle.html) & [`TMany`](./types/TMany.html) and many more, to help you with your TypeScript types.
+* You also get useful types like [`Tany`](./types/Tany.html) (so you can `Exclude<Tany, TPrimitive>`), along with [`TPrimitive`](./types/TPrimitive.html), [`TSingle`](./types/TSingle.html) & [`Many`](./types/Many.html) and many more, to help you with your TypeScript types.
 
-* You even get [`TPrimitiveNames`](./types/TPrimitiveNames.html) and [`TsingleNames`](./types/TsingleNames.html) and similarly for all, to help you with your TypeScript types handling!
+* You even get [`PrimitiveNames`](./types/PrimitiveNames.html) and [`SingleNames`](./types/SingleNames.html) and similarly for all, to help you with your TypeScript types handling!
 
-* To be complete, you also get a runtime [`PRIMITIVE_TYPES`](./variables/PRIMITIVE_TYPES.html), [`SINGLE_TYPES`](./variables/SINGLE_TYPES.html) and similarly for all, to help you with your runtime type checks!
+* To be complete, you also get a runtime [`PRIMITIVE_NAMES`](./variables/PRIMITIVE_NAMES.html), [`SINGLE_NAMES`](./variables/SINGLE_NAMES.html) and similarly for all, to help you with your runtime type checks!
 
 * Equality & similarity checkers like [`z.isEqual`](./functions/isEqual.html),  [`z.isLike`](./functions/isLike.html) and many more, and all `isXxx` type checks you'll ever need ( [`z.isBigInt`](./functions/isBigInt.html),  [`z.isGenerator`](./functions/isGenerator.html) etc) & few set-theory utils (`z.isSetEqual`). All accepting options, to cover many different use cases.
 
@@ -148,21 +148,21 @@ The Type System comes packed with:
 
 ## Native Iteration on anything
 
-The mighty [z.loop](./functions/loop.html) allows the iteration on ALL collections/nested values types (a.k.a `z.isMany` like `Array`, `realObject`, `Set`, `Map`, `Iterator`, `AsyncIterator` etc) **in the exact same way**, with native JS only:
+The mighty [z.loop](./functions/loop.html) allows the iteration on ALL collections/nested values types (a.k.a `z.isMany` like `Array`, `realObject`, `Set`, `Map`, `Iterator`, `Generator`, `AsyncIterator` etc) **in the exact same way**, with native JS only:
 
-You can just 
+```ts
+    for (const [val, key, count, input] of z.loop(anyInput)) {/*code*/}
+```
 
-    for const [val, key] of z.loop(anything) {...}
-  
-and iterate on `anything` that has nested values on it, in the same way, with the same code, without any special cases or special libraries or weird callbacks and APIs. In plain JS.
+to iterate on `anyInput` that has nested values on it, in the same way, with the same code, without any special cases or special libraries or weird callbacks and APIs. In plain, native JS.
 
 Forget iteration (and projections) with `Array.forEach/map/filter()`, lodash limited `_.each` & `_.map` etc and the same with Ramda, IxJs, `Set.entries()` and the myriads other ways for iteration & projections. They are suboptimal, some don't support async/await, others have steep APIs, others don't support `Set` and `Map` etc. 
 
-Just a `for...of z.loop(anything) {}` and you can loop over anything has nested values / props (and also `map`, `filter`, `take` etc while doing so, declaratively!)
+Just a `for...of z.loop(anything)` and you can loop over anything has nested values / props (and also `map`, `filter`, `take` etc while doing so, declaratively!)
 
 ## Project & Filter Anything
 
-A collection of tools like [`z.map()`](./functions/map.html) / [`z.filter()`](./functions/filter.html) / [`z.take()`](./functions/take.html) / [`z.clone()`](./functions/clone.html) / [`z.keys()`](./functions/keys.html) and more like [`z.reduce()`](./functions/reduce.html)]  (all based on the [z.loop](./functions/loop.html)) that **return the same type, as the input value type**!
+A collection of projection functions like [`z.map()`](./functions/map.html) / [`z.filter()`](./functions/filter.html) / [`z.take()`](./functions/take.html) / [`z.clone()`](./functions/clone.html) / [`z.keys()`](./functions/keys.html) and more like [`z.reduce()`](./functions/reduce.html)]  (all based on the [z.loop](./functions/loop.html)) that **return the same type, as the input value type**!
 
 * You pass an Array, you get an Array (with mapped/filtered/etc elements - i.e `_.map` / `_.filter`).
 
@@ -200,7 +200,7 @@ Typings are also tested, mostly via [`ts-expect`](https://github.com/TypeStrong/
 
 ## Nested / Collections & Iteration
 
-- [z.loop](./functions/loop.html) returns an `Iterator` of tuples `[item, idxOrKey, count]` **that work the same way** with any kind of nested values (i.e collection) such as `Array`, `Object`, `Map`, `Set`, `Iterator`, `class` and more). But even [`z.isSingle`](./functions/isSingle.html) (i.e non-nested) values are iterated once, yielding the value itself (but you can opt to be strict)! Currently, in the JS world there was no way to iterate on anything in the same way, but now you can `for (const [keyOrIdx, item, count] of z.loop(value)) {...}` and it will work as expected. At the same time you `filter`, `map`, `take` etc while doing so, declaratively!
+- [z.loop](./functions/loop.html) returns an `Iterator` of tuples `[item, idxOrKey, count]` **that work the same way** with any kind of nested values (i.e collection) such as `Array`, `Object`, `Map`, `Set`, `Iterator`, `class` and more). But even [`z.isSingle`](./functions/isSingle-1.html) (i.e non-nested) values are iterated once, yielding the value itself (but you can opt to be strict)! Currently, in the JS world there was no way to iterate on anything in the same way, but now you can `for (const [keyOrIdx, item, count] of z.loop(value)) {...}` and it will work as expected. At the same time you `filter`, `map`, `take` etc while doing so, declaratively!
 
 - [z.each](./functions/each.html) is a more powerful `_.each()` (which improved `Array.forEach` by allowing objects as well), that based is based on [`z.loop`](./functions/loop.html) and works with any kind of nested values (i.e collection) such as Array, Object, Map & Set). It accepts a callback `(item, keyOrIdx, count) => {}` and since its built on `z.loop`, it accepts the same options so you can also `map`, `filter`, `take` while looping, and more
 
@@ -248,19 +248,17 @@ A plethora of missing type `isXxx(value)` checks (more than 25), that are not pr
 
 - [z.isClass](./functions/isClass.html) checks if a value is an ES2015 class
 
-- [z.isIterator](./functions/isIterator.html) checks if a value is any kind of Iterator // @todo: add tests
-
 - [z.isPromise](./functions/isPromise.html) checks if a value is a (native) Promise
 
 - [z.isRealObject](./functions/isRealObject.html) checks if a value is a Hash (a.k.a. an `{}` object in any form, such as object literal, class instance created with `new MyClass`, or object created by `Object.create(parent)`, with or without a prototype constructor etc.). There is no other way to check for this, as `_.isObject` & `_.isPlainObject` don't do the trick!
 
-- [z.isSingle](./functions/isSingle.html) checks if the value's data type is "plain" in terms of NOT naturally/normally having nested items (eg props, array items etc.) inside it. For example number, string etc. are single.
+- [z.isSingle](./functions/isSingle-1.html) checks if the value's data type is "plain" in terms of NOT naturally/normally having nested items (eg props, array items etc.) inside it. For example number, string etc. are single.
 
 - [z.isMany](./functions/isMany.html) the opposite of isSingle: checks if the value's data type is "nested" in terms of naturally/normally having nested items (eg props, array items etc.) inside it. For example object, array, Map etc. are nested.
 
 - [z.isPrimitive](./functions/isPrimitive.html) according to the [definition of "primitive" in JavaScript](https://developer.mozilla.org/en-US/docs/Glossary/Primitive)
 
-plus many many more...
+plus many more...
 
 ### Numbers: From strict to any
 

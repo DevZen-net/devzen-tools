@@ -90,7 +90,7 @@ const zenTypes: Partial<Record<TypeNames, (...args: any[]) => boolean>> = {
  *
  * # Naming Conventions
  *
- * The type name is returned as a string, where possible types names are among [TtypeNames](/types/TtypeNames.html).
+ * The type name is returned as a string, where possible types names are among [TypeNames](../types/TypeNames.html).
  *
  * We keep same names as [typeof](etc. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof) when these type co-exist in `typeof` & `z.type()`. But we also add many more types, not needing adhere to the ill-formed legacy of `typeof` formatting and rules. So we have types like 'class', 'Generator', 'Iterator', 'Generator', 'Promise' etc. There's a distinction between primitives & boxed primitives, so we also have 'Number', 'String', 'Boolean' etc.
  *
@@ -105,7 +105,7 @@ const zenTypes: Partial<Record<TypeNames, (...args: any[]) => boolean>> = {
  *
  * @param value any value
  *
- * @returns TtypeNames the type name of the value passed as a string, eg 'number' or 'boolean' or 'class' or 'Generator' etc
+ * @returns TypeNames the type name of the value passed as a string, eg 'number' or 'boolean' or 'class' or 'Generator' etc
  */
 export const type = (value: unknown): TypeNames => {
   // @todo: optimise this, instead of looping - not efficient!

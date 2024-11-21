@@ -1,7 +1,7 @@
 import { isEqual, IsEqualCustomizerCallback, IsEqualOptions } from './isEqual'
 
 /**
- * Shortcut of [`z.isEqual`](/functions/isEqual.html) with forced options
+ * Shortcut of [`z.isEqual`](../functions/isEqual.html) with forced options
  *
  *      {exactKeys: true, exactValues: true }
  */

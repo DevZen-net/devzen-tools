@@ -35,10 +35,10 @@ export type Values<Tinput, Toptions extends IKeysOptions> = KeysOrValues<
  * Returns an array of either OR both of:
  *  a) Nested / Nested Values (eg Array elements, Map values, Object.values() etc)
  *  b) the props Values (i.e [`_.values()`](https://lodash.com/docs/4.17.15#values) equivalent)
- * of the input value, according to [`KeyOptions`](/interfaces/KeyOptions.html). Rigorously typed according to the input value and KeyOptions.
+ * of the input value, according to [`KeyOptions`](../interfaces/KeyOptions.html). Rigorously typed according to the input value and KeyOptions.
  *
- * The features, logic & options (of `KeysOptions`) are identical to [`z.keys`](/functions/keys.html), but it returns the nested/props **values** instead of the nested **keys/props**. See [`Keys`](/functions/Keys.html) for more details.
- * @returns an array of Nested / Nested Values and/or Props Values, according to input &  KeyOptions. The type is rigorously typed according to **input** and [`KeyOptions`](/interfaces/KeyOptions.html) and is implemented by [`KeysValues`](/interfaces/KeysValues.html).
+ * The features, logic & options (of `KeysOptions`) are identical to [`z.keys`](../functions/keys.html), but it returns the nested/props **values** instead of the nested **keys/props**. See [`Keys`](../functions/Keys.html) for more details.
+ * @returns an array of Nested / Nested Values and/or Props Values, according to input &  KeyOptions. The type is rigorously typed according to **input** and [`KeyOptions`](../interfaces/KeyOptions.html) and is implemented by [`KeysValues`](../interfaces/KeysValues.html).
  */
 export function values<Tinput, Toptions extends IKeysOptions = IKeys_DefaultOptions>(
   input: Tinput,

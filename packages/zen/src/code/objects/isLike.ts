@@ -11,7 +11,7 @@ export function isLike(
 export function isLike(a: any, b: any, options?: IsEqualOptions, ctx?: any): boolean
 
 /**
- * Shortcut of [`z.isEqual`](/functions/isEqual.html) with forced options
+ * Shortcut of [`z.isEqual`](../functions/isEqual.html) with forced options
  *
  *       { like: true }
  */

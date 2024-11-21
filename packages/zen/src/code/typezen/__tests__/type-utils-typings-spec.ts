@@ -643,7 +643,7 @@ describe(`Type Utils typing tests`, () => {
         expectType<TypeEqual<Tresult, ClassWithCommonProps>>(true)
         // @ts-expect-error OK-ish - look above
         expectType<TypeEqual<Tresult, typeof ClassWithCommonProps>>(true)
-        
+
         expectType<TypeEqual<Tresult, {
           // [symbolProp]: ValueOf<ClassWithCommonProps>;
           // [tooBadSymbolProp]: ValueOf<ClassWithCommonProps>;
@@ -1744,7 +1744,7 @@ describe(`Type Utils typing tests`, () => {
         expectType<TypeEqual<InsideValues<undefined>, undefined>>(true)
         expectType<TypeEqual<InsideValues<null>, null>>(true)
       })
-      it(`non-nested TSingle / TSystemSingle types & System Classes`, () => {
+      it(`non-nested Single / TSystemSingle types & System Classes`, () => {
         expectType<TypeEqual<InsideValues<Date>, number>>(true) // number, because of .valueOf()
         const date = new Date()
         expectType<TypeEqual<InsideValues<typeof date>, number>>(true)

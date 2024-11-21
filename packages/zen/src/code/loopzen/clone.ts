@@ -20,15 +20,15 @@ import { expectType, TypeEqual } from 'ts-expect';
  *
  * - Everything else gets a proper clone. For example arguments are cloned to a new arguments object, with the same items.
  *
- * You can optionally pass an [`IloopOptions`](/interfaces/IloopOptions.html) object as the second parameter, to control which keys / idx are visited (own / inherited / enumerable etc) and more.
+ * You can optionally pass an [`IloopOptions`](../interfaces/IloopOptions.html) object as the second parameter, to control which keys / idx are visited (own / inherited / enumerable etc) and more.
  *
  * - if `options.map` already exists on `clone(val, myOptions, myMapCb)`, in will be called (i.e you clone will be a mapped version.
  *
  * - Similarly, if `options.filter` exists, it is applied to the clone. If the input value is an Array, elements will appear on the cloned array at different indexes of the original, like `Array.filter` / `_.filter`. Use `sparse: true` option to get empty elements when they didn't pass the filter.
  *
- * @see [`z.map`](/functions/map.html) as `z.clone()` is just shortcut to `z.map(value, options, _.identity)`, plus some extra sanity checks. In turn `z.map()` is powered by the mighty `z.loop()`.
+ * @see [`z.map`](../functions/map.html) as `z.clone()` is just shortcut to `z.map(value, options, _.identity)`, plus some extra sanity checks. In turn `z.map()` is powered by the mighty `z.loop()`.
  *
- * @see [`z.loop()`](/functions/loop.html) the power hidden behind `map()` and most other collection functions.
+ * @see [`z.loop()`](../functions/loop.html) the power hidden behind `map()` and most other collection functions.
  *
  * @param input the value to clone
  *

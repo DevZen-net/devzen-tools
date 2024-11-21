@@ -5,11 +5,11 @@ import { project } from './project'
 /**
  * Map over the (many) keys/indexes of **any possible input value**, returning a new instance of the same input value type (if possible), with the results of calling the projector/mapping function on every "nested" key/prop/index of the input value.
  *
- * Similar idea to lodash `_.mapKeys()`, but powered by [`z.loop()`](/functions/loop.html). Hence:
+ * Similar idea to lodash `_.mapKeys()`, but powered by [`z.loop()`](../functions/loop.html). Hence:
  *
- * @see [`z.map()`](/functions/map.html) as mapKeys() is a special case of map() where keys/indexes are mapped, instead of items/values.
+ * @see [`z.map()`](../functions/map.html) as mapKeys() is a special case of map() where keys/indexes are mapped, instead of items/values.
  *
- * @see [`z.loop()`](/functions/loop.html) the power hidden behind `map()` and all other collection functions.
+ * @see [`z.loop()`](../functions/loop.html) the power hidden behind `map()` and all other collection functions.
  *
  * @returns the same type as the input value, but with the keys/props/indexes mapped over. Objects, Arrays, Maps, Sets etc are copied and returned as new values. Also, Iterators, Generators etc are returned as a Generator with their `null` keys mapped over by the mapKeys callback.
  */

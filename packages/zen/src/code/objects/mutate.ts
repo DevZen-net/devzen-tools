@@ -35,7 +35,7 @@ import { isAgree } from '../agreement/isAgree'
  *
  * @param mutator the mutation callback, passing the value, key & oa and returns a new value.
  *
- * @param agreement an agreement filter as in [`z.isAgree`](/functions/isAgree.html). If it is true, value is mutated, otherwise it's left intact. Note: isAgree allows "undefined" as a truthy filter value.
+ * @param agreement an agreement filter as in [`z.isAgree`](../functions/isAgree.html). If it is true, value is mutated, otherwise it's left intact. Note: isAgree allows "undefined" as a truthy filter value.
  *
  * @returns the mutated object or array
  */

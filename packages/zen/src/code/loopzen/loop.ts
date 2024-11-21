@@ -74,7 +74,7 @@ export type ItemsCallback<Titem, TidxKey, Tinput, TreturnType> = (
    *
    * * When `options.props` is used, props & items receive a separate `count`, so the `count` starts as 1 for each of them.
    *
-   * * Iterators and Generators (sync & async) also receive a `count` parameter (if `options.iteratorCount: true` - the default). You can turn it off, if your iterator might exceed the number limit & and you want to avoid the overhead of counting. See [`IloopOptions`](/interfaces/IloopOptions.html)
+   * * Iterators and Generators (sync & async) also receive a `count` parameter (if `options.iteratorCount: true` - the default). You can turn it off, if your iterator might exceed the number limit & and you want to avoid the overhead of counting. See [`IloopOptions`](../interfaces/IloopOptions.html)
    */
   count: number // @todo(153): LoopCount<Tinput, Toptions> but we're missing options, we could pass them along? Or pass Tcount directly?
 ) => TreturnType | Promise<TreturnType>
@@ -147,7 +147,7 @@ export interface ILoopOptions<
    *
    * You can turn it off, if your iterator might exceed the number limit & and the small overhead of counting.
    *
-   * See `count` parameter in [`TitemsCallback`](/types/TitemsCallback.html)
+   * See `count` parameter in [`TitemsCallback`](../types/TitemsCallback.html)
    *
    * @default true
    */
@@ -263,7 +263,7 @@ export interface ILoopOptions<
    *
    * WARNING: If you return `STOP` from the filter callback, the loop will stop immediately, without calling the `map` callback.
    *
-   * WARNING: If you pass callbacks as a prop of options (eg `loop(input, {props: true, map: (val, prop) => val *2 })`, it will break the TypeScript type inference of the callback args. You should pass the callbacks as a separate argument in `loop()` parameters, eg `loop(input, {props: true}, {map: (val, prop) => val *2 })` if you want to get the perfect TypeScript ingerence of the callback args. See [`IloopCallbacks`](/interfaces/IloopCallbacks.html)
+   * WARNING: If you pass callbacks as a prop of options (eg `loop(input, {props: true, map: (val, prop) => val *2 })`, it will break the TypeScript type inference of the callback args. You should pass the callbacks as a separate argument in `loop()` parameters, eg `loop(input, {props: true}, {map: (val, prop) => val *2 })` if you want to get the perfect TypeScript ingerence of the callback args. See [`IloopCallbacks`](../interfaces/IloopCallbacks.html)
    *
    * Note: It's best to NOT type your callback arguments and let the type system infer them from the context. If you do type them, make sure it's the right types, otherwise the `loop()` signature detection will fail!
    */
@@ -273,7 +273,7 @@ export interface ILoopOptions<
    * A mapping callback (projection), used to map the items as they are iterated over.
    * If both `filter` and `map` are provided, `filter` is applied first, then `map` is applied to the result.
    *
-   * WARNING: If you pass callbacks as a prop of options (eg `loop(input, {props: true, map: (val, prop) => val *2 })`, it will break the TypeScript type inference of the callback args. You should pass the callbacks as a separate argument in `loop()` parameters, eg `loop(input, {props: true}, {map: (val, prop) => val *2 })` if you want to get the perfect TypeScript ingerence of the callback args. See [`IloopCallbacks`](/interfaces/IloopCallbacks.html)
+   * WARNING: If you pass callbacks as a prop of options (eg `loop(input, {props: true, map: (val, prop) => val *2 })`, it will break the TypeScript type inference of the callback args. You should pass the callbacks as a separate argument in `loop()` parameters, eg `loop(input, {props: true}, {map: (val, prop) => val *2 })` if you want to get the perfect TypeScript ingerence of the callback args. See [`IloopCallbacks`](../interfaces/IloopCallbacks.html)
    *
    * Note: It's best to NOT type your callback arguments and let the type system infer them from the context. If you do type them, make sure it's the right types, otherwise the `loop()` signature detection will fail!   *
    */
@@ -289,7 +289,7 @@ export interface ILoopOptions<
    * A mapping function that can be used to map the keys that are iterated over.
    * If both `filter` and `map` are provided, `filter` is applied first, then `mapKeys` is applied to the result.
    *
-   * WARNING: If you pass callbacks as a prop of options (eg `loop(input, {props: true, map: (val, prop) => val *2 })`, it will break the TypeScript type inference of the callback args. You should pass the callbacks as a separate argument in `loop()` parameters, eg `loop(input, {props: true}, {map: (val, prop) => val *2 })` if you want to get the perfect TypeScript ingerence of the callback args. See [`IloopCallbacks`](/interfaces/IloopCallbacks.html)
+   * WARNING: If you pass callbacks as a prop of options (eg `loop(input, {props: true, map: (val, prop) => val *2 })`, it will break the TypeScript type inference of the callback args. You should pass the callbacks as a separate argument in `loop()` parameters, eg `loop(input, {props: true}, {map: (val, prop) => val *2 })` if you want to get the perfect TypeScript ingerence of the callback args. See [`IloopCallbacks`](../interfaces/IloopCallbacks.html)
    *
    * Note: It's best to NOT type your callback arguments and let the type system infer them from the context. If you do type them, make sure it's the right types, otherwise the `loop()` signature detection will fail!
    */
@@ -303,7 +303,7 @@ export interface ILoopOptions<
    * * the first `n` keys/idx of the value (eg the `Array` elements, `Set` items etc)
    * * the first `n` of props as well
    *
-   * WARNING: If you pass callbacks as a prop of options (eg `loop(input, {props: true, map: (val, prop) => val *2 })`, it will break the TypeScript type inference of the callback args. You should pass the callbacks as a separate argument in `loop()` parameters, eg `loop(input, {props: true}, {map: (val, prop) => val *2 })` if you want to get the perfect TypeScript ingerence of the callback args. See [`IloopCallbacks`](/interfaces/IloopCallbacks.html)
+   * WARNING: If you pass callbacks as a prop of options (eg `loop(input, {props: true, map: (val, prop) => val *2 })`, it will break the TypeScript type inference of the callback args. You should pass the callbacks as a separate argument in `loop()` parameters, eg `loop(input, {props: true}, {map: (val, prop) => val *2 })` if you want to get the perfect TypeScript ingerence of the callback args. See [`IloopCallbacks`](../interfaces/IloopCallbacks.html)
    *
    * Note: No guaranteed order for property bags like `Objects`, `Sets`, `Maps` etc and return the same value type of input value.
    *
@@ -313,7 +313,7 @@ export interface ILoopOptions<
 }
 
 /**
- * The sole purpose of callbacks to exist here in `IloopCallbacks`, separately from [`ILoopOptions`](/interfaces/ILoopOptions.html), is due to a Zen/TypeScript limitation, that doesn't properly infer the type of a callback's arguments (it ignores the options, probably cause they belong to same type interface before it has been initialized).
+ * The sole purpose of callbacks to exist here in `IloopCallbacks`, separately from [`ILoopOptions`](../interfaces/ILoopOptions.html), is due to a Zen/TypeScript limitation, that doesn't properly infer the type of a callback's arguments (it ignores the options, probably cause they belong to same type interface before it has been initialized).
  *
  * So, in order to have perfect automatic inference of args, callbacks have to be in a separate 3rd argument in `loop()` parameters, `loop(input, options, callbacks)` eg
  *
@@ -325,25 +325,25 @@ export interface ILoopOptions<
  *
  * Implementation-wise & at runtime, the 2 are equivalent
  *
- * @see [`ILoopOptions`](/interfaces/ILoopOptions.html)
+ * @see [`ILoopOptions`](../interfaces/ILoopOptions.html)
  */
 export interface IloopCallbacks<Titem, TidxKey, Tinput, TmapItemReturn = any, TmapKeyReturn = any> {
   /**
-   * @see `filter` in [`IloopCallbacks`](/interfaces/IloopCallbacks.html)
+   * @see `filter` in [`IloopCallbacks`](../interfaces/IloopCallbacks.html)
    */
   filter?: FilterCallback<Titem, TidxKey, Tinput>
 
   /**
-   * @see `map` in [`IloopCallbacks`](/interfaces/IloopCallbacks.html)
+   * @see `map` in [`IloopCallbacks`](../interfaces/IloopCallbacks.html)
    */
   map?: MapCallback<Titem, TidxKey, Tinput, TmapItemReturn>
   /**
-   * @see `mapKeys` in [`IloopCallbacks`](/interfaces/IloopCallbacks.html)
+   * @see `mapKeys` in [`IloopCallbacks`](../interfaces/IloopCallbacks.html)
    */
   mapKeys?: MapKeysCallback<Titem, TidxKey, Tinput, TmapKeyReturn>
 
   /**
-   * @see `take` in [`IloopCallbacks`](/interfaces/IloopCallbacks.html)
+   * @see `take` in [`IloopCallbacks`](../interfaces/IloopCallbacks.html)
    */
   take?: number | TakeCallback<Titem, TidxKey, Tinput>
 }

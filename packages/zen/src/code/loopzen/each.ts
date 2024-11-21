@@ -121,11 +121,11 @@ Issues:
 */
 
 /**
- * Iterate over the (many) items of a value, calling the callback for each item. Think of `_.each()` or `Array.forEach()`, but more powerful via [`z.loop()`](/functions/loop.html). Hence, it works with ANY value, not just arrays and objects, but also `Map`, `Set`, `Iterator`, `Generator` & even `AsyncIterators` (where it returns a promise resolving when iteration ends!
+ * Iterate over the (many) items of a value, calling the callback for each item. Think of `_.each()` or `Array.forEach()`, but more powerful via [`z.loop()`](../functions/loop.html). Hence, it works with ANY value, not just arrays and objects, but also `Map`, `Set`, `Iterator`, `Generator` & even `AsyncIterators` (where it returns a promise resolving when iteration ends!
  *
  * Just like `_.each()`, you can break out the loop by returning `false` (as well as `z.STOP` or `z.STOP()` ;-))
  *
- * [`z.isSingle`](/functions/isSingle.html) values are also supported:
+ * [`z.isSingle`](../functions/isSingle-1.html) values are also supported:
  *
  * - with `loopSingles: true` (default), it yields a single iteration of the value itself (value passed to the callback once). This allows functional programming philosophy, where all values are "enclosed" and can be mapped over.
  *
@@ -133,13 +133,13 @@ Issues:
  *
  * - By default, `options.strict: false` but if strict is `true` it will throw an error, that singles aren't allowed.
  *
- * See [`loop()`](/functions/loop.html) for more details on options & all behavior, since `each()` is built on top of it.
+ * See [`loop()`](../functions/loop.html) for more details on options & all behavior, since `each()` is built on top of it.
  *
  * @param input any value to iterate over. Usually an Array, Object, Map, Set, Iterator, Generator, AsyncIterator, AsyncGenerator etc. but you can also pass single values, like a number, string etc - see `loopSingles` option.
  *
  * @param iteratee the callback function to call for each item. It receives the item, the index or key and the original value (like lodash). If it returns `false` or `STOP` or `STOP()` it breaks the loop. If you're iterating over an `AsyncGenerator` or `AsyncIterator`, you can also return a Promise, which will be awaited before proceeding to the next iteration.
  *
- * @param options you can optionally pass an [`IEachOptions`](/interfaces/IEachOptions.html) object to control which keys / idx are visited (own / inherited / enumerable etc) and more. Note: it is identical to [`ILoopOptions`](/interfaces/ILoopOptions.html), but with an additional `async` option.
+ * @param options you can optionally pass an [`IEachOptions`](../interfaces/IEachOptions.html) object to control which keys / idx are visited (own / inherited / enumerable etc) and more. Note: it is identical to [`ILoopOptions`](../interfaces/ILoopOptions.html), but with an additional `async` option.
  *
  * @returns the original value, for fluent chaining. If `input` was an `AsyncGenerator`/`AsyncIterator`, it returns a `Promise<value>` resolved when iteration is over.
  */

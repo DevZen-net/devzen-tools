@@ -88,9 +88,9 @@ export type SystemClasses =
 /**
  * Check if a value is a class (instead of a "normal" function), with a type guard, so you can `new value()` without TS errors.
  *
- * @see [`z.functionType`](/functions/functionType.html) for the underlying function
+ * @see [`z.functionType`](../functions/functionType.html) for the underlying function
  *
- * @see [`z.isUserClass()`](/functions/isUserClass.html) to exclude internal ones like Promise, Object, Array etc
+ * @see [`z.isUserClass()`](../functions/isUserClass.html) to exclude internal ones like Promise, Object, Array etc
  */
 export const isClass = (value: Class<any> | any): value is Class<any> =>
   functionType(value) === 'class'
@@ -98,9 +98,9 @@ export const isClass = (value: Class<any> | any): value is Class<any> =>
 /**
  * Returns true if the value is a **user class** only, as opposed to a "normal" functions OR non user-defined class, i.e the internal ones like Promise, Object, Array, Set, Map etc
  *
- * @see [`z.isClass`](/functions/isClass.html) for the more inclusive one
+ * @see [`z.isClass`](../functions/isClass.html) for the more inclusive one
  *
- * @see [`z.functionType`](/functions/functionType.html) for the underlying function
+ * @see [`z.functionType`](../functions/functionType.html) for the underlying function
  */
 export const isUserClass = <T>(value: T | any): value is Class<T> =>
   // exclude all built in non-user classes
@@ -111,9 +111,9 @@ export const isUserClass = <T>(value: T | any): value is Class<T> =>
  *
  * @todo: improve guard, it results to Class
  *
- * @see [`z.isClass`](/functions/isClass.html) for the more inclusive one
+ * @see [`z.isClass`](../functions/isClass.html) for the more inclusive one
  *
- * @see [`z.functionType`](/functions/functionType.html) for the underlying function
+ * @see [`z.functionType`](../functions/functionType.html) for the underlying function
  */
 export const isSystemClass = <T>(value: T | any): value is Class<SystemClasses> =>
   isClass(value) && SYSTEM_CLASSES.includes(value) // plain SystemClasses breaks

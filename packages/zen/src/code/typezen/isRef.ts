@@ -5,11 +5,11 @@ import * as _ from 'lodash'
  *
  * This includes all `_.isObject` & `_.isSymbol` types.
  *
- * @see [`z.isMany()`](/functions/isMany.html) is the opposite of `isSingle`
+ * @see [`z.isMany()`](../functions/isMany.html) is the opposite of `isSingle`
  *
- * @see [`z.isPrimitive()`](/functions/isPrimitive.html) for the most basic single types
+ * @see [`z.isPrimitive()`](../functions/isPrimitive.html) for the most basic single types
  *
- * @see [`isSingle`](/functions/isSingle.html) to check if a value's type is a "Single".
+ * @see [`isSingle`](../functions/isSingle-1.html) to check if a value's type is a "Single".
  *
  * @param value any value
  *

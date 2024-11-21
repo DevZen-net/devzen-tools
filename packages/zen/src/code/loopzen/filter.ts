@@ -4,9 +4,9 @@ import { GetMapReturn, MapOptionsOverride, ProjectValues } from './map'
 import { project } from './project'
 
 /**
- * Filter over the (many) items of a value and returning of **a new instance of the value**, containing the elements that pass the filter with [`isPass`](/functions/isPass.html) (an elaborate kind of truthy). Value can be `Object`, `Array`, `Map`, `Iterators` and many more.
+ * Filter over the (many) items of a value and returning of **a new instance of the value**, containing the elements that pass the filter with [`isPass`](../functions/isPass.html) (an elaborate kind of truthy). Value can be `Object`, `Array`, `Map`, `Iterators` and many more.
  *
- * Similar idea to lodash `_.filter()` or `Array.filter()` but powered by [`z.loop()`](/functions/loop.html). Hence:
+ * Similar idea to lodash `_.filter()` or `Array.filter()` but powered by [`z.loop()`](../functions/loop.html). Hence:
  *
  * - it works with many value types, not just `Array` but also `Map`, `Set`, `Object`, Iterators, Generators, AsyncIterators, Functions and optionally `isPrimitive` / `isSingle`s!
  *
@@ -37,11 +37,11 @@ import { project } from './project'
  *
  * but it makes little sense to 'filter' on them. When boxed value is filtered out, the result will be an instance with undefined / / false etc, which it's not great. If `filterSingles: false` (default) it throws an error @todo: unless `props: "only"` is used in which case the props are filtered out, into an "empty" value?
  *
- * - Powered by the mighty [`z.loop()`](/functions/loop.html) / [`z.keys`](/functions/keys.html), so and hence you can control which keys / idx are visited (own / inherited / enumerable / string / symbol etc) via [`IloopOptions`](/interfaces/IloopOptions.html).
+ * - Powered by the mighty [`z.loop()`](../functions/loop.html) / [`z.keys`](../functions/keys.html), so and hence you can control which keys / idx are visited (own / inherited / enumerable / string / symbol etc) via [`IloopOptions`](../interfaces/IloopOptions.html).
  *
- * - [`z.isSingle`](/functions/isSingle.html) values are also supported: the projection callback will be called only once (with `options.strict: false` - default) or throw an error (with `options.strict: true`). This follows the functional programming principles, that all values are enclosed and can be mapped over. This is also the reason why `options.strict: false` is the default.
+ * - [`z.isSingle`](../functions/isSingle-1.html) values are also supported: the projection callback will be called only once (with `options.strict: false` - default) or throw an error (with `options.strict: true`). This follows the functional programming principles, that all values are enclosed and can be mapped over. This is also the reason why `options.strict: false` is the default.
  *
- * - You can pass an [`IloopOptions`](/interfaces/IloopOptions.html) object, to control which keys / idx are visited (own / inherited / enumerable etc):
+ * - You can pass an [`IloopOptions`](../interfaces/IloopOptions.html) object, to control which keys / idx are visited (own / inherited / enumerable etc):
  *   - Without `options.filter` - if it already exists, it throws an error.
  *   - But if `options.map` or `options.take` exists, **it is applied after** the filter passes.
  *

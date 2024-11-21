@@ -3,14 +3,14 @@ import { ILoopOptions, loop } from '../loopzen/loop'
 import { type } from '../typezen/type'
 
 /**
- * Default options for [`z.isDisjoint`](/functions/isDisjoint.html)
+ * Default options for [`z.isDisjoint`](../functions/isDisjoint.html)
  */
 export const isDisjoint_DefaultOptions = {
   equality: (v1: object, v2: object): boolean => v1 === v2,
 }
 
 /**
- * Options interface for [`z.isDisjoint`](/functions/isDisjoint.html)
+ * Options interface for [`z.isDisjoint`](../functions/isDisjoint.html)
  */
 export interface IsDisjointOptions extends ILoopOptions<any, any, any, any, any> {
   // @todo: add IterarorOptions default generic types

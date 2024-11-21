@@ -9,9 +9,9 @@ export type BigIntString = `${number}n`
 /**
  * Check if value is a **string number**, like `'123'` or `'123.456'`
  *
- * @see [`z.isNumber()`](/functions/isNumber.html) for a more inclusive check
+ * @see [`z.isNumber()`](../functions/isNumber.html) for a more inclusive check
  *
- * @see [`z.isAnyNumber()`](/functions/isAnyNumber.html) for the most inclusive check
+ * @see [`z.isAnyNumber()`](../functions/isAnyNumber.html) for the most inclusive check
  *
  * @param val
  */

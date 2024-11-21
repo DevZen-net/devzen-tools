@@ -1,7 +1,7 @@
 import { isStrictNumber } from './isStrictNumber'
 
 /**
- * Checks if value is either a [strict number](/functions/isStrictNumber.html) OR `BigInt` OR `Infinity`, excluding only `NaN`s & boxed `new Number('123')`.
+ * Checks if value is either a [strict number](../functions/isStrictNumber.html) OR `BigInt` OR `Infinity`, excluding only `NaN`s & boxed `new Number('123')`.
  *
  * Why? Because `typeof NaN === 'number'`, `_.isNumber(NaN)` && `_.isNumber(Number('foo'))` are both true!
  *
@@ -9,9 +9,9 @@ import { isStrictNumber } from './isStrictNumber'
  *
  * `Infinity` is a number too, in `isNumber` terms.
  *
- * @see [`z.isAnyNumber()`](/functions/isAnyNumber.html) for the most inclusive, less strict check (incl string numbers!)
+ * @see [`z.isAnyNumber()`](../functions/isAnyNumber.html) for the most inclusive, less strict check (incl string numbers!)
  *
- * @see [`z.isStrictNumber()`](/functions/isStrictNumber.html) for the most strict check, 'real' numbers only!
+ * @see [`z.isStrictNumber()`](../functions/isStrictNumber.html) for the most strict check, 'real' numbers only!
  *
  * @param value
  */
