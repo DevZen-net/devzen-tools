@@ -58,6 +58,7 @@
     "docs:build": "npm-run-all docs:clean typedoc",
     "docs:serve": "npx ws --port 8091 --directory ./dist/docs-html",
     "docs!": "npm-run-all --parallel typedoc! docs:serve",
+    "docs~": "t -npr docs!",
     "docs:clean": "npx rimraf dist/docs-html",
     "         ####### TypeDoc": "",
     "typedoc": "npx typedoc",

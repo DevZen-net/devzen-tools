@@ -16,6 +16,8 @@ NOTE: These docs are hosted at https://neozen.dev/logzen (OR locally with `$ npx
 
  - LogZen is **Context/Path Aware Logger** that pretty prints everything, is very configurable (almost everything is customizable) and solves the [Granularity Problem](#md:why--inspiration-the-problem-is-granularity-control). It has unique features like:
 
+    - A [simple API](#md:13-logzen-api-overview) & much more...
+
     - All known [**Log Levels**](#md:4-loglevel---choosing-what-severity-to-print) with more granularity at `debug()` & `trace()`
 
     - [Cascading Options](#md:6---cascading-options-instanceconstructor-options-logpathoptions-and-defaultoptions) to really control the *when*, *where* and *how* to do logging in different partitions of your app, leading to control of granularity
@@ -29,8 +31,6 @@ NOTE: These docs are hosted at https://neozen.dev/logzen (OR locally with `$ npx
     - [Args Pass-Through](#md:11-args-pass-through---log-anywhere-even-inside-function-calls) to **`l.log()`** everywhere, even inside other expressions or function calls etc
 
     - [Kids](#md:12-kid-instances---inherit-parent-options--echo-log-methods) that inherit/override parent options, and then echo parents' log methods, so you can log in different places at once (with different options).
-
-    - A [simple API](#md:13-logzen-api-overview) & much more...
 
  - LogZen is a **Context/Path Aware Logger**, that is making it very capable in tailoring and reconfiguring your Logging requirements in large systems, even on the fly. This gives rise to **fine granularity** and **full control** of logging levels (and all other amazing options) per filePath, or per logger instance, or per **Kid** that is **inheriting from a parent**, or whatever incredible rule you can devise. And it doesnt have to be statically at App Boot time, you can even re-configure logging options dynamically at runtime (responding to events, errors, attacks etc)!
 
@@ -235,7 +235,7 @@ Now let's construct a LogZen instance with no args, and print the mandatory "Hel
 ```ts
 const l1_1 = new LogZen()
 l1_1.log('Hello world from node version', process.version)
-// [LOG|dist/docs/generated/detailed-usage-examples.executable.spec.generated]: Hello world from node version v20.8.0
+// [LOG|dist/docs/generated/detailed-usage-examples.executable.spec.generated]: Hello world from node version v20.18.0
 ```
 We see that the relative filename of this file was printed as the Header name. We can affect this in surprising ways, read on.
 
@@ -1337,7 +1337,7 @@ l7_3.table(`l.table() will redirect to our "table" custom output`, [{ a: 1, b: 2
 // ┌─────────┬───┬───┐
 // │ (index) │ a │ b │
 // ├─────────┼───┼───┤
-// │    0    │ 1 │ 2 │
+// │ 0       │ 1 │ 2 │
 // └─────────┴───┴───┘
 //
 ```
@@ -1741,7 +1741,7 @@ You can print **current Date** on the Header in ISO format:
 ```ts
 const l9_6_1 = new LogZen({ header: { date: true } })
 l9_6_1.info('Prints current date on the Header in ISO format')
-// [2024-11-21|INFO|aLoggerNameForPath]: Prints current date on the Header in ISO format
+// [2024-11-22|INFO|aLoggerNameForPath]: Prints current date on the Header in ISO format
 ```
 
 Similarly you can print **current Time** on the Header in 24H format:
@@ -1749,7 +1749,7 @@ Similarly you can print **current Time** on the Header in 24H format:
 ```ts
 const l9_6_2 = new LogZen({ header: { time: true } })
 l9_6_2.ok("Prints current 24h time on the Header via new Date().toLocaleTimeString('en-GB')")
-// [19:21:25|OK|aLoggerNameForPath]: Prints current 24h time on the Header via new Date().toLocaleTimeString('en-GB')
+// [23:43:07|OK|aLoggerNameForPath]: Prints current 24h time on the Header via new Date().toLocaleTimeString('en-GB')
 ```
 
 
@@ -2012,8 +2012,8 @@ result = l11.table1(`l.table1() returns last arg, which is tableHeader in this c
 // ┌─────────┬───┬───┐
 // │ (index) │ a │ b │
 // ├─────────┼───┼───┤
-// │    0    │ 1 │ 2 │
-// │    1    │ 3 │ 4 │
+// │ 0       │ 1 │ 2 │
+// │ 1       │ 3 │ 4 │
 // └─────────┴───┴───┘
 //
 // result === ["a", "b"]
@@ -2094,23 +2094,23 @@ l12_2.table('Tables are also echoed by kids', [
 ])
 // [TABLE|myKid1|#1]: Tables are also echoed by kids
 // ┌─────────┬───────────┬────────────┐
-// │ (index) │   name    │  nickname  │
+// │ (index) │ name      │ nickname   │
 // ├─────────┼───────────┼────────────┤
-// │    0    │ 'Angelos' │ 'AnoDyNoS' │
+// │ 0       │ 'Angelos' │ 'AnoDyNoS' │
 // └─────────┴───────────┴────────────┘
 //
 // [TABLE|myKid2|#2]: Tables are also echoed by kids
 // ┌─────────┬───────────┬────────────┐
-// │ (index) │   name    │  nickname  │
+// │ (index) │ name      │ nickname   │
 // ├─────────┼───────────┼────────────┤
-// │    0    │ 'Angelos' │ 'AnoDyNoS' │
+// │ 0       │ 'Angelos' │ 'AnoDyNoS' │
 // └─────────┴───────────┴────────────┘
 //
 // [TABLE|Parent With Kid]: Tables are also echoed by kids
 // ┌─────────┬───────────┬────────────┐
-// │ (index) │   name    │  nickname  │
+// │ (index) │ name      │ nickname   │
 // ├─────────┼───────────┼────────────┤
-// │    0    │ 'Angelos' │ 'AnoDyNoS' │
+// │ 0       │ 'Angelos' │ 'AnoDyNoS' │
 // └─────────┴───────────┴────────────┘
 //
 ```
@@ -2507,10 +2507,10 @@ l1_1.table('This is a table of users, with selected columns, which must be strin
 ])
 // [TABLE|SpecialConsoleMethods]: This is a table of users, with selected columns, which must be string[]:
 // ┌─────────┬──────────┬────────────┐
-// │ (index) │    id    │  nickname  │
+// │ (index) │ id       │ nickname   │
 // ├─────────┼──────────┼────────────┤
-// │    0    │ 'user_1' │ 'AnoDyNoS' │
-// │    1    │ 'user_2' │  'Pipidi'  │
+// │ 0       │ 'user_1' │ 'AnoDyNoS' │
+// │ 1       │ 'user_2' │ 'Pipidi'   │
 // └─────────┴──────────┴────────────┘
 //
 ```
@@ -2525,10 +2525,10 @@ const l13_3 = new LogZen({
 l13_3.table('This is a table of users, with all columns:', users)
 // [TABLE|SpecialConsoleMethods]: This is a table of users, with all columns:
 // ┌─────────┬──────────┬───────────┬────────────┬────────────┐
-// │ (index) │    id    │   name    │  surname   │  nickname  │
+// │ (index) │ id       │ name      │ surname    │ nickname   │
 // ├─────────┼──────────┼───────────┼────────────┼────────────┤
-// │    0    │ 'user_1' │ 'Angelos' │ 'Pikoulas' │ 'AnoDyNoS' │
-// │    1    │ 'user_2' │ 'Elpida'  │ 'Pikoula'  │  'Pipidi'  │
+// │ 0       │ 'user_1' │ 'Angelos' │ 'Pikoulas' │ 'AnoDyNoS' │
+// │ 1       │ 'user_2' │ 'Elpida'  │ 'Pikoula'  │ 'Pipidi'   │
 // └─────────┴──────────┴───────────┴────────────┴────────────┘
 //
 ```

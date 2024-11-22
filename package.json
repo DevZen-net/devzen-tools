@@ -36,6 +36,7 @@
     "   ### docs ": "",
     "docs:build": "npx lerna run docs:build --loglevel verbose",
     "build:docs": "npm run docs:build",
+    "docs~": "npx lerna run docs~ --loglevel verbose",
 
     "################# Code Generation": "",
     "gen": "npx lerna run gen --loglevel verbose",

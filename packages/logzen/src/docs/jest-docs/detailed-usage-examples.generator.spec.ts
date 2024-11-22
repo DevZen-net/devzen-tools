@@ -253,6 +253,8 @@ NOTE: These docs are hosted at https://neozen.dev/logzen (OR locally with \`$ np
 
  - LogZen is **Context/Path Aware Logger** that pretty prints everything, is very configurable (almost everything is customizable) and solves the [Granularity Problem](#md:why--inspiration-the-problem-is-granularity-control). It has unique features like:
 
+    - A [simple API](#md:13-logzen-api-overview) & much more...
+
     - All known [**Log Levels**](#md:4-loglevel---choosing-what-severity-to-print) with more granularity at \`debug()\` & \`trace()\`
 
     - [Cascading Options](#md:6---cascading-options-instanceconstructor-options-logpathoptions-and-defaultoptions) to really control the *when*, *where* and *how* to do logging in different partitions of your app, leading to control of granularity
@@ -266,8 +268,6 @@ NOTE: These docs are hosted at https://neozen.dev/logzen (OR locally with \`$ np
     - [Args Pass-Through](#md:11-args-pass-through---log-anywhere-even-inside-function-calls) to **\`l.log()\`** everywhere, even inside other expressions or function calls etc
 
     - [Kids](#md:12-kid-instances---inherit-parent-options--echo-log-methods) that inherit/override parent options, and then echo parents' log methods, so you can log in different places at once (with different options).
-
-    - A [simple API](#md:13-logzen-api-overview) & much more...
 
  - LogZen is a **Context/Path Aware Logger**, that is making it very capable in tailoring and reconfiguring your Logging requirements in large systems, even on the fly. This gives rise to **fine granularity** and **full control** of logging levels (and all other amazing options) per filePath, or per logger instance, or per **Kid** that is **inheriting from a parent**, or whatever incredible rule you can devise. And it doesnt have to be statically at App Boot time, you can even re-configure logging options dynamically at runtime (responding to events, errors, attacks etc)!
 
