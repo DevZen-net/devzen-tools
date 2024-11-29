@@ -1,4 +1,4 @@
-# Zen 1.0.0
+# Zen 1.0.0 - Alpha - WIP DOCS
 
 **Zen** offers a radical way to type-check all values and iterate / projéct / filter / reduce etc, consistently over **all the different JS values & types**. `Zen` is (so much more than) a collection of essential useful utils for JavaScript & TypeScript, missing from JS and popular libs like lodash & others! Zen is the backbone of 2 of the most fundamental operations in a dynamic runtime like JS. 
 

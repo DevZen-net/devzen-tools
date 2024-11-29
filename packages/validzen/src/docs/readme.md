@@ -1,4 +1,4 @@
-# ValidZen v1.0.0
+# ValidZen v1.0.0 - Alpha - WIP DOCS
 
 A powerful OR & AND PropertyDecorator for `class-validator`, to support very complex validation scenarios. Full integration with  `class-transformer-validator` and useful opinionated tools. Also, a PoC to reuse ALL `class-validator` & `class-validator-extended` PropertyDecorators as-is!   
 

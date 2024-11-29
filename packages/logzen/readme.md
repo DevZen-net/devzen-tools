@@ -1,4 +1,4 @@
-# LogZen v1.0.0-alpha.2
+# LogZen v1.0.0-alpha.2 - Alpha - WIP DOCS
 
 A radically powerful (yet familiar) **Logger**, with emphasis on Granularity & Context, Debugging BigApps & [Observability](https://en.wikipedia.org/wiki/Observability), but also beautiful output & configurability.
 
@@ -1741,7 +1741,7 @@ You can print **current Date** on the Header in ISO format:
 ```ts
 const l9_6_1 = new LogZen({ header: { date: true } })
 l9_6_1.info('Prints current date on the Header in ISO format')
-// [2024-11-22|INFO|aLoggerNameForPath]: Prints current date on the Header in ISO format
+// [2024-11-29|INFO|aLoggerNameForPath]: Prints current date on the Header in ISO format
 ```
 
 Similarly you can print **current Time** on the Header in 24H format:
@@ -1749,7 +1749,7 @@ Similarly you can print **current Time** on the Header in 24H format:
 ```ts
 const l9_6_2 = new LogZen({ header: { time: true } })
 l9_6_2.ok("Prints current 24h time on the Header via new Date().toLocaleTimeString('en-GB')")
-// [23:43:07|OK|aLoggerNameForPath]: Prints current 24h time on the Header via new Date().toLocaleTimeString('en-GB')
+// [21:43:05|OK|aLoggerNameForPath]: Prints current 24h time on the Header via new Date().toLocaleTimeString('en-GB')
 ```
 
 

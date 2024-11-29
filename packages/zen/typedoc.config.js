@@ -35,6 +35,10 @@ const config = {
   ],
   plugin: ['@mxssfd/typedoc-theme'],
   theme: 'my-theme',
+  excludePrivate: true,
+  categorizeByGroup: true,
+  // categoryOrder
+  groupOrder: ['Functions', 'Type Aliases', 'Variables', '*'],
 }
 
 module.exports = config

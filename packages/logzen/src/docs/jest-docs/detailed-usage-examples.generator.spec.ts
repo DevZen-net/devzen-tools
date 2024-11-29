@@ -235,7 +235,7 @@ const packageJson = JSON.parse(fs.readFileSync('./package.json').toString())
 describe(
   joinAll(
     docsBlock(`
-# LogZen v${packageJson.version}
+# LogZen v${packageJson.version} - Alpha - WIP DOCS
 
 A radically powerful (yet familiar) **Logger**, with emphasis on Granularity & Context, Debugging BigApps & [Observability](https://en.wikipedia.org/wiki/Observability), but also beautiful output & configurability.
 
