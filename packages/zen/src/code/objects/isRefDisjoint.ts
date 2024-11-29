@@ -4,14 +4,14 @@ import { getRefs } from './getRefs'
 import { isDisjoint } from './isDisjoint'
 
 /**
- * Default options for [`z.isRefDisjoint`](/functions/isRefDisjoint.html)
+ * Default options for [`z.isRefDisjoint`](../functions/isRefDisjoint.html)
  */
 export const isRefDisjoint_DefaultOptions = {
   depth: true,
 }
 
 /**
- * Options interface for [`z.isRefDisjoint`](/functions/isRefDisjoint.html)
+ * Options interface for [`z.isRefDisjoint`](../functions/isRefDisjoint.html)
  */
 export interface IsRefDisjointOptions extends ILoopOptions<any, any, any, any, any> {
   depth?: boolean | number

@@ -21,9 +21,9 @@ import { isBigInt } from './isBigInt'
  *
  * Note: by "real number" we refer to the programming terminology, not the Mathematical "Real Numbers"!
  *
- * @see [`z.isNumber()`](/functions/isNumber.html) for a less inclusive, more strict check
+ * @see [`z.isNumber()`](../functions/isNumber.html) for a less inclusive, more strict check
  *
- * @see [`z.isStrictNumber()`](/functions/isStrictNumber.html) for the most strict check
+ * @see [`z.isStrictNumber()`](../functions/isStrictNumber.html) for the most strict check
  *
  * @param val
  */

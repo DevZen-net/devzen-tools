@@ -3,9 +3,9 @@
  *
  * Why? Because `typeof NaN === 'number'`, but `_.isNumber(NaN)` && `_.isNumber(Number('foo')))` are both true!
  *
- * @see [`z.isNumber()`](/functions/isNumber.html) for a more inclusive check
+ * @see [`z.isNumber()`](../functions/isNumber.html) for a more inclusive check
  *
- * @see [`z.isAnyNumber()`](/functions/isAnyNumber.html) for the most inclusive check
+ * @see [`z.isAnyNumber()`](../functions/isAnyNumber.html) for the most inclusive check
  *
  * @param val
  */

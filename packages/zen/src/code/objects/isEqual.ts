@@ -17,7 +17,7 @@ const isSetOrMap = (val: unknown): val is Map<any, any> | Set<any> =>
   _.isSet(val) || _.isMap(val)
 
 /**
- * Customizer callback type for [`z.isEqual`](/functions/isEqual.html).
+ * Customizer callback type for [`z.isEqual`](../functions/isEqual.html).
  *
  * Checks for equality of two values, returning `true` or a "truthy" value if they are considered equal.
  *
@@ -37,7 +37,7 @@ export type IsEqualCustomizerCallback = (
 ) => boolean | any
 
 /**
- * Options interface for [`z.isEqual`](/functions/isEqual.html)
+ * Options interface for [`z.isEqual`](../functions/isEqual.html)
  */
 export interface IsEqualOptions extends IKeysOptions {
   /**
@@ -99,7 +99,7 @@ export interface IsEqualOptions extends IKeysOptions {
   path?: Any[]
 
   /**
-   * If you pass an array of [`Tany`](/types/Tany.html), it will exclude those keys from the comparison.
+   * If you pass an array of [`Tany`](../types/Tany.html), it will exclude those keys from the comparison.
    *
    * @todo: if it is a Function, called with (key, val, ??), excludes key if true is returned (NOT IMPLEMENTED YET)
    *
@@ -148,7 +148,7 @@ export interface IsEqualOptions extends IKeysOptions {
    *
    * The customizer can be the 3rd parameter (to maintain compatibility with *lodash* _.isEqualWith) and options can be the 5th, but you can pass `customizer` and `ctx` as properties of the `options` object being the 3rd arg. But if you pass them in both places, it throws an Error.
    *
-   * The customizer type is [`TisEqualcustomizer`](/types/TisEqualcustomizer.html).
+   * The customizer type is [`TisEqualcustomizer`](../types/TisEqualcustomizer.html).
    */
   customizer?: IsEqualCustomizerCallback
   /**
@@ -158,7 +158,7 @@ export interface IsEqualOptions extends IKeysOptions {
 }
 
 /**
- * Default options for [`z.isEqual`](/functions/isEqual.html) *
+ * Default options for [`z.isEqual`](../functions/isEqual.html) *
  */
 export const isEqual_DefaultOptions: IsEqualOptions = {
   inherited: false,
@@ -220,9 +220,9 @@ export function isEqual(
  * Deeply compares 2 input values, returning `true` if they are considered equal, with loads of awesome options!
  *
  * Similar to lodash's `_.isEqual`, but:
- * - adds [**loads of extra options**](/types/IisEqualOptions.html), for example use `.isEquals()` of the values if it exists, `like` one-side similarity comparisons, `exact` refs required (shallow clones), `inherited` or `exclude` props, get the `path` of where the difference was found and loads more! @see [`IisEqualOptions`](/types/IisEqualOptions.html) *
+ * - adds [**loads of extra options**](../types/IisEqualOptions.html), for example use `.isEquals()` of the values if it exists, `like` one-side similarity comparisons, `exact` refs required (shallow clones), `inherited` or `exclude` props, get the `path` of where the difference was found and loads more! @see [`IisEqualOptions`](../types/IisEqualOptions.html) *
  * - It supports all types, including `Map`, `Set`, `WeakMap`, `WeakSet`, `ArrayBuffer`, `Error`, `RegExp`, `Date`, `Symbol`, `BigInt`, `TypedArray`, `Promise`, `class`, `function`, `arguments`, `null`, `undefined`, `NaN`, `realObject` and more.
- * - You can also use any of [`IKeysOptions`](/interfaces/IKeysOptions.html) to control which keys are compared, as [`IisEqualOptions`](/types/IisEqualOptions.html) extends [`IKeysOptions`](/interfaces/IKeysOptions.html)!
+ * - You can also use any of [`IKeysOptions`](../interfaces/IKeysOptions.html) to control which keys are compared, as [`IisEqualOptions`](../types/IisEqualOptions.html) extends [`IKeysOptions`](../interfaces/IKeysOptions.html)!
  *    - when `props: true`, **only props** matter, not the actual values! *
  *
  * Note: it is NOT 100% compatible to `lodash`, mostly for good reasons. Few minor edge cases are not implemented yet as `options`, and current default deemed better and so kept different to lodash. Search `z.isEqual DIFFERENT` in `src/code/objects/isEqual-lodash-spec.ts`, where lodash tests are also tested against `z.isEqual`, with differences highlighted.

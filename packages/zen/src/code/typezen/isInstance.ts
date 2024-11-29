@@ -9,9 +9,9 @@ import { InstanceTypeAll } from './type-utils'
  *
  * To the contrary, `new function PseudoClass(){}` is a valid instance, as it's a user-defined pseudo class in JS.
  *
- * @see [`z.isRealObject()`](/functions/isRealObject.html) for the most useful object check
+ * @see [`z.isRealObject()`](../functions/isRealObject.html) for the most useful object check
  *
- * @see [`z.isPOJSObject()`](/functions/isPOJSObject.html) for the Plain Old JavaScript Object check
+ * @see [`z.isPOJSObject()`](../functions/isPOJSObject.html) for the Plain Old JavaScript Object check
  *
  *  @param value any value
  *

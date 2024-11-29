@@ -73,7 +73,7 @@ export const REAL_TYPE_NAMES: RealTypeNames[] = [
  *
  * - Instead of `'TypedArray`, you get `'Int8Array'`, `'Uint8Array'`, `'Uint8ClampedArray'`, `'Int16Array'`, `'Uint16Array'`, `'Int32Array'` etc.
  *
- * @see [`z.type()`](/functions/type.html) for the underlying function
+ * @see [`z.type()`](../functions/type.html) for the underlying function
  *
  * @param value any value
  *

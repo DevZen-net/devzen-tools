@@ -113,9 +113,9 @@ export type IsMany<T> =
 /**
  * Returns `true` if the data type is a natural holder of other items, also known as a "collection" (eg Array, Object, Set, Map) but Many is also Iterator, Generator, arguments etc, hence the name `isMany` instead of `isCollection`.
  *
- * It's also the opposite of [`_.isSingle()`](/functions/isSingle.html) in terms of naturally/normally having compound or many items (eg props, array items etc) nested inside it.
+ * It's also the opposite of [`z.isSingle()`](../functions/isSingle-1.html) in terms of naturally/normally having compound or many items (eg props, array items etc) nested inside it.
  *
- * As defined in [`T_MANY_NAMES`](/variables/T_MANY_NAMES.html), they are:
+ * As defined in [`MANY_NAMES`](../variables/MANY_NAMES.html), they are:
  *
  *   - `'object'`
  *   - `'Array'`
@@ -132,26 +132,26 @@ export type IsMany<T> =
  *   - `'WeakSet'`
  *   - `'WeakMap'`
  *
- * @note: class types makes sense to be categorised as "Many", because a class can have interesting static props.
+ * @note class types makes sense to be categorised as "Many", because a class can have interesting static props.
  *
  * Normal 'function' is not normally a "Many" type (many values holder), although in theory it can hold props. Same applies to Boxed primitives like `String`, `Number` etc, which represent a single value (not many), but they can have properties (very rare & bad practice though). You need to enforce this check in your code.
  *
  *
- * @note: On all of these "Many" types (except `WeakSet`/`WeakMap` which aren't revealing their items), you can use [`z.loop(value)`](/functions/iterate.html) to get an `IterableIterator` of `[keyOrIdx, value]` pairs, which works the same way for all of them.
+ * @note: On all of these "Many" types (except `WeakSet`/`WeakMap` which aren't revealing their items), you can use [`z.loop(value)`](../functions/iterate.html) to get an `IterableIterator` of `[keyOrIdx, value]` pairs, which works the same way for all of them.
  *
  * It also has an option `allProps` that deals with props on all `_.isObject` values.
  *
- * @see [`z.isSingle()`](/functions/isSingle.html) is the opposite of `isMany`
+ * @see [`z.isSingle()`](../functions/isSingle-1.html) is the opposite of `isMany`
  *
- * @see [`z.isPrimitive()`](/functions/isPrimitive.html) for the most basic single types
+ * @see [`z.isPrimitive()`](../functions/isPrimitive.html) for the most basic single types
  *
- * @see [`z.loop(value)`](/functions/iterate.html) to iterate on `isMany()` values (that makes sense).
+ * @see [`z.loop(value)`](../functions/iterate.html) to iterate on `isMany()` values (that makes sense).
  *
- * @see [`T_MANY_NAMES`](/variables/T_MANY_NAMES.html) for the string list of types that are considered "Many" types.
+ * @see [`MANY_NAMES`](../variables/MANY_NAMES.html) for the string list of types that are considered "Many" types.
  *
- * @see [`TMany`](/types/TMany.html) the types that are considered "Many".
+ * @see [`Many`](../types/Many.html) the types that are considered "Many".
  *
- * @see [`isManyType`](/functions/isManyType.html) to check if a type (not a value) is a "Many" type.
+ * @see [`isManyType`](../functions/isManyType.html) to check if a type (not a value) is a "Many" type.
  *
  * @param value any value
  *

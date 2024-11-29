@@ -37,13 +37,13 @@ export const PRIMITIVE_NAMES: Readonly<PrimitiveNames[]> = [
  *
  * Boxed / object versions of primitives result to false in `z.isPrimitive`, i.e they are NOT considered primitives (they are Boxed Primitives).
  *
- * This is in contrast to [`isSingle`](/functions/isSingle.html) that considers boxed values as `z.isSingle` and their `z.type` is their designated type.
+ * This is in contrast to [`isSingle`](../functions/isSingle-1.html) that considers boxed values as `z.isSingle` and their `z.type` is their designated type.
  *
- * To check Boxed Primitives, use [`z.isBoxedPrimitive()`](/functions/isBoxedPrimitive.html) or use the individual `z.isBoxedXxx` functions.
+ * To check Boxed Primitives, use [`z.isBoxedPrimitive()`](../functions/isBoxedPrimitive.html) or use the individual `z.isBoxedXxx` functions.
  *
- * @see [`z.isSingle()`](/functions/isSingle.html) is a broader version of `isPrimitive`
+ * @see [`z.isSingle()`](../functions/isSingle-1.html) is a broader version of `isPrimitive`
  *
- * @see [`z.isMany()`](/functions/isMany.html) is the opposite of `isSingle`
+ * @see [`z.isMany()`](../functions/isMany.html) is the opposite of `isSingle`
  *
  * @param value any value
  *
@@ -58,7 +58,7 @@ export const isPrimitive = (value: Primitive | any): value is Primitive =>
  * @param theType
  */
 export const isPrimitiveType = (
-  theType: string /*TPrimitiveNames*/
+  theType: string /*PrimitiveNames*/
 ): theType is PrimitiveNames => PRIMITIVE_NAMES.includes(theType as PrimitiveNames)
 
 // Node deprecated util.isPrimitive, suggests `(typeof value !== 'object' && typeof value !== 'function') || value === null`

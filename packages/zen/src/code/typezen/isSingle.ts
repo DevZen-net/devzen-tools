@@ -102,7 +102,7 @@ export type IfBoxedPrimitive<T, Then = true, Else = false> =
   IsBoxedPrimitive<T> extends true ? Then : Else
 
 /**
- * @see [`TsingleOrWeak`](/types/TsingleOrWeak.html)
+ * @see [`TsingleOrWeak`](../types/TsingleOrWeak.html)
  * @param value
  */
 export const isSingleOrWeak = (value: any): value is SingleOrWeak =>
@@ -113,7 +113,7 @@ export const isSingleOrWeak = (value: any): value is SingleOrWeak =>
  *
  * Aka and similar to Scalar or Primitive, but there are distinctions - see this answer https://stackoverflow.com/a/6628566/799502 for context.
  *
- * @see `z.isSingle` is similar to [`z.isPrimitive()`](/functions/isPrimitive.html), but :
+ * @see `z.isSingle` is similar to [`z.isPrimitive()`](../functions/isPrimitive.html), but :
  *  - `z.isSingle` also includes extras as "singles" (eg `Date` & `RegExp`), as they are not considered as having arbitrary props or contents (days months minutes etc in Date don't count as user-defined props).
  *  - `z.isSingle` also includes boxed values of primitives (eg. `new Boolean(true)`), unlike `z.isPrimitive()` which only allows for really primitive unboxed values.
  *
@@ -154,15 +154,15 @@ export const isSingleOrWeak = (value: any): value is SingleOrWeak =>
  *
  *  irrespective of how these values are created (literal/primitive or new Xxx).
  *
- * @see [`z.isMany()`](/functions/isMany.html) is the opposite of `isSingle`
+ * @see [`z.isMany()`](../functions/isMany.html) is the opposite of `isSingle`
  *
- * @see [`z.isPrimitive()`](/functions/isPrimitive.html) for the most basic single types
+ * @see [`z.isPrimitive()`](../functions/isPrimitive.html) for the most basic single types
  *
- * @see [`T_SINGLE_NAMES`](/variables/T_SINGLE_NAMES.html) for the string list of types that are considered "Single" types.
+ * @see [`SINGLE_NAMES`](../variables/SINGLE_NAMES.html) for the string list of types that are considered "Single" types.
  *
- * @see [`TSingle`](/types/TSingle.html) the types that are considered "Single".
+ * @see [`Single`](../types/Single.html) the types that are considered "Single".
  *
- * @see [`isSingleType`](/functions/isSingleType.html) to check if a type (not a value) is a "Single" type.
+ * @see [`isSingleType`](../functions/isSingleType.html) to check if a type (not a value) is a "Single" type.
  *
  * @param value any value
  *

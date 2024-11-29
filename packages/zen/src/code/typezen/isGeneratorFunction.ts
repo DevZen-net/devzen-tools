@@ -7,7 +7,7 @@ const GeneratorFunctionConstructor = function* () {}.constructor
  * - `GeneratorFunction`, eg `function* () {}`
  * - OR `AsyncGeneratorFunction`  `async function* () {}`
  *
- * @see [`z.isAsyncGeneratorFunction`](/functions/isAsyncGeneratorFunction.html) for the more specific one
+ * @see [`z.isAsyncGeneratorFunction`](../functions/isAsyncGeneratorFunction.html) for the more specific one
  *
  * @param val
  */

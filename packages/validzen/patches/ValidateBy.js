@@ -32,7 +32,7 @@ const { ValidationUtils } = require("../../validation/ValidationUtils");
  * The compiled version needs to be injected into class-validator, (i.e `exports.ValidateBy = ValidateByAsValidatorFunction`)
  * to be able to use any (?) PropertyDecorator as a function!
  *
- * @see [wrapValidateByPropertyDecorator](/functions/wrapValidateByPropertyDecorator) for for context!
+ * @see [wrapValidateByPropertyDecorator](../functions/wrapValidateByPropertyDecorator) for for context!
  *
  * @todo(4 5 7): handle async/promises
  * @todo(5 6 8): explain better

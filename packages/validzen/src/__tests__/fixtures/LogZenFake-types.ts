@@ -21,9 +21,9 @@ import {
 } from 'class-validator'
 
 /**
- * The type of `logInfo` in [TOutputFn](/types/TOutputFn.html) function, accessed as `this.logInfo` inside that function call
+ * The type of `logInfo` in [TOutputFn](../types/TOutputFn.html) function, accessed as `this.logInfo` inside that function call
  *
- * @see [`BuiltInOutputsOptions`](/classes/BuiltInOutputsOptions.html)
+ * @see [`BuiltInOutputsOptions`](../classes/BuiltInOutputsOptions.html)
  */
 export interface IOutputLogInfo {
   lineNumber?: number
@@ -211,8 +211,6 @@ export class Options {
 
   /**
    * Where & how to print / output log messages and info.
-   *
-   * @see [Custom Output docs](/index.html#md:7-custom-output---redirecting-amp-transforming-output)
    */
   @IsOptional() // multiple types, done manually in validateOptions() - see https://github.com/typestack/class-validator/issues/160
   output?: Output | TBuiltInOutputNames | [TBuiltInOutputNames, BuiltInOutputsOptions?]
@@ -224,7 +222,7 @@ export class Options {
    *
    *  - true: prints a default header
    *
-   *  - [Header](/classes/Header.html) object: Header enabled with separate settings within.
+   *  - [Header](../classes/Header.html) object: Header enabled with separate settings within.
    *
    * - false: Header is disabled
    *
@@ -253,8 +251,6 @@ export class Options {
   /**
    * The `logLevel` to allow, i.e what logging severity is in effect.
    *
-   * See [logLevel](/index.html#md:4-loglevel---choosing-what-severity-to-print)
-   *
    * Default: undefined, but `debug` is implicitly enforced (hard coded)
    */
   // Solution 1 - it just works, with great description
@@ -271,7 +267,7 @@ export class Options {
    *
    * It's an arbitrary number of a range of your choosing, but 0-100 is recommended.
    *
-   * @see [debugLevel & traceLevel](/index.html#md:5-the-ldebug--ltrace-methods-amp-debuglevel--tracelevel)
+   * @see [debugLevel & traceLevel]
    *
    * Defaults to undefined, so `l.debug('something')` with no debugLevel will print (if `logLevel` allows `debug`).
    */
@@ -328,11 +324,7 @@ export class Options {
   // @ValidZen('undefined', 'number')
   debugLevel?: number
 
-  /**
-   * The [LogZenInspectOptions](/interfaces/LogZenInspectOptions.html) to use
-   *
-   * If false, it disables inspect completely
-   */
+
   @IsOptional()
   @ValidateNested()
   @ValidateIf((o, value) => !_.isBoolean(value))

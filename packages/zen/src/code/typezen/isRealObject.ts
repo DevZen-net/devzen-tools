@@ -18,9 +18,9 @@ import { ObjectPropTypes } from './type-utils'
  *
  * @todo: caveat: TypeScript type guard is not great. Fix to allow for only "Hash" types, not just "object" types, eg Record<> or similar
  *
- * @see [`z.isInstance()`](/functions/isInstance.html) for the instance-only check
+ * @see [`z.isInstance()`](../functions/isInstance.html) for the instance-only check
  *
- * @see [`z.isPOJSObject()`](/functions/isPOJSObject.html) for the Plain Old JavaScript Object check
+ * @see [`z.isPOJSObject()`](../functions/isPOJSObject.html) for the Plain Old JavaScript Object check
  *
  * @param input any value
  *
@@ -31,7 +31,7 @@ export const isRealObject = <Tobj extends Record<ObjectPropTypes, any>>(
 ): input is Record<keyof Tobj, ValueOf<Tobj>> => type(input) === 'realObject'
 
 /**
- * Returns `true` if the value is a **realObject** as defined in [`isRealObject()`](/functions/isRealObject.html)
+ * Returns `true` if the value is a **realObject** as defined in [`isRealObject()`](../functions/isRealObject.html)
  */
 export type IsRealObject<T> = T extends object
   ? Writable<T> extends SystemClasses

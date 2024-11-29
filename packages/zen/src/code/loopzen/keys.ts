@@ -329,9 +329,9 @@ export function keys<Tinput, Toptions extends IKeysOptions>(
  *
  * # Typings choice
  *
- * The [`keys()`](/functions/keys.html) & [`keysS()`](/functions/keysS.html) variants share the same implementation and same runtime results, but differ in the props types they return in TypeScript:
- * * [`keys()`](/functions/keys.html) is typed rigorously to return you the **exact types of props** of your input value, based on your options.
- * * [`keysS()`](/functions/keysS.html) returns **only `string` or `symbol` types of props** of your input value, based on your options (similar to `_.keys()` or `Object.keys()`).
+ * The [`keys()`](../functions/keys.html) & [`keysS()`](../functions/keysS.html) variants share the same implementation and same runtime results, but differ in the props types they return in TypeScript:
+ * * [`keys()`](../functions/keys.html) is typed rigorously to return you the **exact types of props** of your input value, based on your options.
+ * * [`keysS()`](../functions/keysS.html) returns **only `string` or `symbol` types of props** of your input value, based on your options (similar to `_.keys()` or `Object.keys()`).
  * [See discussion](https://stackoverflow.com/questions/55012174/why-doesnt-object-keys-return-a-keyof-type-in-typescript/76139008#76139008) and more below.
  *
  * # Examples
@@ -371,7 +371,7 @@ export function keys<Tinput, Toptions extends IKeysOptions>(
  *  - `top`-level props like methods `toString` etc. By default, top level props are excluded
  *  - `hidden` top-level & hidden props, like `__proto__`, `__defineGetter__` etc
  *
- *  See more at [`KeysOptions`](/interfaces/keysOptions.html)
+ *  See more at [`KeysOptions`](../interfaces/keysOptions.html)
  *
  * Adapted from `getAllKeysConditionally` at https://stackoverflow.com/questions/8024149/is-it-possible-to-get-the-non-enumerable-inherited-property-names-of-an-object/70629468#70629468
  * input
@@ -601,9 +601,9 @@ export type KeysS<Tinput, Toptions extends IKeysOptions> = KeysOrValues<
  *
  * @param input any input value that is an Object (eg Array, Map, Set, Function, Iterator, Generator, etc). `Primitive` values are allowed by default (with `strict: false`) and return an empty array (of type `never[]`).
  *
- * @param options the [`KeysOptions`](/interfaces/keysOptions.html) to control the output of keys / props
+ * @param options the [`KeysOptions`](../interfaces/keysOptions.html) to control the output of keys / props
 
- * @return Array of keys or props of the input value, typed according to the input value & options, but limited to `string` or `symbol` only. Use [`keys()`](/functions/keys.html) for the full props types.
+ * @return Array of keys or props of the input value, typed according to the input value & options, but limited to `string` or `symbol` only. Use [`keys()`](../functions/keys.html) for the full props types.
  */
 export function keysS<Tinput, Toptions extends IKeysOptions>(
   input: Tinput,

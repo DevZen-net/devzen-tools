@@ -105,7 +105,7 @@ export type ProjectKeys<Tinput, Toptions extends IKeysOptions> = LoopKeysOrValue
 /**
  * Map over the (many) items of **any possible input value**, returning a new instance of the same input value type (if possible), with the results of calling the projector/mapping function on every "nested" element of the input value (for collections like Objects, Arrays, Maps, Sets but also for Iterators, Generators, AsyncIterators etc).
  *
- * Similar idea to lodash `_.map()` or `Array.map()` or `_.mapValues()`, but powered by [`z.loop()`](/functions/loop.html). Hence:
+ * Similar idea to lodash `_.map()` or `Array.map()` or `_.mapValues()`, but powered by [`z.loop()`](../functions/loop.html). Hence:
  *
  * - it works with many value types, not just arrays (and objects with separate `_.mapValues()`) but also on `Map`, `Set`, `Iterator`, `Generator`, `AsyncIterator`, `Function`, `Promise` and even `isPrimitive` / `isSingle`s!
  *
@@ -138,7 +138,7 @@ export type ProjectKeys<Tinput, Toptions extends IKeysOptions> = LoopKeysOrValue
  *
  *    NOTE: When `props: 'all'`, the Generator's props are also copied over to the new Generator, all except `next`, `Symbol.iterator` & `Symbol.asyncIterator` (since these would mess the iteration). Also in strict:true, you can't use `symbol: true` (via `props`) with Iterators/Generators (it throws).
  *
- * - [`z.isSingle`](/functions/isSingle.html) values (primitives & boxed) are also supported: the projection callback will be called only once (by default, with `options.loopSingles: true` & `options.strict: false`) or throw an error (with `options.strict: true`). This follows the functional programming principles, that all values are enclosed and can be mapped over. This is also the reason why `options.strict: false` is the default.
+ * - [`z.isSingle`](../functions/isSingle-1.html) values (primitives & boxed) are also supported: the projection callback will be called only once (by default, with `options.loopSingles: true` & `options.strict: false`) or throw an error (with `options.strict: true`). This follows the functional programming principles, that all values are enclosed and can be mapped over. This is also the reason why `options.strict: false` is the default.
  *
  * - Primitives are the only exception to the rule of "getting back the same value type": you can change the return mapped type of the `input`, eg `const numAsString = map(42, (v) => v + '')` will return `'42'` as a `string`, not `42` as `number` (and type will follow). It's up to you if you want to return the same input value type!
  *
@@ -146,13 +146,13 @@ export type ProjectKeys<Tinput, Toptions extends IKeysOptions> = LoopKeysOrValue
  *
  * In all cases, any extra object props (eg `Array` Props, `Map` props etc) can be copied over to the new Array, with `props:true` - ignored for non-objects. WARNING: it is dangerous to copy inherited props like methods that might be bound or internals like `Symbol.iterator` to the mapped object, as they might mess with the new object's behavior. Some of these case are coded against, but dragons might still lurk.
  *
- * - Powered by the mighty [`z.loop()`](/functions/loop.html) / [`z.keys`](/functions/keys.html) & [`z.values`](/functions/values.html), hence you can control which keys / idx are visited (`own` / `inherited` / `nonEnumerables` / `string` / `symbol` etc) via [`IloopOptions`](/interfaces/IloopOptions.html).
+ * - Powered by the mighty [`z.loop()`](../functions/loop.html) / [`z.keys`](../functions/keys.html) & [`z.values`](../functions/values.html), hence you can control which keys / idx are visited (`own` / `inherited` / `nonEnumerables` / `string` / `symbol` etc) via [`IloopOptions`](../interfaces/IloopOptions.html).
  *
- * - You can pass an [`IloopOptions`](/interfaces/IloopOptions.html) object as the second parameter, instead of the callback, to control which keys / idx are visited (own / inherited / enumerable etc).
+ * - You can pass an [`IloopOptions`](../interfaces/IloopOptions.html) object as the second parameter, instead of the callback, to control which keys / idx are visited (own / inherited / enumerable etc).
  *   - NOTE: if `options.map` already exists on `map(val, myOptions, myMapCb)`, it throws an error.
  *   - But if `options.filter` exists, it is applied before the map. If the input value is an array, elements will appear on the result mapped array **at the same indexes of the original**, hence the resulting array will be sparse, for elements that are missing (because they didn't pass the filter). You can change this behavior with `sparse: false` in the options.
  *
- * @see [`z.loop()`](/functions/loop.html) the power hidden behind `map()` and all other collection functions.
+ * @see [`z.loop()`](../functions/loop.html) the power hidden behind `map()` and all other collection functions.
  *
  * @returns the same type as the input value, but with the items mapped over. Objects, Arrays, Maps, Sets etc are copied and returned as new values. Also Iterators, Generators etc are returned as a Generator with their items mapped over.
  */

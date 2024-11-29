@@ -1,4 +1,4 @@
-# SpecZen v1.0.0
+# SpecZen v1.0.0 - Alpha - WIP DOCS
 
 Surgical Precision Testing & Spec-ing.
 

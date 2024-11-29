@@ -8,7 +8,7 @@ import { numberEnumToNumberVal } from './numberEnumToNumberVal'
  * - The string part can be given the exact string key, or lower, upper or capitalized form of the string. // @todo: make this optional
  * - It should maintain the right types of Enum / Enum keys, eg `keyof TEnumType` as a string
  *
- * @see [`z.numberEnumToNumberVal()`](/functions/numberEnumToNumberVal.html) for the reverse function
+ * @see [`z.numberEnumToNumberVal()`](../functions/numberEnumToNumberVal.html) for the reverse function
  *
  * @todo: Curry this function, maintain types:
  *  - `_.curry`, return type is string, instead of keyof `TEnumType`

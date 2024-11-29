@@ -1,7 +1,7 @@
 import * as _ from 'lodash'
 
 /**
- * Default options for [`z.getProp`](/functions/getProp.html)
+ * Default options for [`z.getProp`](../functions/getProp.html)
  */
 export const getProp_DefaultOptions: GetPropOptions & { separator: '/' } = {
   separator: '/',
@@ -13,7 +13,7 @@ export const getProp_DefaultOptions: GetPropOptions & { separator: '/' } = {
 }
 
 /**
- * Options interface for [`z.getProp`](/functions/getProp.html)
+ * Options interface for [`z.getProp`](../functions/getProp.html)
  */
 export interface GetPropOptions {
   separator?: string

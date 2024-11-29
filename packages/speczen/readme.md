@@ -1,0 +1,1 @@
+The `readme.md` is in (`/src/docs/readme.md`)[./src/docs#readme] for silly reasons

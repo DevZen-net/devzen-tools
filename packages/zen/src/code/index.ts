@@ -1,5 +1,4 @@
 // export const VERSION = '0.0.0.unknown' // was added by 'urequire-rc-inject-version'
-export { mutate } from './objects/mutate'
 export { setProp, SetPropOptions, setProp_DefaultOptions } from './objects/setProp'
 export { getProp, GetPropOptions, getProp_DefaultOptions } from './objects/getProp'
 export { isDisjoint, IsDisjointOptions, isDisjoint_DefaultOptions } from './objects/isDisjoint'
